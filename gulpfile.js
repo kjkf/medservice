@@ -27,6 +27,12 @@ task('copy:html', () => {
       .pipe(reload({ stream: true }));
 });
 
+task('copy:css', () => {
+    return src('src/css/*.css')
+        .pipe(dest('dist/css'))
+        .pipe(reload({ stream: true }));
+});
+
 task('copy:favicon', () => {
   return src('src/*.ico')
       .pipe(dest('dist'))
@@ -129,6 +135,7 @@ task('server', () => {
 watch('./src/sass/**/*.sass', series("styles"));
 watch('./src/js/*.js', series("scripts"));
 watch('./src/*.html', series("copy:html"));
+watch('./src/*.css', series("copy:css"));
 watch('./src/*.ico', series("copy:favicon"));
 watch('./src/fonts/**/*.*', series("copy:fonts"));
 watch('./src/images/**/*.*', series("copy:images"));
@@ -137,4 +144,4 @@ watch('./src/js/components/*.js', series("copy:jsComponents"));
 /*watch('./src/images/icons/!*.svg', series("icons"));*/
 
 //task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:fonts', 'copy:images', 'styles', 'icons', 'scripts'), 'server'));
-task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:fonts', 'copy:images', 'copy:upload', 'copy:jsComponents', 'styles', 'scripts'), 'server'));
+task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'copy:jsComponents', 'styles', 'scripts'), 'server'));
