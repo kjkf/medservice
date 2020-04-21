@@ -10,26 +10,31 @@
   +flexbox
   +flex-direction(row)
   +justify-content(center)
-  width: 64px
   +align-items(center)
+  width: 232px
+  padding: 5px 15px
   &__field
+    display: flex
+    flex-grow: 1
     border-style: none
-    width: 22px
     text-align: left
     font-weight: normal
     font-size: 19px
     color: #CDCDCD
-    margin: 5px 8px
+    margin: 0
+    padding: 0
   &__btn
-    width: 14px
-    height: 70%
+    display: inline-flex
+    width: 25px
+    height: 80%
     border-style: none
     background-color: #ffffff
-    background-image: url('../images/reminder/icon_dropdownbtn.png')
+    background-image: url('../images/reminder/icon_dropdownbtn.svg')
     background-repeat: no-repeat
-    background-size: 14px 9px
+    background-size: 25px 10px
     background-position: center center
-    margin: 5px 8px 5px 2px
+    padding: 3px 7px
+    margin: 0
 .dropdown--wide
   width: 123px
   .dropdown__field
