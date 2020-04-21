@@ -1,7 +1,7 @@
 .nurse-col--left
   +laptop
-    width: 24.5%
-    min-width: auto
+    min-width: 24%
+    width: 24%
   +ipad
     width: 100%
     min-width: unset
@@ -17,7 +17,7 @@
 
     +laptop
       padding-top: 35px
-      padding-bottom: 38px
+      padding-bottom: 44px
       margin-bottom: 27px
       margin-left: -20px
       +border-radius-bl(0px)
@@ -34,6 +34,8 @@
 
 
   .time-hm
+    +laptop
+      font-size: 60px
     +ipad
       +inline-flex
       font-size: 36px
@@ -43,6 +45,15 @@
       font-size: 16px
       line-height: 21px
       margin-left: 0px
+
+  .date-md
+    font-family: $fontFuturaPTBook
+    +laptop
+      font-size: 16px
+
+  .seconds
+    +laptop
+      font-size: 32px
 
 .reminder-item-wrap
   //height: calc(100% - 226px - 53px) // 226 height of datetime
@@ -74,7 +85,7 @@
   +laptop
     font-size: 10px
     line-height: 13px
-    padding: 17px 7px 7px 7px
+    padding: 17px 4px 7px 4px
     +border_radius(13px)
 
   +ipad
@@ -114,6 +125,7 @@
 .reminder-item__title
   display: block
   color: $blue-light
+  font-family: $fontFuturaPTDemi
   font-size: 17px
   font-weight: 600
   line-height: 1
@@ -125,6 +137,7 @@
 .reminder-item__descr
   display: block
   color: $blue-light
+  font-family: $fontFuturaPTBook
   font-size: 14px
   line-height: 16px
   margin: 0px
@@ -143,6 +156,7 @@
 
 .reminder-item__time
   display: inline-block
+  font-family: $fontFuturaPTBook
   margin-bottom: 8px
 
   +laptop
@@ -152,6 +166,7 @@
 
 .btn-rem
   +border_radius(50px)
+  font-family: $fontFuturaPTBook
   font-size: 12px
   line-height: 15px
   min-width: 35px
@@ -199,6 +214,8 @@
 
 
 .layer__name
+  font-family: $fontFuturaPTDemi
+  font-size: 19px
   padding-left: 15px
   position: relative
 
@@ -247,6 +264,7 @@
     padding: 0px 12px
 
   .layer__name
+    font-size: 18px
     +laptop
       display: none
 
