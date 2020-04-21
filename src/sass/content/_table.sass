@@ -1,0 +1,86 @@
+.table_wrapper
+  background: #ffffff
+  margin: 0 auto
+  //padding: 100px 70px 45px
+  box-sizing: border-box
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15)
+  border-radius: 26px
+  overflow: hidden
+  max-width: 426px
+  max-height: 386px
+  border: 2px solid #F9E9BA
+
+.table
+  width: 100%
+  border-spacing: 0
+  text-align: left
+  //table-layout: fixed
+
+  & thead
+    background: #FFD454
+    tr
+      display: block
+      width: 100%
+    & th
+      padding: 15px 5px 10px
+      font-weight: 400
+      font-style: normal
+      font-size: 13px
+      line-height: 13px
+
+      &:first-child
+        width: 107px
+        padding-left: 28px
+      &:nth-child(2)
+        width: 53px
+      &:nth-child(3)
+        width: 70px
+      &:nth-child(4)
+        width: 48px
+      &:last-child
+        width: auto
+
+  & tbody
+    display: block
+    width: 100%
+    overflow: auto
+    height: 386px
+    & tr
+      &:nth-child(odd)
+        background: $table-odd-tr-bg
+      &:last-child
+        & td:first-child
+      & td
+        text-align: left
+        padding: 12px 5px 9px
+        font-weight: 400
+        font-style: normal
+        font-size: 15px
+        line-height: 19px
+        color: $table-body-text
+
+        &:first-child
+          padding-left: 28px
+          font-weight: 600
+          width: 107px
+        &:nth-child(2)
+          width: 53px
+        &:nth-child(3)
+          width: 70px
+        &:nth-child(4)
+          width: 48px
+        &:last-child
+          width: auto
+
+.btn--table
+  border-radius: 50px
+  padding: 4px 12px
+
+.btn--purple
+  background: #E4DEFA
+
+.btn--lightGreen
+  background: #D5F2E1
+
+.p0
+  padding: 0

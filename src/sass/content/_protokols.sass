@@ -1,0 +1,572 @@
+.mainContent
+  width: 861px
+  +flex
+  +flex-direction(column)
+  +justify-content(start)
+  padding-top: 31px
+  align-items: center
+  background-image: url('../upload/mainContent_bg_bottom.png'),url('../upload/mainContent_bg_top.png')
+  background-repeat: no-repeat
+  background-position: right bottom, right top
+  background-size: 360px 200px
+
+.block
+  +flexbox
+  +flex-direction(row)
+  +justify-content(space-around)
+  +flex-wrap(wrap)
+  width: calc(100% - (6px * 2))
+  background-color: #FFFFFF
+  +box_shadow(0px 1px 8px rgba(0, 0, 0, 0.15))
+  +border_radius(26px)
+  padding: 6px 6px 5px
+  margin-bottom: 22px
+  +medium
+    width: calc(100% - (15px * 2))
+    //+retina
+      width: calc(100% - (6px * 2))
+  +laptop
+    width: calc(100% - (6px * 2))
+    margin-bottom: 7px
+  +ipad
+    +flex-direction(column)
+    +border_radius(16px)
+    width: calc(100% - 25px)
+    margin-bottom: 8px
+    padding: 14px 10px
+    position: relative
+  +tablet
+    width: calc(100% - (12px * 2))
+  +phone_min
+    padding: 10px 5px
+    width: calc(100% - (5px * 2) - #{$container_phone-p}*2)
+
+//@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+  .block
+    +medium
+      width: calc(100% - (6px * 2) - (10px * 2))
+    +laptop
+      width: calc(100% - (10px * 2))
+    //+tablet
+      //width: calc(100% - 15px*2) // 15px is paddings of container
+      width: calc(100% - (6px * 2) - (10px * 2))
+
+.block__protocolCaption
+  +flexbox
+  +flex-direction(row)
+  +justify-content(flex-start)
+  +align-items(flex-end)
+  width: auto
+  height: 30px
+  margin-bottom: 10px
+  padding-left: 40px
+  width: 100px
+  background:
+    color: transparent
+    image: url('../images/icon_list.png')
+    repeat: no-repeat
+    size: 20px 26px
+    position: 14px 0px
+  +laptop
+    height: 26px
+    margin-bottom: 7px
+  +ipad
+    margin-bottom: 16px
+    +align-items(center)
+    background-size: 16px 20px
+    //margin-right: 115px
+    max-width: 200px
+  +phone_1
+    max-width: calc(100% - 160px)
+  h3
+    margin: 0px 5px 3px 0px
+    +phone
+      display: none
+  h2
+    margin: 0px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+
+.block.active
+  background-color: $blockBgColor_Active
+  align-content: center
+  +tablet
+    background-color: #DEE7FF
+
+.block-head
+  padding: 20px 20px 24px
+  width: calc(100% - (20px * 2))
+  +justify-content(space-between)
+  +retina
+    max-width: calc(100% - (15px * 2))
+  +medium
+    padding: 10px 10px 14px
+    +retina
+      width: calc(100% - (6px * 2))
+      padding: 6px 6px 14px
+  +laptop
+    width: calc(100% - (18px * 2))
+    padding: 12px 18px
+    margin-bottom: 7px
+    //+retina
+    //max-width: calc(100% - (20px * 6))
+  +ipad
+    +flex-direction(column)
+    padding: 19px 17px 22px
+    margin-bottom: 22px
+  +tablet
+    //margin-top: calc(41px + 8px)
+  +phone_min
+    padding: 14px 10px
+    width: calc(100% - (#{$container_phone-p} * 2) - 10px*2)
+  &-f
+    margin-right: 35px
+    +medium
+      margin-right: 0px
+    +laptop
+      //width: 100%
+      width: 280px
+    +ipad
+      +order(1)
+      margin-right: 0px
+      margin-bottom: 10px
+      +justify-content(space-around)
+      width: auto
+      max-width: initial
+  &-s
+    margin-right: 30px
+    +medium
+      margin-right: 0px
+    +laptop
+      width: 280px
+      //width: 100%
+      margin-bottom: 10px
+    +ipad
+      +order(2)
+      margin-right: 0px
+      margin-bottom: 14px
+      width: auto
+      max-width: initial
+  &-l
+    margin-bottom: 20px
+    +medium
+      margin-right: 0px
+    +laptop
+      //width: 100%
+      width: 280px
+      margin-bottom: 10px
+    +ipad
+      width: auto
+      +order(3)
+      margin-right: 0px
+      margin-bottom: 14px
+      width: auto
+      max-width: initial
+    .btn-drop
+      margin-right: 8px
+      +medium
+        margin-right: 3px
+      &:last-child
+        margin-right: 0px
+
+.row, .row-alignright
+  height: auto
+  +flexbox
+  +flex-direction(row)
+  +justify-content(space-around)
+
+.row-alignright
+  +justify-content(flex-end)
+  margin-bottom: 10px
+  margin-right: 3px
+
+.col
+  +flexbox
+  +flex-direction(column)
+  +justify-content(flex-end)
+  margin-right: 5px
+  //max-width: 296px
+  &:last-child
+    margin-right: 0px
+  //margin: 0 5px
+  +medium
+    margin-right: 0px
+  +laptop
+    margin-right: 6px
+  +ipad
+    width: 100%
+    margin-right: 0px
+    //max-width: 100%
+
+.inside-block
+  +flexbox
+  +flex-direction(column)
+  +justify-content(space-around)
+  text-align: center
+  +ipad
+    width: 100%
+  .btn
+    &.active
+      color: #FFFFFF
+      background-color: $buttonBgColor_Active
+
+.block__layer
+  +flexbox
+  +justify-content(space-between)
+  +flex-direction(row)
+  padding: 8px 12px
+  background-color: $layerBgColor
+  //+box_shadow(0px 1px 8px rgba(0, 0, 0, 0.15))
+  +medium
+    padding-left: 7px
+    padding-right: 7px
+  +laptop
+    +retina
+      padding-left: 3px
+      padding-right: 3px
+  +ipad
+    padding-left: 7px
+    padding-right: 7px
+    margin-bottom: 8px
+    +justify-content(space-around)
+  &--left
+    +border_radius(24px 24px 0 24px)
+    padding-top: 14px
+    +laptop
+      +flex-wrap(wrap)
+      +justify-content(space-around)
+      //width: 320px
+      width: 100%
+      max-width: 320px
+      padding-top: 0px
+    +ipad
+      +border_radius(20px)
+      +flex-wrap(nowrap)
+      width: auto
+      max-width: initial
+      padding-top: 14px
+    .inside-block
+      margin-right: $block__layer__l_mr
+      +medium
+        margin-right: 0px
+      +ipad
+        +justify-content(space-between)
+      +phone_min
+        margin-right: 4px
+      &:last-child
+        margin-right: 0px
+  &--center
+    +border_radius(24px 24px 0 0)
+    +flex-direction(column)
+    +ipad
+      +border_radius(20px)
+    .btn
+      margin-right: $block__layer__c_mr
+      +medium
+        margin-right: 0px
+      &:last-child
+        margin-right: 0px
+  &--right
+    padding-top: 14px
+    +border_radius(24px 24px 24px 0)
+    +laptop
+      +flex-wrap(wrap)
+      +justify-content(space-around)
+      +align-self(flex-end)
+      //width: 320px
+      max-width: 320px
+      width: 100%
+    +ipad
+      +border_radius(20px)
+      padding-top: 8px
+      +flex-wrap(nowrap)
+      width: auto
+      max-width: initial
+    .btn
+      margin-right: $block__layer__r_mr
+      +medium
+        margin-right: 0px
+      &:last-child
+        margin-right: 0px
+    .med-label
+      +align-self(flex-start)
+      +laptop
+        +align-self(center)
+      +ipad
+        +align-self(center)
+    .inside-block
+      +laptop
+        width: 100%
+    .row
+      +laptop
+        +align-self(center)
+
+.field-box
+  +flexbox
+  +flex-direction(row)
+  +justify-content(space-between)
+  width: 60%
+  background-color: white
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25)
+  border-radius: 12px
+  color: black
+  border: none
+  padding: 5px 5px 5px 15px
+  align-items: center
+  position: relative
+  margin-bottom: 20px
+  margin-right: 20px
+  +retina
+    min-height: 40px
+  +medium
+    margin-right: 0px
+  +laptop
+    max-width: 482px
+    width: 100%
+    margin-bottom: 12px
+  +ipad
+    +order(0)
+    width: 100%
+    max-width: initial
+    padding: 0
+    box-shadow: none
+    background-color: inherit
+    margin-bottom: 20px
+  .btn-add
+    +retina
+      min-width: 132px
+      margin-left: 5px
+    +ipad
+      // position: absolute
+      // right: -100px
+      font-size: 14px
+      background-size: 11px 11px
+      padding: 5px 10px 5px 30px
+      margin-left: 25px
+      min-width: auto
+    //+phone_1
+      margin-left: 8px
+
+.mainContent_footer-btn
+  +inline-flex
+  +justify-content(flex-end)
+  +align-self(flex-end)
+  +align-items(flex-end)
+  background-color: #F2F4FF
+  +box_shadow(0px 0px 10px rgba(0, 0, 0, 0.25))
+  border-top-left-radius: 72px
+  border-bottom-right-radius: 52px
+  padding: 15px 27px
+
+  +tablet
+    display: block
+    width: 100%
+    background-color: transparent
+    +box_shadow(none)
+    +border_radius(0px)
+    //padding: 0px 35px 33px 0px
+    padding: 0 0 5px 0
+    margin-right: 0
+  +phone_1
+    +inline-flex
+    +justify-content(space-between)
+    width: calc(100% - 20px)
+
+  .btn-plus
+    margin-right: 20px
+    +phone
+      display: none
+  .btn--blue
+    +phone
+      border-radius: 22px
+
+.mainContent_footer
+  width: 860px
+  position: fixed
+  bottom: 7px
+  right: 15px
+  text-align: right
+  border-bottom-right-radius: 52px
+  margin-top: auto
+  padding-top: 20px
+  background-color: transparent
+  box-shadow: none
+  +tablet
+    text-align: center
+    bottom: 0px!important
+    right: 0px!important
+    +border_radius(0px)
+    background-color: $containerbg
+    width: 100% !important
+    padding-top: 7px
+    padding-bottom: 7px
+
+  .btn-content
+    font-size: 14px
+    /* min-width: 87px; */
+    max-width: 90px
+    word-wrap: break-word
+    padding: 5px 6px 6px
+    line-height: 14px
+    margin-right: 12px
+    &:last-child
+      margin-right: 0px
+    +phone_1
+      margin-right: 0px
+
+
+.med-label
+  text-align: center
+  color: #2B5D92
+  margin: 0px 0px 6px
+  +phone
+    font-size: 11px
+
+
+.btn-delete-wrap
+  margin-bottom: 9px
+  +align-self(flex-end)
+  margin-right: 13px
+  +ipad
+    position: absolute
+    top: 14px
+    right: 0px
+
+.inside-block--center
+  .btn
+    margin-right: $block__layer__c_mr
+    &:last-child
+      margin-right: 0px
+
+.inside-block--right
+  +laptop
+    width: 180px
+    margin-right: calc(90px / 2)
+  +ipad
+    width: auto
+    margin-right: 0px
+    +order(4)
+    +align-self(center)
+  .btn
+    margin-right: $block__layer__r_mr
+    &:last-child
+      margin-right: 0px
+  .med-label
+    +align-self(flex-start)
+    +laptop
+      +align-self(center)
+    +ipad
+      +align-self(center)
+
+.block-head-f
+  .btn
+    margin-right: $block__layer__l_mr
+    +laptop
+      margin-right: 0px
+    +phone_min
+      margin-right: 0px
+
+.block
+  .col
+    &:first-child
+      +ipad
+        +order(0)
+    &:nth-child(2)
+      +laptop
+        display: none
+      +ipad
+        +flexbox
+
+.block__layer--center
+  +laptop
+    display: none
+  +ipad
+    +flexbox
+  .inside-block:nth-child(2)
+    +ipad
+      +order(-1)
+
+.block__layer--right
+  +ipad
+    +order(-1)
+    +justify-content(center)
+
+.block--last
+  margin-bottom: 12px
+  +tablet
+    margin-bottom: 6px
+
+.block--footer
+  margin-bottom: calc(71px + 20px)
+  +box_shadow(none)
+  background: transparent
+  +justify-content(flex-start)
+  +tablet
+    margin-bottom: calc(91px - 24px)
+    width: auto
+    +justify-content(flex-start)
+    +align-self(flex-start)
+
+.btn-recomend-wrap
+  display: none
+  width: 100%
+  margin-top: 5px
+  +tablet
+    display: block
+  .btn-content
+    max-width: none
+
+
+.displaced-left, .displaced-right
+  +laptop
+    width: 100%
+  .row
+    +laptop
+      width: 100%
+      +justify-content(space-around)
+
+.displaced-left
+  +order(-1)
+
+.row--sh
+  +laptop
+    width: 60%
+  +ipad
+    width: auto
+
+.field-box
+  +laptop
+    +order(0)
+.block-head-l
+  +laptop
+    +order(1)
+  .row
+    +laptop
+      +justify-content(space-between)
+    +ipad
+      +justify-content(space-around)
+
+
+.block-head-s
+  +laptop
+    +order(2)
+  +ipad
+    +order(3)
+.block-head-f
+  +laptop
+    +order(3)
+    +justify-content(space-between)
+  +ipad
+    +order(2)
+.inside-block--right
+  +laptop
+    +order(4)
+
+.block
+  .col
+    &:first-child, &:last-child
+      +laptop
+        width: 47%
+      +ipad
+        width: auto

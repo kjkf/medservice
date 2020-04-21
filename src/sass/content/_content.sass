@@ -1,0 +1,189 @@
+.container
+  +flexbox
+  +flex-direction(row)
+  +justify-content(center)
+  padding: $container-p
+  background-color: $containerbg
+  //height: calc(100% - #{$container-p*2})
+  margin: 0px auto
+  position: relative
+  height: calc(100vh - #{$container-p}*2)
+  +medium
+    padding: 5px
+    //max-width: 330px
+    //padding: 7px 15px
+    height: calc(100vh - 7px*2)
+  +laptop
+    padding: 30px
+  +tablet
+    padding: 15px
+  +phone_min
+    padding: $container_phone-p
+
+.main-panel
+  position: relative
+  +flexbox
+  +flex-direction(column)
+  +justify-content(space-around)
+  width: $main-panel-width
+  padding-top: $main-panel-pt
+  padding-bottom: $main-panel-pb
+  background-color: $menuBgColor
+  color: $menuFontColor
+  border-top-left-radius: $main-panel-rad
+  border-bottom-left-radius: $main-panel-rad
+  background-image: url('../upload/menu_bg_top.png'), url('../upload/menu_bg_bottom.png')
+  background-repeat: no-repeat
+  background-size: 348px 132px, 348px 132px
+  background-position: top, bottom
+  height: calc(100vh - #{$main-panel-pt} - #{$main-panel-pt})
+  z-index: 100
+
+  &__in
+    padding-right: $main-panel-pr
+    padding-left: $main-panel-pl
+    +medium
+      padding-right: 20px
+      padding-left: 20px
+      +flexbox
+      +justify-content(space-between)
+      +flex-direction(column)
+      +tablet
+        +flex-direction(row)
+    +laptop
+      padding-left: 14px
+      padding-right: 12px
+    +tablet
+      padding-right: 20px
+      padding-left: 20px
+
+  +laptop
+    //width: calc(#{$main-panel-width} - 90px)
+    width: 240px
+    padding-bottom: 26px
+    padding-top: 70px
+  +tablet
+    transition: all 1s
+    position: absolute
+    padding-bottom: 10px
+    padding-top: 10px
+    width: calc(100% - 15px*2)
+    +border_radius(16px)
+    background: #2B5D92
+    height: calc(100vh - (10px * 2))
+  +phone_min
+    width: calc(100% - (#{$container_phone-p} * 2))
+
+
+  .menu-list-wrap, .btn-content-wrap, .search-bar
+    +tablet
+      display: none
+
+.main-panel.folded
+  width: 54px
+  +tablet
+    position: fixed
+    top: 0px !important
+    left: 0px !important
+    width: 265px
+    height: calc(100% - 35px - 33px)!important
+    padding-top: 35px
+    padding-bottom: 33px
+    border-top-left-radius: 0px
+    border-bottom-left-radius: 0px
+    border-top-right-radius: 27px
+    border-bottom-right-radius: 27px
+    +justify-content(flex-start)
+  .menu-list-wrap, .btn-content-wrap, .search-bar
+    +tablet
+      +flexbox
+  .mob-menu, .datetime
+    +tablet
+      display: none
+
+.content
+  +flex-grow(1)
+  +inline-flex
+  height: calc(100vh - #{$content-pt} - #{$content-pb})
+  max-width: 860px!important
+  +medium
+    height: calc(100vh - 20px - 25px)
+  +tablet
+    top: calc(45px + 7px + 15px) !important
+  +phone_min
+    top: calc(45px + 7px + #{$container_phone-p}) !important
+  &__in
+    width: 100%
+    margin: 0 auto
+    +flexbox
+    +flex-direction(column)
+    +justify-content(start)
+    +align-items(center)
+    //min-width: 861px
+    padding: $content-pt $content-plr $content-pb
+    background-color: $contentBgColor
+    color: $blockFontColor
+    border-top-right-radius: $main-panel-rad
+    border-bottom-right-radius: $main-panel-rad
+    background-image: url('../upload/mainContent_bg_bottom.png'),url('../upload/mainContent_bg_top.png')
+    background-repeat: no-repeat
+    background-position: right bottom, right top
+    background-size: 360px 200px
+    overflow-y: scroll
+
+    +medium
+      padding-top: 20px
+      padding-bottom: 25px
+      padding-left: 0px
+      padding-right: 0px
+
+    +laptop
+      padding-left: 20px
+      padding-right: 20px
+
+    +ipad
+      padding-left: 10px
+      padding-right: 10px
+
+    +tablet
+      padding: 0px
+      background: transparent
+      +border_radius(0px)
+      overflow-y: scroll
+      height: calc(100vh - 56px - 15px) //15px - paddings of .container; 56px - top of .content
+
+
+  &__scrolled
+    +flexbox
+    +flex-direction(column)
+    +justify-content(start)
+    +align-items(center)
+    padding: 0 5px
+    width: calc(100% - 14px)
+    height: 300px
+    overflow-y: scroll
+    margin-bottom: 10px
+
+    +tablet
+      overflow-y: unset
+      height: auto!important
+
+.main-panel.folded + .content
+  top: 7px!important
+  height: calc(100vh - 14px) !important
+  .content__in
+    height: calc(100vh - 14px) !important
+
+.main-panel, .content
+  position: fixed
+  top: 0px
+  left: 0px
+
+.content__in
+  .btn-content
+    font-size: 14px
+    line-height: 14px
+    padding: 0px 15px
+    min-height: 41px
+    //&.block--last
+      +align-self(flex-start)

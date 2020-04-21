@@ -1,0 +1,116 @@
+.reminder-fields
+  border: 1px solid  #C3D1FF
+  +box-shadow(inset 0px 1px 8px rgba(131, 131, 131, 0.25))
+  height: 38px
+  +border-radius(8px)
+  margin-right: 6px
+  margin-top: 4px
+
+.dropdown
+  +flexbox
+  +flex-direction(row)
+  +justify-content(center)
+  width: 64px
+  +align-items(center)
+  &__field
+    border-style: none
+    width: 22px
+    text-align: left
+    font-weight: normal
+    font-size: 19px
+    color: #CDCDCD
+    margin: 5px 8px
+  &__btn
+    width: 14px
+    height: 70%
+    border-style: none
+    background-color: #ffffff
+    background-image: url('../images/reminder/icon_dropdownbtn.png')
+    background-repeat: no-repeat
+    background-size: 14px 9px
+    background-position: center center
+    margin: 5px 8px 5px 2px
+.dropdown--wide
+  width: 123px
+  .dropdown__field
+    width: 50px
+    margin: 5px 20px
+.timefield
+  +flexbox
+  +flex-direction(row)
+  +justify-content(center)
+  +align-items(center)
+  width: 80px
+  margin-bottom: 25px
+  &__hm
+    text-align: center
+    font-weight: normal
+    font-size: 19px
+    border-style: none
+    width: 25px
+  &__separator
+    width: 5px
+    margin: 0px 3px
+
+.reminder
+  width: 305px
+  +flexbox
+  +flex-direction(column)
+  +justify-content(left)
+  +box-shadow(0px 0px 10px rgba(0, 0, 0, 0.25))
+  +border-radius(26px)
+  background-color: #ffffff
+  padding-top: 23px
+  padding-left: 26px
+  padding-bottom: 23px
+  input
+    color: #CDCDCD
+  &__caption
+    width: 100%
+    +flexbox
+    +flex-direction(row)
+    +justify-content(left)
+    +align-items(center)
+    font-style: normal
+    font-weight: 600
+    font-size: 19px
+    margin-bottom: 23px
+  &__addBtn
+    border-style: none
+    width: 36px
+    height: 36px
+    background-color: #ffffff
+    background-image: url('../images/reminder/icon_add_blue.png')
+    margin-right: 20px
+  &__descr
+    width: 100%
+    +flexbox
+    +flex-direction(column)
+    +justify-content(left)
+    font-size: 18px
+    font-weight: normal
+    padding-left: 26px
+    padding-bottom: 26px
+  .textarea-field
+    margin-top: 4px
+    margin-bottom: 8px
+    font-weight: normal
+    font-size: 19px
+    width: 265px
+    height: 75px
+  &__date
+    width: 100%
+    +flexbox
+    +flex-direction(row)
+    +justify-content(left)
+    margin-bottom: 3px
+  &__btn
+    width: 265px
+    height: 38px
+    background-color: #FDCA35
+    border-style: none
+    +box-shadow(0px 0px 10px #FDCA35)
+    +border-radius(50px)
+    font-weight: normal
+    font-size: 18px
+    color: #284D8A

@@ -1,0 +1,8 @@
+dist/
+node_modules/
+package-lock.json
+*.xml
+*.iml
+scroll_testing.html
+dialogtesting.html
+reminder.html

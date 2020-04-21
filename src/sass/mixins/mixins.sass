@@ -1,0 +1,230 @@
+=clearfix
+	&::after
+		clear: both
+		content: ""
+		display: table
+
+=border_radius($radius)
+	-webkit-border-radius: $radius
+	-moz-border-radius: $radius
+	border-radius: $radius
+
+=border-radius-l($rad)
+	-webkit-border-top-left-radius: $rad
+	-webkit-border-bottom-left-radius: $rad
+	-moz-border-radius-topleft: $rad
+	-moz-border-radius-bottomleft: $rad
+	border-top-left-radius: $rad
+	border-bottom-left-radius: $rad
+
+=border-radius-r($rad)
+	-webkit-border-top-right-radius: $rad
+	-webkit-border-bottom-right-radius: $rad
+	-moz-border-radius-topright: $rad
+	-moz-border-radius-bottomright: $rad
+	border-top-right-radius: $rad
+	border-bottom-right-radius: $rad
+
+=border-radius-b($rad)
+	-webkit-border-bottom-right-radius: $rad
+	-webkit-border-bottom-left-radius: $rad
+	-moz-border-radius-bottomright: $rad
+	-moz-border-radius-bottomleft: $rad
+	border-bottom-right-radius: $rad
+	border-bottom-left-radius: $rad
+
+=border-radius-t($rad)
+	-webkit-border-top-left-radius: $rad
+	-webkit-border-top-right-radius: $rad
+	-moz-border-radius-topleft: $rad
+	-moz-border-radius-topright: $rad
+	border-top-left-radius: $rad
+	border-top-right-radius: $rad
+
+=border-radius-bl($rad)
+	-webkit-border-bottom-left-radius: $rad
+	-moz-border-radius-bottomleft: $rad
+	border-bottom-left-radius: $rad
+
+=border-radius-tl($rad)
+	-webkit-border-top-left-radius: $rad
+	-moz-border-radius-topleft: $rad
+	border-top-left-radius: $rad
+
+=box_shadow($shadows)
+	-moz-box-shadow: $shadows
+	-webkit-box-shadow: $shadows
+	box-shadow: $shadows
+
+=placeholder
+	&::-webkit-input-placeholder
+		@content
+	&::-moz-placeholder
+		@content
+	&:-moz-placeholder
+		@content
+	&:-ms-input-placeholder
+		@content
+
+// generic transform
+=transform($transforms)
+	-moz-transform: $transforms
+		-o-transform: $transforms
+		-ms-transform: $transforms
+	-webkit-transform: $transforms
+		transform: $transforms
+// rotate
+=rotate ($deg)
+	+transform(rotate(#{$deg}deg))
+
+
+
+$extra_large-width: 1920px
+$large-width: 1440px
+$medium-width: 1112px
+$laptop-width: 1347px
+$ipad-width: 1023px
+$tablet-width: 768px
+$phone-width_1: 585px
+$phone-width: 425px
+$phone-width_2: 375px
+$phone-width-min: 320px
+
+=extra_large
+	@media screen and (min-width: $extra_large-width)
+		@content
+=large
+	@media screen and (min-width: $large-width)
+		@content
+=medium
+	@media screen and (max-width: $medium-width)
+		@content
+=laptop
+	@media screen and (max-width: $laptop-width)
+		@content
+=ipad
+	@media screen and (max-width: $ipad-width)
+		@content
+=tablet
+	@media screen and (max-width: $tablet-width)
+		@content
+=phone
+	@media screen and (max-width: $phone-width)
+		@content
+=phone_1
+	@media screen and (max-width: $phone-width_1)
+		@content
+=phone_2
+	@media screen and (max-width: $phone-width_2)
+		@content
+=phone_min
+	@media screen and (max-width: $phone-width-min)
+		@content
+
+=phone-down
+	@media screen and (min-width: $phone-width)
+		@content
+=tablet-down
+	@media screen and (max-width: $tablet-width)
+		@content
+=medium-down
+	@media screen and (max-width: $medium-width)
+		@content
+=large-down
+	@media screen and (max-width: $large-width)
+		@content
+=extra_large-down
+	@media screen and (max-width: $extra_large-width)
+		@content
+
+=scrolled($height)
+	//max-height: $height
+	height: $height
+	overflow-y: scroll
+
+$brd_width: calc(96px / 144)
+$brd_widthx2: calc(2 * 96px / 144)
+//144dpi for retina
+//96px = 1inch
+
+=retina
+	@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5), only screen and (-o-min-device-pixel-ratio : 1.5)
+		@content
+
+=user-select($val)
+	-webkit-user-select: $val
+	-moz-user-select: $val
+	-ms-user-select: $val
+	user-select: $val
+
+=a-ic ($name, $width, $height)
+	width: $width
+	height: $height
+	background:
+		color: transparent
+		image: url("images/ic/ic-"+ $name +".svg")
+		repeat: no-repeat
+		position: 0px 0px
+		size: cover
+
+=a-ic-menu ($width, $height, $posX, $posY, $bgsize, $col)
+	+flexbox
+	+justify-content(center)
+	+align-items(center)
+	width: $width
+	height: $height
+	filter: $col
+	background:
+		color: transparent
+		image: url("images/ic/menu-title-sprite.svg")
+		repeat: no-repeat
+		position-x: $posX
+		position-y: $posY
+		size: $bgsize
+
+//=ic-position($el, $classname, $hover)
+	.#{$el}
+		background-position-y: $classname
+		&:hover
+			background-position-x: $hover
+=ic-position-content($classname, $hover)
+	background-position-y: $classname
+	&:hover, &:active
+		background-position-x: $hover
+
+=ic-position($el, $classname, $hover)
+	.#{$el}
+		+ic-position-content($classname, $hover)
+	@if $el == 'artb__set-item'
+		+ic-position-content($classname, $hover)
+
+
+//input type range mixins
+=shadow($shadow-size, $shadow-blur, $shadow-color)
+	box-shadow: $shadow-size $shadow-size $shadow-blur $shadow-color, 0 0 $shadow-size lighten($shadow-color, 5%)
+
+=track
+	cursor: default
+	height: $track-height
+	transition: all .2s ease
+	width: $track-width
+
+=thumb($adjustment: 0)
+	//+shadow($thumb-shadow-size, $thumb-shadow-blur, $thumb-shadow-color)
+	background: $a_white
+	border: $thumb-border-width solid $a_dark_grey
+	border-radius: $thumb-radius
+	cursor: pointer
+	height: $thumb-height + $adjustment
+	width: $thumb-width + $adjustment
+
+=disabled
+	cursor: not-allowed
+=hidden-animate
+	visibility: hidden
+	overflow: hidden
+	opacity: 0
+	height: 0px
+	width: 0px
+	margin: 0px
+	transition: all 1.3s liner

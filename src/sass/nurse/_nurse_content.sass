@@ -1,0 +1,45 @@
+.nurse-page
+  padding: 57px 70px
+  height: calc(100% - 57px*2)
+
+  +laptop
+    padding: 35px 30px
+    height: calc(100% - 35px*2)
+  +ipad
+    height: auto
+    padding: 0px
+    background-color: $grey1
+
+.nurse
+  max-width: 1209px
+  width: 100%
+  min-height: 100%
+  +flexbox
+  +align-self(center)
+  background: $grey1
+  +border_radius($br_n)
+  overflow: hidden
+
+  +ipad
+    +border_radius(0px)
+
+  &__in
+    +flexbox
+    width: 100%
+    padding: 0px 0px 0px 30px
+    +laptop
+      padding-left: 20px
+      padding-right: 0px
+    +ipad
+      +flex-direction(column)
+      padding: 0px 15px
+
+
+.nurse-col
+  width: 28.5%
+  min-width: 330px
+
+
+.nurse-main
+  flex-grow: 1
+  min-height: 520px

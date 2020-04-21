@@ -1,0 +1,291 @@
+.dial-window
+  width: 412px
+  background: #FFFFFF
+  +border_radius(20px)
+  +phone_1
+    width: 332px
+  //+phone
+    width: calc(100% - 20px)
+
+  &--wide
+    width: 568px
+    +phone_1
+      width: 350px
+    .dial-window__in
+      +align-items(center)
+      padding: 26px 24px 34px
+      +phone_1
+        padding: 22px 16px 18px
+
+  &__in
+    +flexbox
+    +justify-content(flex-start)
+    +flex-direction(column)
+    padding: 36px 46px
+    +phone_1
+      padding: 26px 26px 34px
+
+  &__title
+    font-size: 24px
+    line-height: 26px
+    color: #2B5D92
+    margin: 0px
+    margin-bottom: 23px
+  &__title--center
+    text-align: center
+  &__text
+    margin: 0px
+    text-align: center
+    letter-spacing: 0.3
+    line-height: 1.2
+
+  &__footer
+    width: 100%
+    +justify-content(space-between)
+
+  .input-field
+    font-size: 24px
+    line-height: 26px
+    padding-left: 16px
+    color: $input-field_dial-col
+    -webkit-appearance: none
+    +placeholder
+      font-size: 24px
+      line-height: 26px
+      color: $input-field-placeholder
+      +phone_1
+        font-size: 18px
+    +phone_1
+      font-size: 18px
+      padding: 8px 12px
+
+  .input-field__wrap
+    margin-bottom: 25px
+    +flexbox
+
+  .btn
+    padding: 9px 35px 10px
+    +phone
+      padding: 9px 25px 10px
+
+  .btn-content
+    +box_shadow($btn-dw-box-shadow)
+
+  .btn--white
+    &:hover
+      background-color: $btn-blue-bg
+      color: $btn-white-bg
+
+  .btn--blue
+    &:hover
+      box-shadow: none
+    &:active
+      background-color: $btn-white-bg
+      border-color: $btn-blue-bg
+      color: $btn-blue-bg
+      box-shadow: none
+
+  &--msg
+    width: 280px
+    +border_radius(16px)
+
+    .dial-window__in
+      padding: 26px 28px 29px
+
+    .btn
+      font-size: 19px
+      line-height: 21px
+      padding: 6px 47px 7px
+
+    .dial-window__text
+      color: #274d98
+      margin-bottom: 18px
+
+    .dial-window__footer
+      +justify-content(center)
+
+.dial-window--msg
+  position: relative
+  &::before
+    content: ''
+    position: absolute
+    display: block
+    width: 0px
+    border: 20px solid transparent
+
+.dial-window--drug
+  //min-height: 310px
+  //1+phone_1
+  width: 332px
+  min-height: 389px
+  +phone
+    width: 300px
+
+  .button-reg.button-reg--yellow
+    padding: 0 4px
+
+  .dial-window__title
+    //margin-bottom: 27px
+    //+phone_1
+    margin-bottom: 17px
+
+  .input-field__wrap
+    //margin-bottom: 16px
+    //+phone_1
+    margin-bottom: 15px
+    width: auto
+
+  .dial-window__title-wrapper, .dial-window__footer
+    //width: 71%
+    //+phone_1
+    width: 100%
+
+  .drug-info
+    //margin-bottom: 31px
+    +align-items(center)
+    //+phone_1
+    +flex-direction(column)
+    margin-bottom: 14px
+    &-col
+      //margin-right: 25px
+      +phone_1
+        margin-right: 0px
+    margin-right: 0
+    margin-bottom: 13px
+    &-col:last-child
+      margin-right: 0px
+      //+phone_1
+      margin-bottom: 0
+
+  .item-label
+    font-size: 16px
+    +phone_1
+      font-size: 18px
+      margin-bottom: 12px
+
+  .input-field
+    padding: 12px 16px
+    //color: #333335
+    //text-align: center
+    +placeholder
+      //color: #333335
+      text-align: center
+      +phone_1
+        font-size: 18px
+        color: #BDBDBD
+    +phone_1
+      font-size: 18px
+      padding: 8px 12px
+    +phone_1
+      width: calc(100% - 20px)
+
+  .btn-content
+    //width: 160px
+    //+phone_1
+    width: 140px
+    padding: 7px 35px 8px
+    +phone
+      padding: 7px 25px 8px
+
+//диал. окно с указателем на "вверхней правой" части
+.top-right
+  &::before
+    left: 50%
+    top: 0
+    border-top: 0
+    border-bottom: 46px solid #FFFFFF
+    +transform(translate(calc(100% + 12px), calc(-100% + 17px)) rotate(30deg))
+
+//диал. окно с указателем на "вверхней левой" части
+.top-left
+  &::before
+    left: 0
+    top: 0
+    border-top: 0
+    border-bottom: 46px solid #FFFFFF
+    +transform(translate(calc(100% + 12px), calc(-100% + 17px)) rotate(-30deg))
+
+//диал. окно с указателем на "нижней правой" части
+.bottom-right
+  &::before
+    left: 50%
+    border: 20px solid transparent
+    bottom: 0
+    border-bottom: 0
+    border-top: 46px solid #FFFFFF
+    +transform(translate(calc(100% + 10px), calc(-100% + 77px)) rotate(-30deg))
+  .dial-window__in
+    padding: 40px 28px 40px
+
+//диал. окно с указателем на "нижней левой" части
+.bottom-left
+  position: relative
+  &::before
+    left: 0
+    border: 20px solid transparent
+    bottom: 0
+    border-bottom: 0
+    border-top: 46px solid #FFFFFF
+    +transform(translate(calc(100% + -5px), calc(-100% + 80px)) rotate(30deg))
+  .dial-window__in
+    padding: 33px 28px 30px
+
+//диал. окно с указателем на "правой вверхней" части
+.right-top
+  position: relative
+  &::before
+    left: 100%
+    top: 0
+    border-top: 0
+    border-bottom: 46px solid #FFFFFF
+    +transform(translate(calc(100% - 53px), calc(-100% + 60px)) rotate(60deg))
+
+//диал. окно с указателем на "правой нижней" части
+.right-bottom
+  position: relative
+  &::before
+    left: 100%
+    top: 0
+    border-top: 0
+    border-bottom: 46px solid #FFFFFF
+    +transform(-translate(calc(100% - 53px), calc(-100% + 130px)) rotate(60deg))
+
+//диал. окно с указателем на "левой вверхней" части
+.left-top
+  position: relative
+  &::before
+    left: 0
+    top: 0
+    border-top: 0
+    border-bottom: 46px solid #FFFFFF
+    +transform(translate(calc(100% + -68px), calc(-100% + 68px)) rotate(-60deg))
+
+//диал. окно с указателем на "левой нижней" части
+.left-bottom
+  position: relative
+  &::before
+    left: 0
+    top: 0
+    border-top: 0
+    border-bottom: 46px solid #FFFFFF
+    +transform(translate(calc(100% + -68px), calc(-100% + 130px)) rotate(-60deg))
+
+.dial-window--recomend
+  width: 674px
+  height: 346px
+  +border_radius(30px)
+  .dial-window__in
+    padding: 23px
+  .dial-window__footer
+    display: none
+  .recomend-text-wrap
+    width: calc(100% - 20px)
+    //height: calc(100% - 20px)
+    padding: 15px 10px
+    +flexbox
+    +justify-content(center)
+    +align-items(center)
+    +box_shadow($dialWReoom_textarea_sh)
+    +border_radius($dialWReoom_textarea_rad)
+  +phone_1
+    width: 100%

@@ -1,0 +1,212 @@
+//Ед измерения
+.unit
+  min-width: $unit-width
+  min-height: $unit-height
+  font-family: $fontFuturaPT
+  font-style: normal
+  font-weight: 500
+  font-size: 20px
+  line-height: 1
+  color: $unit-col
+  background-color: $unit-bg
+  border: 1px solid transparent
+  +border_radius($unit-rad)
+  +box_shadow($box-shadow)
+  +inline-flex
+  +justify-content(center)
+  +align-items(center)
+  cursor: pointer
+  &.active
+    border-color: $unit-br
+  &:hover
+    +box_shadow(none)
+  &--sm
+    min-width: 30px
+    min-height: 20px
+    font-size: 12px
+
+.unit-wrap
+  +flexbox
+  .unit
+    margin-right: 6px
+    &:last-child
+      margin-right: 0px
+
+//Форма выпуска
+.drugs
+  width: 30px
+  height: 29px
+  cursor: pointer
+
+  &--ampoule
+    //.icon
+    width: 28px
+    height: 40.55px
+    &.drug-info-item
+      top: calc(50% - 40.55px/2)
+
+  &--capsule
+    //.icon
+    width: 45.66px
+    height: 34px
+    &.drug-info-item
+      top: calc(50% - 34px/2)
+
+  &--pill
+    //.icon
+    width: 38.75px
+    height: 31px
+    &.drug-info-item
+      top: calc(50% - 31px/2)
+
+  &--system
+    //.icon
+    width: 38px
+    height: 48px
+    &.drug-info-item
+      top: calc(50% - 48px/2)
+
+  &--pot
+    //.icon
+    width: 34px
+    height: 42.74px
+    &.drug-info-item
+      top: calc(50% - 42.74px/2)
+
+  &--candles
+    //.icon
+    width: 38.97px
+    height: 38px
+    &.drug-info-item
+      top: calc(50% - 38px/2)
+
+
+.drugs-wrap
+  +flexbox
+  +align-items(center)
+  //.drugs
+    margin-right: 3px
+    &:last-child
+      margin-right: 0px
+
+.button-reg--yellow
+  background-color: #F4B740
+  .button-reg__field
+    background-color: #F4B740
+    color: #000000
+    font-size: 12px
+    font-weight: bold
+
+.button-reg--readonly
+  min-width: $unit_read-width
+  min-height: $unit_read-height
+  padding: 0px
+  +justify-content(center)
+  .button-reg__minus, .button-reg__plus
+    display: none
+
+
+.item-label
+  font-family: $fontFuturaPT
+  font-style: normal
+  font-weight: 300
+  font-size: $item-label-fs
+  line-height: 1
+  color: $item-label-col
+  text-align: center
+  margin-bottom: 6px
+
+//span.drugs
+  position: absolute
+  right: 30px
+  top: 0px
+  +phone_1
+    right: 0px
+
+.drug-dosage
+  width: 40px
+  display: inline-block
+  padding: 0px 12px
+  border-radius: 32px
+  background: #f4b440
+  text-align: center
+  color: #000000
+  +box_shadow($box-shadow)
+  &--sm
+    width: calc(30px + 12px*2)
+    padding: 0px
+    height: 20px
+    font-size: 16px
+    line-height: 20px
+
+.drug-name
+  display: inline-block
+  width: 55%
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+
+
+.drug-info-item
+  //margin-right: 15px
+  //&:last-child
+    margin-right: 0
+  &.drug-name
+    //margin-right: 36px
+  &.drug-dosage
+    margin-left: auto
+    cursor: auto
+  &.unit
+    margin-right: calc(50px + 15px)
+    margin-left: 18px
+    cursor: auto
+    &:hover
+      +box_shadow($box-shadow)
+    +phone_1
+      margin-right: 25px
+      margin-left: 5px
+  &.drugs
+    cursor: auto
+    position: absolute
+    right: 28px
+    width: 46px!important
+    +phone_1
+      right: 0px
+
+.block__items
+  +flexbox
+  +align-items(center)
+  height: 30px
+  +ipad
+    margin-left: auto
+    margin-right: calc(110px + 5px)
+  +phone_1
+    display: none
+
+  .drug-dosage
+    margin-right: 5px
+    cursor: auto
+
+  .unit
+    margin-right: 5px
+    cursor: auto
+    &:hover
+      +box_shadow($box-shadow)
+
+  .drugs
+    cursor: auto
+    width: 46px
+
+
+.block__header
+  +flexbox
+  +justify-content(space-between)
+  +laptop
+    width: 100%
+    max-width: 320px
+  +tablet
+    +justify-content(flex-start)
+
+.icon
+  width: 100%
+  height: 100%

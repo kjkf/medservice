@@ -1,0 +1,345 @@
+.main-panel
+  .btn-content
+    padding: 10px 2px 14px
+    width: 100%
+    +retina
+      min-height: 50px
+    +laptop
+      font-size: 18px
+    +tablet
+      padding-bottom: 10px
+      +retina
+        min-height: 46px
+    &:hover, &.active
+      color: #2B5D92
+      background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%)
+  .btn-content-wrap
+    margin-top: auto
+  +tablet
+    +retina
+      max-height: 25px
+
+  &.folded
+    +tablet
+      +retina
+        max-height: initial
+
+.menu
+  width: 21%
+  +flexbox
+  +flex-direction(column)
+  +justify-content(space-around)
+  background-color: $menuBgColor
+  color: $menuFontColor
+  border-top-left-radius: 52px
+  border-bottom-left-radius: 52px
+  position: relative
+  padding-top: 69px
+  padding-bottom: 127px
+  background-image: url('../upload/menu_bg_top.png'), url('../upload/menu_bg_bottom.png')
+  background-repeat: no-repeat
+  background-size: 348px 132px, 348px 132px
+  background-position: top, bottom
+
+.datetime
+  +flexbox
+  +flex-direction(row)
+  +justify-content(center)
+  color: white
+  margin-bottom: 41px
+  +retina
+    min-height: 68px
+  +laptop
+    margin-bottom: 26px
+  +tablet
+    margin-bottom: 0px
+    +justify-content(flex-end)
+    min-height: auto
+
+.time-hm
+  +inline-flex
+  font-family: $fontTerminalDosis
+  font-size: 82px
+  line-height: 68px
+  letter-spacing: -2px
+  +laptop
+    font-size: 63px
+  +tablet
+    display: none
+
+.date-sd
+  +flexbox
+  +flex-direction(column)
+  +justify-content(space-evenly)
+  margin-left: 10px
+  +tablet
+    font-size: 16px
+    line-height: 21px
+
+.seconds
+  +flexbox
+  font-family: $fontTerminalDosis
+  font-size: 44px
+  +laptop
+    font-size: 34px
+  +tablet
+    display: none
+
+.date-md
+  +flexbox
+  font-family: $fontFuturaPT
+  font-size: 20px
+  +laptop
+    font-size: 17px
+
+.search-bar
+  +flexbox
+  //border-radius: 12px
+  +align-self(center)
+  +align-items(center)
+  margin-bottom: 40px
+  position: relative
+  +retina
+    min-height: 45px
+  +tablet
+    margin-bottom: 9px
+
+.search-bar__field
+  +flexbox
+  +flex-direction(row)
+  +justify-content(center)
+  width: 100%
+  border: none
+  font-size: 21px
+  padding: 12px 0 9px 40px
+  +border_radius(12px)
+  background-color: #FFFFFF
+  +phone
+    width: 184px
+    padding: 9px 0 9px 40px
+  +placeholder
+    font-size: 21px
+    color: #CACACA
+
+.search-bar__icon
+  position: absolute
+  top: 12px
+  left: 13px
+  width: 17px
+  height: 17px
+  background-image: url('../images/icon_search.png')
+  background-repeat: no-repeat
+  background-size: contain
+
+.menu-list
+  +flexbox
+  +flex-direction(column)
+  +justify-content(right)
+  list-style: none
+  padding: 20px 0px 0px 0px
+  margin: 0px
+  margin-bottom: 40px
+  height: 560px
+  overflow-y: scroll
+  +tablet
+    margin-bottom: 0px
+  .menu-list__item
+    +flexbox
+    padding: 13px 20px 13px 75px
+    margin-bottom: 0px
+    border-bottom-left-radius: 14px
+    border-top-left-radius: 14px
+    +laptop
+      padding-left: 48px
+    +tablet
+      +border_radius(12px)
+      padding: 11px 16px 11px 50px
+    a
+      text-decoration: none
+      font-family: $fontFuturaPT
+      font-style: normal
+      font-weight: 450
+      font-size: 25px
+      letter-spacing: 0.3px
+      color: $menuFontColor
+      position: relative
+      +tablet
+        font-size: 21px
+    a::before
+      content: ''
+      position: absolute
+      width: 20px
+      height: 20px
+      left: -40px
+      top: 5px
+      +border_radius(50%)
+      background-color: #8EADD4
+      +tablet
+        left: -27px
+        width: 15px
+        height: 15px
+
+  .menu-list__item.active
+    background-color: $contentBgColor
+    position: relative
+    &:after, &:before
+      content: ''
+      display: block
+      position: absolute
+      width: 20px
+      height: 20px
+      +tablet
+        display: none
+    &:before
+      right: 0
+      top: -20px
+      background-image: radial-gradient(circle at 0 0, transparent 20px, $contentBgColor 20px)
+    &:after
+      right: 0
+      bottom: -20px
+      background-image: radial-gradient(circle at 0 100%, transparent 20px, $contentBgColor 20px)
+    a
+      color: $menuFontColor_Active
+      //padding-left: 5px
+      position: relative
+      &:before
+        position: absolute
+        content: ''
+        width: 38px
+        height: 38px
+        left: -52px
+        top: -7px
+        background-image: url('../images/icon_protocol.svg')
+        background-color: transparent
+        background-repeat: no-repeat
+        background-position: center
+        background-size: contain
+        +laptop
+          width: 24px
+          height: 24px
+          left: -40px
+          top: 0px
+        +tablet
+          width: 28px
+          height: 28px
+          left: -35px
+          top: -4px
+
+.menu-list-wrap
+  padding-right: 0px
+  +tablet
+    padding-left: 35px
+    padding-right: 35px
+  .menu-list__item.hide
+    display: none !important
+
+.mob-menu
+  display: none
+  width: 26px
+  height: 25px
+  +border_radius(3px)
+  cursor: pointer
+  background:
+    color: #FFFFFF
+    image: url("../images/icon_menu.svg")
+    size: 13px 10px
+    position: center
+    repeat: no-repeat
+  +tablet
+    display: inline-block
+
+.hide
+  display: none
+
+.return-list-wrap
+  height: auto
+  width: calc(100% - #{$main-panel-pr} - #{$main-panel-pl})
+  position: absolute
+  bottom: $main-panel-pb
+  left: $main-panel-pl
+  z-index: 1
+  overflow: hidden
+  background-color: #FFFFFF
+  +border_radius(24px)
+  padding-top: 25px
+  padding-bottom: calc(30px + 30px)
+  +medium
+    width: calc(100% - 20px*2 )
+    left: 20px
+  +laptop
+    width: calc(100% - 14px - 12px)
+    left: 14px
+    padding-bottom: 50px
+    padding-top: 35px
+    height: 186px
+
+  +tablet
+    width: calc(100% - 20px*2 )
+    left: 20px
+
+.return-list
+  +flexbox
+  +flex-direction(column)
+  +justify-content(right)
+  background-color: #FFFFFF
+  list-style: none
+  margin: 0px
+  padding: 0px
+  width: 100%
+  min-height: 411px
+  overflow-y: scroll
+
+  +laptop
+    min-height: 170px!important
+    height: 170px!important
+
+  &__item
+    +flexbox
+    padding: 16px 16px 10px 70px
+    margin-bottom: 10px
+    +laptop
+      padding: 0px 4px 0px 53px
+    //+tablet
+      +border_radius(12px)
+      padding: 8px 5px 8px 50px
+    a
+      display: inline-block
+      text-decoration: none
+      font-family: $fontFuturaPT
+      font-style: normal
+      font-weight: 450
+      font-size: 25px
+      color: #8EADD4
+      position: relative
+      //+tablet
+        font-size: 21px
+    a::before
+      content: ''
+      position: absolute
+      width: 20px
+      height: 20px
+      left: -40px
+      top: 5px
+      +border_radius(50%)
+      background-color: #8EADD4
+      +laptop
+        left: -38px
+
+    &:hover, &:active, &.active
+      a
+        color: #2B5D92
+        &:before
+          background-color: #2B5D92
+
+.btn-return, .return-list-wrap
+  display: none
+
+.return-unfold
+  .btn-protocol
+    display: none
+  .btn-return, .return-list-wrap
+    display: block
+
+.btn-return
+  position: relative
+  z-index: 1

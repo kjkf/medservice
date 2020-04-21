@@ -1,0 +1,285 @@
+.nurse-col--left
+  +laptop
+    width: 24.5%
+    min-width: auto
+  +ipad
+    width: 100%
+    min-width: unset
+
+.nurse
+  .datetime
+    background: $n_blue_bg
+    padding-top: 85px
+    padding-bottom: 50px
+    +box_shadow($n_shadow)
+    +border-radius-b(25px)
+    margin-bottom: 23px
+
+    +laptop
+      padding-top: 35px
+      padding-bottom: 38px
+      margin-bottom: 27px
+      margin-left: -20px
+      +border-radius-bl(0px)
+
+    +ipad
+      +justify-content(center)
+      +flex-direction(column)
+      padding-top: 10px
+      padding-bottom: 5px
+      padding-left: 33px
+      margin-left: 0px
+      +border-radius-b(16px)
+      +box_shadow(none)
+
+
+  .time-hm
+    +ipad
+      +inline-flex
+      font-size: 36px
+      line-height: 46px
+  .date-sd
+    +ipad
+      font-size: 16px
+      line-height: 21px
+      margin-left: 0px
+
+.reminder-item-wrap
+  //height: calc(100% - 226px - 53px) // 226 height of datetime
+  background-color: $grey1
+  +scrolled(416px)
+  padding-right: 6px
+  +laptop
+    padding-right: 0px
+  +ipad
+    overflow: unset
+    height: auto
+    max-height: unset
+
+.reminder-item
+  +flexbox
+  +justify-content(space-between)
+  background: rgba(191, 201, 255, 0.2)
+  +border_radius(26px)
+  padding: 23px 10px 9px 25px
+  //min-height: 80px
+  color: $blue-light
+  font-size: 14px
+  line-height: 18px
+  color: $blue-light
+  margin-bottom: 4px
+  &:last-child
+    margin-bottom: 0px
+
+  +laptop
+    font-size: 10px
+    line-height: 13px
+    padding: 17px 7px 7px 7px
+    +border_radius(13px)
+
+  +ipad
+    padding: 13px 7px 5px 18px
+
+
+.reminder-item__num
+  display: inline-block
+  min-width: 20px
+  min-height: 20px
+  border: 1px solid $blue
+  font-size: 12px
+  line-height: 20px
+  color: $blue1
+  text-align: center
+  +border_radius(50%)
+  +align-self(flex-start)
+
+  +laptop
+    display: none
+
+  +ipad
+    display: inline-block
+    min-width: 15px
+    min-height: 15px
+    font-size: 10px
+    line-height: 15px
+
+.reminder-item__info
+  +flex-grow(1)
+  margin: 0px 20px 0px 17px
+  +laptop
+    margin: 0px 0px 0px 5px
+  +ipad
+    margin-left: 20px
+
+.reminder-item__title
+  display: block
+  color: $blue-light
+  font-size: 17px
+  font-weight: 600
+  line-height: 1
+  margin: 0px
+
+  +laptop
+    font-size: 16px
+
+.reminder-item__descr
+  display: block
+  color: $blue-light
+  font-size: 14px
+  line-height: 16px
+  margin: 0px
+
+  +laptop
+    font-size: 14px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    width: 100px
+
+
+
+.reminder-item__right
+  text-align: right
+
+.reminder-item__time
+  display: inline-block
+  margin-bottom: 8px
+
+  +laptop
+    margin-bottom: 9px
+  +ipad
+    margin-bottom: 5px
+
+.btn-rem
+  +border_radius(50px)
+  font-size: 12px
+  line-height: 15px
+  min-width: 35px
+  min-height: 24px
+  padding: 0px
+  +box_shadow(0px 0px 10px rgba(0, 0, 0, 0.25))
+
+.btn-rem--delete
+  background: $red
+
+.btn-rem--create
+  background: $green
+
+.reminder-item__btn
+  .btn
+    margin-right: 3px
+    &:last-child
+      margin-right: 0px
+
+.layer
+  +flexbox
+  +align-items(center)
+  +justify-content(flex-start)
+  min-height: 93px
+  padding: 0px 20px 0px 25px
+  background: $layer_bg
+  box-shadow: $btn-dw-box-shadow
+  +border-radius($layer_br)
+  color: $blue-light
+  font-size: 19px
+  line-height: 20px
+  margin-bottom: 7px
+
+  +laptop
+    min-height: 70px
+    padding: 0px 28px 0px 12px
+
+  +ipad
+    +border_radius(30px)
+    min-height: 83px
+    padding: 0px 12px 0px 19px
+
+  &:last-child
+    margin-bottom: 0px
+
+
+.layer__name
+  padding-left: 15px
+  position: relative
+
+  +laptop
+    padding-left: 22px
+  +ipad
+    padding-left: 15px
+
+.layer__ic
+  display: inline-block
+  width: $layer_w
+  height: $layer_w
+  border: 2px solid $blue-light
+  +border_radius(50%)
+  background:
+    color: transparent
+    //image: url("../images/nurse/icon_doc.svg")
+    repeat: no-repeat
+    size: 50%
+    position: center
+  +laptop
+    width: calc(#{$layer_w} - 6px)
+    height: calc(#{$layer_w} - 6px)
+  +ipad
+    width: calc(#{$layer_w} + 2px)
+    height: calc(#{$layer_w} + 2px)
+
+.layer__btn
+  margin-left: auto
+
+.layer--dis
+  background: $grey_blue
+  color: $blue2
+  .layer__btn
+    display: none
+
+
+.reminder-item.layer
+  background: rgba(191, 201, 255, 0.2)
+  +box_shadow(none)
+  min-height: 80px
+
+  +laptop
+    +justify-content(center)
+    +border-radius(13px)
+    padding: 0px 12px
+
+  .layer__name
+    +laptop
+      display: none
+
+  .layer__ic
+    border: 0px
+    background-image: url("../images/nurse/icon_add_grey.svg")
+    background-size: 24px
+
+
+.work-time
+  .layer__ic
+    background-image: url("../images/nurse/icon_doc.svg")
+
+.reminder-add
+  .layer__ic
+    background-image: url("../images/nurse/icon_add.svg")
+
+.vidjet-add
+  +laptop
+    padding: 0px 12px
+    +justify-content(center)
+  +ipad
+    padding: 0px 12px 0px 19px
+    +justify-content(flex-start)
+
+  .layer__ic
+    border: 0px
+    background-image: url("../images/nurse/icon_add_grey.svg")
+    background-size: 24px
+
+  .layer__name
+    padding-left: 30px
+    +laptop
+      display: none
+    +ipad
+      display: block

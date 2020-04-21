@@ -1,0 +1,384 @@
+*
+  &:focus, &:active
+    outline: none !important
+
+html
+  overflow: hidden
+  font-size: $fontSizeMain
+  +ipad
+    overflow-y: scroll
+
+body
+  font:
+    family: $fontFuturaPT
+    size: 1em
+    weight: 400
+  color: $fontColorMain
+  line-height: 1
+  //min-width: $bodyMinWidth
+  margin: 0
+  padding: 0
+  height: 100vh
+  background-color: $bodybg
+  +tablet
+    min-width: $bodyMinWidth_phone
+
+a
+  text-decoration: none
+
+h1
+  font-size: $fontSize_h1
+h2
+  font-family: $fontFuturaPT
+  font-size: $fontSize_h2
+  font-style: normal
+  font-weight: 450
+  //line-height: 26px
+  +tablet
+    font-size: 17px
+
+h3
+  font-family: $fontFuturaPT
+  font-size: $fontSize_h3
+  font-style: normal
+  font-weight: 450
+  //line-height: 17px
+h4
+  font-family: $fontFuturaPT
+  font-size: $fontSize_h4
+  font-style: normal
+  font-weight: 450
+  line-height: 13px
+
+
+.mainContainer
+  padding: 0
+  background-color: $containerbg
+  +flexbox
+  +flex-direction(row)
+  +justify-content(space-around)
+
+.mainContent
+  width: 79%
+  +flexbox
+  +flex-direction(column)
+  +justify-content(space-around)
+  background-color: $contentBgColor
+  color: $blockFontColor
+  border-top-right-radius: 52px
+  border-bottom-right-radius: 52px
+  padding: 20px 20px 0 0
+
+.pr-0px
+  padding-right: 0px !important
+
+.mb-6px-desct
+  margin-bottom: 6px!important
+  +tablet
+    margin-bottom: 0px!important
+
+.mb-8px-mob
+  margin-bottom: 0px!important
+  +laptop
+    margin-bottom: 6px!important
+  +ipad
+    margin-bottom: 8px!important
+
+.mb-0
+  margin-bottom: 0px!important
+
+.btn
+  width: auto
+  min-height: 31px
+  display: inline-block
+  font-family: $fontFuturaPT
+  font-size: 16px
+  font-weight: 450
+  line-height: 18px
+  color: #2B5D92
+  text-align: center
+  vertical-align: middle
+  cursor: pointer
+  user-select: none
+  border: 1px solid transparent
+  background-color: #FFFFFF
+  +border-radius(31px)
+  padding: 0px 20px
+  +box_shadow(0px 1px 4px rgba(0, 0, 0, 0.25))
+
+
+.btn:hover
+  +box_shadow(none)
+
+.btn-p10
+  padding-left: 10px
+  padding-right: 10px
+
+.btn-delete
+  padding: 0px 18px 0 38px
+  color: #FFFFFF
+  background:
+    color: $deleteButBgColor
+    image: url('../images/icon_trash.svg')
+    repeat: no-repeat
+    position: 15px center
+    size: 14px 18px
+  +laptop
+    min-height: 21px
+    padding: 0px 6px 0 20px
+    background-size: 10px 12px
+    background-position: 7px center
+  +tablet
+    +box_shadow(none)
+  &.active
+    color: #FFFFFF
+    background-color: $deleteButBgColor
+
+.btn-add
+  font-size: 19px
+  padding: 9px 15px 8px 40px
+  +border_radius(12px)
+  color: #FFFFFF
+  background:
+    color: $buttonBgColor_Active
+    image: url('../images/icon_big_plus.svg')
+    repeat: no-repeat
+    position: 10px center
+    size: 17px 17px
+
+.btn-content
+  font-size: 21px
+  padding: 13px 42px
+  line-height: 23px
+  +border_radius(22px)
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%)
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.65)
+  &:hover
+    background-color: #305388
+    color: #FFFFFF
+    box-shadow: none
+  +tablet
+    font-size: 18px
+
+.btn--white
+  background: $btn-white-bg
+  color: $btn-blue-bg
+  border: $btn-white-br-width solid $btn-blue-bg
+  &:hover
+    background: $btn-white-bg
+    color: $btn-blue-bg
+
+.btn--blue
+  background: $btn-blue-bg
+  color: $btn-white-bg
+  border: $btn-white-br-width solid $btn-blue-bg
+
+.btn--lightBlue
+  +border_radius(31px)
+  background: #3677D2
+  color: #FFFFFF
+  &:hover
+    background: #3677D2
+
+.btn--wide
+  padding: 0px 30px
+
+.btn--sh
+  padding: 0px 12px
+
+.btn-plus
+  height: 50px
+  width: 50px
+  +border_radius(50%)
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.65)
+  background:
+    image: url('../images/icon_big_plus.svg')
+    repeat: no-repeat
+    size: 24px 24px
+    position: center
+  &:hover
+    box-shadow: none
+
+.btn-drop
+  background-image: url(../images/icon_drop_blue.svg)
+  background-repeat: no-repeat
+  background-size: 14px, 19px
+  background-position: center
+  width: 80px
+  &.active
+    background-image: url(../images/icon_drop_white.svg)
+
+.btn-drop--2
+  background-image: url(../images/icon_drop_blue.svg), url(../images/icon_drop_blue.svg)
+  background-repeat: no-repeat, no-repeat
+  background-size: 14px 19px, 14px 19px
+  background-position-x: 23px, 40px
+  background-position-y: center
+  &.active
+    background-image: url(../images/icon_drop_white.svg),url(../images/icon_drop_white.svg)
+
+.btn-drop--3
+  background-image: url(../images/icon_drop_blue.svg),url(../images/icon_drop_blue.svg), url(../images/icon_drop_blue.svg)
+  background-repeat: no-repeat, no-repeat
+  background-size: 14px 19px, 14px 19px, 14px 19px
+  background-position-x: 19px,35px,50px
+  background-position-y: center
+  &.active
+    background-image: url(../images/icon_drop_white.svg),url(../images/icon_drop_white.svg), url(../images/icon_drop_white.svg)
+
+.button-reg
+  padding: 0 4px
+  +inline-flex
+  +align-self(center)
+  &__field
+    border: none
+    width: 34px
+    text-align: center
+    color: inherit
+    font-size: 12px
+    font-weight: bold
+    text-align: center
+    padding: 0 2px
+    margin: 0
+    +medium
+      width: 30px
+    +tablet
+      width: 32px
+  &--wide
+    .button-reg__field
+      width: 40px
+      +medium
+        //width: 30px
+  &__plus, &__minus
+    +align-self(center)
+    display: inline-block
+    width: 21px
+    height: 21px
+    border: none
+    border-radius: 50%
+    background:
+      color: $regButBgColor
+      repeat: no-repeat
+      size: 11.4px, 11.4px
+      position: center
+    +phone
+      width: 19px
+      height: 19px
+  &__plus
+    background-image: url(../images/icon_plus_blue.svg)
+    &:hover
+      background-image: url(../images/icon_plus_white.svg)
+      background-color: $deleteButBgColor
+  &__minus
+    background-image: url(../images/icon_minus_blue.svg)
+    &:hover
+      background-image: url(../images/icon_minus_white.svg)
+      background-color: $deleteButBgColor
+
+input[type="text"]
+  color: #2B5D92
+  +placeholder
+    font-family: $fontFuturaPT
+    font-size: 20px
+    line-height: 1
+    font-style: normal
+    font-weight: 450
+    color: #DADADA
+
+.input-field
+  +flexbox
+  +flex-direction(row)
+  +justify-content(flex-start)
+  width: 100%
+  border: none
+  font-size: 20px
+  color: #2B5D92
+  padding: 12px 0 9px 40px
+  +border_radius(12px)
+  background-color: $input-field-col
+  box-shadow: inset 0px 1px 4px rgba(0, 0, 0, 0.25)
+  &--yellow
+    border: 1px solid $yellow
+  &__wrap
+    width: 100%
+
+.flex
+  +flexbox
+
+.flex-col
+  +flex-direction(column)
+  //+align-self(flex-start)
+  //+phone_1
+  +align-self(center)
+  margin-bottom: 6px
+
+.textarea-field
+  +flexbox
+  +justify-content(center)
+  +align-items(center)
+  width: calc(100% - #{$dialTextareaP})
+  height: 270px
+  border: none
+  font-size: 24px
+  font-family: $fontFuturaPT
+  //color: #2B5D92
+  color: #000000
+  padding: 0px 10px
+  resize: none
+  line-height: 26px
+  +phone_1
+    font-size: 15px
+    line-height: 17px
+    padding: 0
+  +placeholder
+    padding: 0 50px
+    color: $input-field-placeholder
+    text-align: center
+    +transform(translateY(78px))
+    +phone_1
+      +transform(translateY(68px))
+      font-size: 15px
+      padding: 0
+    +phone_2
+      +transform(translateY(68px))
+
+
+.pos_abs
+  position: absolute
+
+.btn-arrow
+  display: inline-block
+  cursor: pointer
+  user-select: none
+  width: 20px
+  height: 10px
+  border: 0px
+  background:
+    color: transparent
+    image: url("../images/nurse/icon_arrow.svg")
+    size: contain
+    repeat: no-repeat
+    position: center
+
+*::-webkit-scrollbar
+  background-color: transparent
+  width: 0
+
+*::-webkit-scrollbar-track-piece
+  background-color: transparent
+  -webkit-border-radius: 6px
+
+
+.scrolled::-webkit-scrollbar
+  width: 12px
+  height: 8px
+  background-color: #CBD3FF
+  border-radius: 17px
+
+.scrolled::-webkit-scrollbar-thumb
+  background-color: #3677D2
+  border-radius: 17px
+
+.scrolled
+  scrollbar-color: #3677D2 #CBD3FF
+  scrollbar-width: thin

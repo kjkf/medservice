@@ -1,0 +1,37 @@
+<div class="flex">
+    <div class="flex flex-col">
+        <div class="item-label">Единица измерения</div>
+        <div class="unit-wrap">
+            <span class="unit active">ЕД</span>
+            <span class="unit">ml</span>
+            <span class="unit">mg</span>
+        </div>
+    </div>
+    <div class="flex flex-col">
+        <div class="item-label">Дозировка:</div>
+        <div class="measure-wrap">
+            <increment-input class="btn button-reg button-reg--yellow" increment="5" value="3">
+                <button class="button-reg__minus" type="button" name="button"></button>
+                <input class="button-reg__field" type="text">
+                <button class="button-reg__plus" type="button" name="button"></button>
+            </increment-input>
+
+            <increment-input class="btn button-reg button-reg--yellow button-reg--readonly" increment="5" value="3">
+                <button class="button-reg__minus" type="button" name="button"></button>
+                <input class="button-reg__field" type="text" readonly>
+                <button class="button-reg__plus" type="button" name="button"></button>
+            </increment-input>
+        </div>
+    </div>
+    <div class="flex flex-col">
+        <div class="item-label">Форма выпуска:</div>
+        <div class="drugs-wrap">
+            <div class="drugs drugs--system"></div>
+            <div class="drugs drugs--ampoule"></div>
+            <div class="drugs drugs--pill"></div>
+            <div class="drugs drugs--capsule"></div>
+            <div class="drugs drugs--pot"></div>
+            <div class="drugs drugs--candles"></div>
+        </div>
+    </div>
+</div>
