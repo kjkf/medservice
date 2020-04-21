@@ -86,11 +86,7 @@
     font-family: $fontFuturaPTBook
     font-size: 19px
     font-weight: normal
-    +placeholder
-      color: #CDCDCD
-      font-family: $fontFuturaPTBook
-      font-size: 19px
-      font-weight: normal
+    s
   &__caption
     width: 100%
     +flexbox
@@ -152,10 +148,14 @@
     font-weight: normal
     font-size: 18px
     color: #284D8A
+    &:hover
+      background-color: #FFAB2D
+      +box-shadow(none)
     +laptop
       width: 244px
     +ipad
       width: 265px
+
 
 //-----------datapicker style-----------
 .reminder
