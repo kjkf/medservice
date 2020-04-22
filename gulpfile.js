@@ -80,7 +80,7 @@ task('styles', () => {
 });
 
 task('icons', () => {
-    return src('src/images/icons/*.svg')
+    return src('src/images/nurse/sprite/*.svg')
         .pipe(
             svgo({
                 plugins: [
@@ -94,12 +94,12 @@ task('icons', () => {
             svgSprite({
                 mode: {
                     symbol: {
-                        sprite: "../sprite.svg"
+                        sprite: "../nurse_sprite.svg"
                     }
                 }
             })
          )
-        .pipe(dest("dist/images/icons"));
+        .pipe(dest("dist/images/nurse/sprites"));
 });
 
 task("scripts", () => {
@@ -173,7 +173,7 @@ watch('./src/fonts/**/*.*', series("copy:fonts"));
 watch('./src/images/**/*.*', series("copy:images"));
 watch('./src/upload/**/*.*', series("copy:upload"));
 watch('./src/js/components/*.js', series("copy:jsComponents"));
-/*watch('./src/images/icons/!*.svg', series("icons"));*/
+watch('./src/images/nurse/sprite/*.svg', series("icons"));
 
 //task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:fonts', 'copy:images', 'styles', 'icons', 'scripts'), 'server'));
-task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'copy:jsComponents', 'styles', 'scripts:jsLibs', 'scripts', 'scripts:nurse'), 'server'));
+task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'icons', 'copy:jsComponents', 'styles', 'scripts:jsLibs', 'scripts', 'scripts:nurse'), 'server'));

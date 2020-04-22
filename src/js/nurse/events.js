@@ -27,7 +27,12 @@
     const layers = document.querySelectorAll('.layer');
 
     layers.forEach(layer => {
-        layer.addEventListener('click', e => setActive(layer))
+        layer.addEventListener('click', e => {
+            console.log(e.target.parentNode);
+            const targetParent = e.target.parentNode;
+            if (!targetParent.classList.contains('layer__top') && !targetParent.classList.contains('layer') ) return;
+            setActive(layer)
+        })
     });
 
 
