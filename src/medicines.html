@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <title>Table</title>
 </head>
@@ -22,7 +23,7 @@
             </div>
         </div>
         <div class="table_wrapper">
-            <table class="table">
+            <table class="table" id>
                 <thead>
                 <tr>
                     <th>Название Препарата</th>
@@ -65,7 +66,25 @@
         </div>
     </div>
 </div>
+<script src="js/libs.min.js"></script>
+<script src="js/components/OverlayScrollbars.min.js"></script>
+<script>
+    const tableWrapper = document.querySelector('.table_wrapper');
+    console.log(tableWrapper);
+    if (tableWrapper) {
+        var instance1 = OverlayScrollbars(tableWrapper, {
+            scrollbars: {
+                autoHide: 'scroll',
+                autoHideDelay: 800
+            }
+        });
 
+        $('#research_table').floatThead({
+            position: 'fixed'
+        });
+        $('#research_table').floatThead('reflow');
+    }
+</script>
 </body>
 </html>
 
