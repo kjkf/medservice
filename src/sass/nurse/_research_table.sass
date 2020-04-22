@@ -11,7 +11,7 @@
     align-items: center
     color: #284c8a
     font-family: "FuturaPT-Book"
-
+    padding-left: 26px
     & .patient
         font-family: 'FuturaPT-Demi'
         font-size: 24px
@@ -49,14 +49,12 @@
   .table_wrapper
     max-width: 805px
     max-height: 391px
+    width: 805px
+    height: 391px
     & thead
       & th
         text-align: center
-        width: 52px
-        &:first-child
-          width: 219px
-        &:last-child
-          width: auto
+
     & tbody
       height: 350px
       & td
@@ -64,14 +62,13 @@
         line-height: 15px
         border-right: 1px solid #E8EBFF
         padding: 8px 3px
-        width: 52px
         &:first-child
-          width: 219px
           background: #EEF2FF
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1)
+        &:nth-child(2)
+          padding-left: 6px
         &:last-child
           border-right-color: transparent
-          width: auto
         &:nth-last-child(2)
           border-right-color: transparent
       & .btn--table

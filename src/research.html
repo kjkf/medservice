@@ -21,9 +21,24 @@
                 <span class="btn--table btn--lightGreen">Исследования</span>
             </div>
         </div>
-        <div class="table_wrapper">
-            <table class="table" id="nurse_table">
+        <div class="table_wrapper1">
+            <table class="table" id="research_table">
+                <colgroup>
+                    <col width="219px">
+                    <col width="54px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="auto">
+                </colgroup>
                 <thead>
+
                 <tr>
                     <th>Исследование</th>
                     <th>20.03</th>
@@ -245,7 +260,24 @@
 </div>
 <script src="js/libs.min.js"></script>
 <script src="js/components/OverlayScrollbars.min.js"></script>
-<script src="js/nurse.min.js"></script>
+<script>
+    const tableWrapper = document.querySelector('.table_wrapper1');
+    console.log(tableWrapper);
+    if (tableWrapper) {
+        var instance1 = OverlayScrollbars(tableWrapper, {
+            resize: 'both',
+            scrollbars: {
+                autoHide: 'scroll',
+                autoHideDelay: 800
+            }
+        });
+
+      /*  $('#nurse_table').floatThead({
+            position: 'fixed'
+        });
+        $('#nurse_table').floatThead('reflow');*/
+    }
+</script>
 
 </body>
 </html>

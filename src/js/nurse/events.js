@@ -10,7 +10,13 @@
 
     const tableWrapper = document.querySelector('.table_wrapper');
     if (tableWrapper) {
-        var instance = OverlayScrollbars(tableWrapper, { });
+        var instance = OverlayScrollbars(tableWrapper, {
+            resize: 'both',
+            scrollbars: {
+                autoHide: 'scroll',
+                autoHideDelay: 800
+            }
+        });
 
         $('#nurse_table').floatThead({
             position: 'fixed'
