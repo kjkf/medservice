@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <title>Table</title>
 </head>
@@ -21,20 +22,20 @@
                 <span class="btn--table btn--lightGreen">Исследования</span>
             </div>
         </div>
-        <div class="table_wrapper1">
+        <div class="table_wrapper">
             <table class="table" id="research_table">
                 <colgroup>
                     <col width="219px">
+                    <col width="56px">
                     <col width="54px">
-                    <col width="52px">
-                    <col width="52px">
-                    <col width="52px">
-                    <col width="52px">
-                    <col width="52px">
-                    <col width="52px">
-                    <col width="52px">
-                    <col width="52px">
-                    <col width="52px">
+                    <col width="54px">
+                    <col width="54px">
+                    <col width="54px">
+                    <col width="54px">
+                    <col width="54px">
+                    <col width="54px">
+                    <col width="54px">
+                    <col width="54px">
                     <col width="auto">
                 </colgroup>
                 <thead>
@@ -261,7 +262,7 @@
 <script src="js/libs.min.js"></script>
 <script src="js/components/OverlayScrollbars.min.js"></script>
 <script>
-    const tableWrapper = document.querySelector('.table_wrapper1');
+    const tableWrapper = document.querySelector('.table_wrapper');
     console.log(tableWrapper);
     if (tableWrapper) {
         var instance1 = OverlayScrollbars(tableWrapper, {
@@ -272,10 +273,10 @@
             }
         });
 
-      /*  $('#nurse_table').floatThead({
+        $('#research_table').floatThead({
             position: 'fixed'
         });
-        $('#nurse_table').floatThead('reflow');*/
+        $('#research_table').floatThead('reflow');
     }
 </script>
 
