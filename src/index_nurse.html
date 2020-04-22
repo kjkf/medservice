@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/datepicker.min.css">
     <title>Nurse page</title>
 </head>
 <body>
@@ -268,8 +269,32 @@
                             <div class="layer__name">Добавить напоминие</div>
                             <button class="layer__btn btn-arrow btn-arrow--down"></button>
                         </div>
-                        <div class="layer__bottom"></div>
+                        <div class="layer__bottom">
+                          <div class="reminder">
+                        		<div class="reminder__descr">
+                        			<span>Описание</span>
+                        			<textarea class="reminder-fields textarea-field" rows="3" cols="2" name="recomend-text" class="" placeholder="Детали напоминания"></textarea>
+                        		</div>
+                            <span>Дата</span>
+                            <div class="reminder__date">
+                              <div class="reminder-fields dropdown" id=''>
+                                <input class="dropdown__field" type="text" name="" value="" id="calendar_input" placeholder="Выберите дату">
+                                <button class="dropdown__btn" type="button" name="button" id="calendar_btn"></button>
+                              </div>
+                            </div>
+                            <span>Время</span>
+                            <div class="reminder-fields timefield">
+                              <input class="timefield__hm" type="text" name="" value="" placeholder="чч">
+                              <span class="timefield__separator">:</span>
+                              <input class="timefield__hm" type="text" name="" value="" placeholder="мм">
+                            </div>
+                            <button class="btn btn--yellow reminder__btn">
+                              Добавить
+                            </button>
+                          </div>
+                        </div>
                     </div>
+
                     <div class="layer vidjet-add layer--dis">
                         <div class="layer__top">
                             <span class="layer__ic"></span>
@@ -286,6 +311,7 @@
 <script src='js/components/datepicker.min.js'></script>
 <script src="js/components/OverlayScrollbars.min.js"></script>
 <script src="js/components/CalendarClock.js"></script>
+<script src='js/components/datepicker.min.js'></script>
 <script src="js/nurse.min.js"></script>
 </body>
 </html>
