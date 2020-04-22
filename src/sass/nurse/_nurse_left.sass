@@ -189,11 +189,12 @@
       margin-right: 0px
 
 .layer
-  +flexbox
-  +justify-content(center)
+  box-sizing: border-box
+  display: flex
+  justify-content: flex-start
   flex-direction: column
-  min-height: 93px
-  padding: 0px 5px
+  min-height: calc(93px - 20px*2)
+  padding: 20px 5px
   //padding: 0px 20px 0px 25px
   background: $layer_bg
   box-shadow: $btn-dw-box-shadow
@@ -202,6 +203,7 @@
   font-size: 19px
   line-height: 20px
   margin-bottom: 7px
+
 
   +laptop
     min-height: 70px
@@ -240,6 +242,9 @@
   +ipad
     padding: 0px 15px 0px 18px
 
+.layer__bottom
+  background-color: blue
+
 .layer__ic
   display: inline-block
   width: $layer_w
@@ -277,7 +282,7 @@
 
   +laptop
     +border-radius(13px)
-    padding: 0px 12px
+    padding: 20px 12px
     min-height: 73px
     .layer__top
       justify-content: center
@@ -307,10 +312,11 @@
 
 .vidjet-add
   +laptop
-    padding: 0px 12px
+    padding: 20px 12px
     min-height: 80px
   +ipad
-    padding: 0px 12px 0px 19px
+    padding-left: 19px
+    padding-right: 12px
     font-size: 18px
 
   .layer__top
