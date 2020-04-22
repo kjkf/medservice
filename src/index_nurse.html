@@ -240,15 +240,22 @@
             </div>
             <div class="nurse-col nurse-col--right ">
                 <div class="nurse-col__in scrolled">
-                    <div class="layer schedule">
+                    <div class="layer schedule active">
                         <div class="layer__top">
                             <span class="layer__ic"></span>
                             <div class="layer__name">График работы</div>
                             <button class="layer__btn btn-arrow btn-arrow--down"></button>
                         </div>
                         <div class="layer__bottom">
-                            <button class="btn schedule__month"></button>
-                            <ul class="schedule-list">
+                            <button class="btn btn-lr schedule__month">
+                                <span class="btn-arrow left"></span>
+                                <span class="btn-lr__name">
+                                    <span class="btn-lr-m">Апрель</span>
+                                    <span class="btn-lr-y">2020</span>
+                                </span>
+                                <span class="btn-arrow right"></span>
+                            </button>
+                            <ul class="schedule-list scrolled">
                                 <li class="schedule-list__item">
                                     <div class="day">
                                         <span class="day__month">Апр</span>
@@ -259,7 +266,60 @@
                                         <span class="week-day__time">08:00 - 14:00</span>
                                     </div>
                                 </li>
-
+                                <li class="schedule-list__item current">
+                                    <div class="day">
+                                        <span class="day__month">Апр</span>
+                                        <span class="day__num">7</span>
+                                    </div>
+                                    <div class="week-day">
+                                        <span class="week-day__name">Вторник</span>
+                                        <span class="week-day__time">08:00 - 14:00</span>
+                                    </div>
+                                </li>
+                                <li class="schedule-list__item">
+                                    <div class="day">
+                                        <span class="day__month">Апр</span>
+                                        <span class="day__num">8</span>
+                                    </div>
+                                    <div class="week-day">
+                                        <span class="week-day__name">Среда</span>
+                                        <span class="week-day__time">08:00 - 14:00</span>
+                                    </div>
+                                </li>
+                                <li class="schedule-list__item">
+                                    <div class="day">
+                                        <span class="day__month">Апр</span>
+                                        <span class="day__num">9</span>
+                                    </div>
+                                    <div class="week-day">
+                                        <span class="week-day__name">Четверг</span>
+                                        <span class="week-day__time">08:00 - 14:00</span>
+                                    </div>
+                                    <div class="schedule-selected">
+                                        <!--<ul class="schedule-selected__left"></ul>-->
+                                        <div>ывыв</div>
+                                    </div>
+                                </li>
+                                <li class="schedule-list__item">
+                                    <div class="day">
+                                        <span class="day__month">Апр</span>
+                                        <span class="day__num">10</span>
+                                    </div>
+                                    <div class="week-day">
+                                        <span class="week-day__name">Пятница</span>
+                                        <span class="week-day__time">08:00 - 14:00</span>
+                                    </div>
+                                </li>
+                                <li class="schedule-list__item">
+                                    <div class="day">
+                                        <span class="day__month">Апр</span>
+                                        <span class="day__num">11</span>
+                                    </div>
+                                    <div class="week-day">
+                                        <span class="week-day__name">Суббота</span>
+                                        <span class="week-day__time">08:00 - 14:00</span>
+                                    </div>
+                                </li>
                             </ul>
                         </div>
                     </div>
