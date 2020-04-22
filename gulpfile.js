@@ -116,6 +116,20 @@ task("scripts", () => {
         .pipe(reload({stream: true}))
 });
 
+task("scripts:nurse", () => {
+    return src('src/js/nurse/*.js')
+        .pipe(sourcemaps.init())
+        .pipe(concat('nurse.min.js', { newLine: ";" }))
+        .pipe(babel({
+                presets: ['@babel/env']
+            })
+        )
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(dest('dist/js'))
+        .pipe(reload({stream: true}))
+});
+
 
 task('copy:jsComponents', () => {
     return src('src/js/components/*.js')
@@ -134,6 +148,7 @@ task('server', () => {
 
 watch('./src/sass/**/*.sass', series("styles"));
 watch('./src/js/*.js', series("scripts"));
+watch('./src/js/nurse/*.js', series("scripts:nurse"));
 watch('./src/*.html', series("copy:html"));
 watch('./src/*.css', series("copy:css"));
 watch('./src/*.ico', series("copy:favicon"));
@@ -144,4 +159,4 @@ watch('./src/js/components/*.js', series("copy:jsComponents"));
 /*watch('./src/images/icons/!*.svg', series("icons"));*/
 
 //task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:fonts', 'copy:images', 'styles', 'icons', 'scripts'), 'server'));
-task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'copy:jsComponents', 'styles', 'scripts'), 'server'));
+task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'copy:jsComponents', 'styles', 'scripts', 'scripts:nurse'), 'server'));
