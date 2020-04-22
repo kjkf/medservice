@@ -5,7 +5,8 @@
   +border-radius(8px)
   margin-right: 6px
   margin-top: 4px
-
+  &:hover
+    border: 1px solid #4D83C9
 .dropdown
   +flexbox
   +flex-direction(row)
@@ -13,16 +14,21 @@
   +align-items(center)
   width: 232px
   padding: 5px 15px
+  +laptop
+    width: 212px
+  +ipad
+    width: 232px
   &__field
     display: flex
     flex-grow: 1
     border-style: none
     text-align: left
-    font-weight: normal
-    font-size: 19px
-    color: #CDCDCD
+    color: #686868
     margin: 0
     padding: 0
+    font-family: $fontFuturaPTBook
+    font-size: 19px
+    font-weight: normal
   &__btn
     display: inline-flex
     width: 25px
@@ -35,11 +41,7 @@
     background-position: center center
     padding: 3px 7px
     margin: 0
-.dropdown--wide
-  width: 123px
-  .dropdown__field
-    width: 50px
-    margin: 5px 20px
+
 .timefield
   +flexbox
   +flex-direction(row)
@@ -53,6 +55,10 @@
     font-size: 19px
     border-style: none
     width: 25px
+    font-family: $fontFuturaPTBook
+    font-size: 19px
+    font-weight: normal
+    padding-top: 7px
   &__separator
     width: 5px
     margin: 0px 3px
@@ -68,8 +74,19 @@
   padding-top: 23px
   padding-left: 26px
   padding-bottom: 23px
+  font-family: $fontFuturaPTBook
+  font-size: 18px
+  font-weight: normal
+  +laptop
+    width: 270px
+  +ipad
+    width: 300px
   input
-    color: #CDCDCD
+    color: #686868
+    font-family: $fontFuturaPTBook
+    font-size: 19px
+    font-weight: normal
+    s
   &__caption
     width: 100%
     +flexbox
@@ -101,8 +118,19 @@
     margin-bottom: 8px
     font-weight: normal
     font-size: 19px
+    color: #686868
     width: 265px
     height: 75px
+    color: #686868
+    font-family: $fontFuturaPTBook
+    font-size: 19px
+    font-weight: normal
+    +placeholder
+      color: #CDCDCD
+    +laptop
+      width: 244px
+    +ipad
+      width: 265px
   &__date
     width: 100%
     +flexbox
@@ -116,6 +144,90 @@
     border-style: none
     +box-shadow(0px 0px 10px #FDCA35)
     +border-radius(50px)
+    font-family: $fontFuturaPTBook
     font-weight: normal
     font-size: 18px
     color: #284D8A
+    &:hover
+      background-color: #FFAB2D
+      +box-shadow(none)
+    +laptop
+      width: 244px
+    +ipad
+      width: 265px
+
+
+//-----------datapicker style-----------
+.reminder
+  .qs-datepicker-container
+    font-family: $fontRobotoMedium!important
+    font-weight: 500!important
+    font-size: 14px!important
+    border: 1px solid #E3E9FF
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15)
+    border-radius: 8px
+    width: 265px
+    top: 50px!important
+    left: -2px!important
+  .qs-datepicker .qs-controls
+    width: auto!important
+    background: #FFFFFF!important
+    margin: 0px 18px
+    padding: 16px 0px 10px 0px
+    font-family: $fontRobotoMedium
+    font-weight: 500
+    font-size: 14px
+    border-bottom: 0.6px solid rgba(0, 0, 0, .17)
+  .qs-datepicker .qs-square .qs-day
+    color: rgba(68,68,68, 0.6)
+    font-weight: 500!important
+  .qs-datepicker .qs-squares
+    margin: 0px 18px 18px 18px
+    padding: 8px 0px 0px 0px
+    border-bottom: 0.6px solid rgba(0, 0, 0, .17)
+  .qs-datepicker .qs-square
+    width: 22px!important
+    height: 23px!important
+    margin: 8px 5px
+    border-radius: 50%
+    font-family: $fontRobotoMedium
+    font-weight: 500
+    font-size: 14px
+    &.qs-current
+      font-weight: 500!important
+      background: #E6EBFE!important
+      span
+        text-decoration: none
+    &:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active)
+      &:hover
+        background: #2B5D92!important
+        color: #FFFFFF
+  .qs-datepicker .qs-active
+    font-weight: 500
+    color: #FFFFFF
+    background: #2B5D92!important
+  .qs-datepicker .qs-arrow
+    width: 10px
+    height: 10px
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 10px 10px
+    border: none
+    &::after
+      display: none
+    &:hover
+      width: 10px
+      height: 10px
+      background-repeat: no-repeat
+      background-position: center center
+      background-size: 10px 10px
+      border: none
+      background-color: #E6EBFE
+  .qs-datepicker .qs-arrow.qs-left
+    background-image: url('../images/reminder/icon_date_left.svg')
+    &::after
+      display: none
+  .qs-datepicker .qs-arrow.qs-right
+    background-image: url('../images/reminder/icon_date_right.svg')
+    &::after
+      display: none

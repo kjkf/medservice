@@ -5,5 +5,5 @@ package-lock.json
 *.iml
 scroll_testing.html
 dialogtesting.html
-reminder.html
+
 .DS_Store
