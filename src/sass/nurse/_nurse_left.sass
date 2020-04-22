@@ -214,9 +214,6 @@
     min-height: 83px
     //padding: 0px 12px 0px 19px
 
-  &:last-child
-    margin-bottom: 0px
-
 
 .layer__name
   font-family: $fontFuturaPTDemi
@@ -300,17 +297,17 @@
 
   .layer__ic
     border: 0px
-    background-image: url("../images/nurse/icon_add_grey.svg")
+    background-image: url("../images/nurse/sprite/icon_add_grey.svg")
     background-size: 30px
 
 
 .schedule
   .layer__ic
-    background-image: url("../images/nurse/icon_doc.svg")
+    background-image: url("../images/nurse/sprite/icon_doc.svg")
 
 .reminder-add
   .layer__ic
-    background-image: url("../images/nurse/icon_add.svg")
+    background-image: url("../images/nurse/sprite/icon_add.svg")
 
 .vidjet-add
   +laptop
@@ -330,7 +327,7 @@
 
   .layer__ic
     border: 0px
-    background-image: url("../images/nurse/icon_add_grey.svg")
+    background-image: url("../images/nurse/sprite/icon_add_grey.svg")
     background-size: 30px
     +laptop
       width: 44px
@@ -351,4 +348,7 @@
 .layer.active
   .layer__bottom
     display: flex
+  .btn-arrow.layer__btn
+    transform: rotate(180deg)
+
 
