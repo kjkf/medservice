@@ -2,7 +2,6 @@
   background: #ffffff
   margin: 0 auto
   //padding: 100px 70px 45px
-  box-sizing: border-box
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15)
   border-radius: 26px
   overflow: hidden
@@ -22,6 +21,7 @@
       display: block
       width: 100%
     & th
+      box-sizing: border-box
       padding: 15px 5px 10px
       font-weight: 400
       font-style: normal
@@ -29,28 +29,19 @@
       line-height: 13px
 
       &:first-child
-        width: 107px
         padding-left: 28px
-      &:nth-child(2)
-        width: 53px
-      &:nth-child(3)
-        width: 70px
-      &:nth-child(4)
-        width: 48px
-      &:last-child
-        width: auto
-
   & tbody
     display: block
     width: 100%
     overflow: auto
     height: 386px
     & tr
+      display: block
+      width: 100%
       &:nth-child(odd)
         background: $table-odd-tr-bg
-      &:last-child
-        & td:first-child
       & td
+        box-sizing: border-box
         text-align: left
         padding: 12px 5px 9px
         font-family: "FuturaPT-Book"
@@ -64,25 +55,23 @@
           padding-left: 28px
           font-family: 'FuturaPT-Demi'
           font-weight: 600
-          width: 107px
-        &:nth-child(2)
-          width: 53px
-        &:nth-child(3)
-          width: 70px
-        &:nth-child(4)
-          width: 48px
-        &:last-child
-          width: auto
 
 .btn--table
   border-radius: 50px
   padding: 4px 12px
+  font-family: "FuturaPT-Book"
 
 .btn--purple
-  background: #E4DEFA
+  background: $purpleBg
+  color: $purpleColor
 
 .btn--lightGreen
-  background: #D5F2E1
+  background: $lightGreenBg
+  color: $lightGreenColor
+
+.btn--lightCyan
+  background: $lightCyanBg
+  color: $lightCyanColor
 
 .p0
   padding: 0

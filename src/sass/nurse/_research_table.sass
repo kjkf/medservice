@@ -1,0 +1,78 @@
+.research
+  padding: 67px 79px 34px 83px
+  background: #FFFFFF
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+  border-radius: 26px
+  max-width: 1200px
+  min-height: 723px
+  .table-header
+    display: flex
+    justify-content: space-between
+    align-items: center
+    color: #284c8a
+    font-family: "FuturaPT-Book"
+
+    & .patient
+        font-family: 'FuturaPT-Demi'
+        font-size: 24px
+        line-height: 22px
+        font-weight: 600
+    .wrapper
+      display: flex
+      justify-content: space-between
+      align-items: center
+      & .indicators
+        display: flex
+        list-style: none
+        & li
+          margin-right: 10px
+          padding-left: 36px
+          font-size: 13px
+          line-height: 13px
+          position: relative
+          &:before
+            content: ''
+            display: inline-block
+            width: 24px
+            height: 24px
+            border-radius: 50%
+            position: absolute
+            left: 4px
+            top: -5px
+          &.indic-lightCyan:before
+            background: $lightCyanBg
+          &.indic-lightGreen:before
+            background: $lightGreenBg
+          &.indic-purple:before
+            background: $purpleBg
+
+  .table_wrapper
+    max-width: 805px
+    max-height: 391px
+    & thead
+      & th
+        text-align: center
+        width: 52px
+        &:first-child
+          width: 219px
+        &:last-child
+          width: auto
+    & tbody
+      height: 350px
+      & td
+        font-size: 12px
+        line-height: 15px
+        border-right: 1px solid #E8EBFF
+        padding: 8px 3px
+        width: 52px
+        &:first-child
+          width: 219px
+          background: #EEF2FF
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1)
+        &:last-child
+          border-right-color: transparent
+          width: auto
+        &:nth-last-child(2)
+          border-right-color: transparent
+      & .btn--table
+        padding: 4px 7px
