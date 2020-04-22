@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/OverlayScrollbars.min.css">
     <link rel="stylesheet" href="css/styles.min.css">
     <title>Nurse page</title>
 </head>
@@ -121,7 +122,14 @@
                 <div class="content-block">
                     <h3 class="content-title">Листы назначений для пациента</h3>
                     <div class="table_wrapper">
-                        <table class="table">
+                        <table class="table" id="nurse_table">
+                            <colgroup>
+                                <col width="140px">
+                                <col width="53px">
+                                <col width="70px">
+                                <col width="48px">
+                                <col width="auto">
+                            </colgroup>
                             <thead>
                             <tr>
                                 <th>Пациент</th>
@@ -131,9 +139,9 @@
                                 <th class="p0"></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="scrolledBody">
                             <tr>
-                                <td>Петренко П.П.</td>
+                                <td>Чернышевский П.П.</td>
                                 <td>№ 27</td>
                                 <td>24.03.2020</td>
                                 <td><span class="btn--table btn--purple">Мед</span></td>
@@ -271,6 +279,8 @@
         </div>
     </div>
 </div>
+<script src="js/libs.min.js"></script>
+<script src="js/components/OverlayScrollbars.min.js"></script>
 <script src="js/components/CalendarClock.js"></script>
 <script src="js/nurse.min.js"></script>
 </body>

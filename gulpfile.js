@@ -130,6 +130,23 @@ task("scripts:nurse", () => {
         .pipe(reload({stream: true}))
 });
 
+const libs = [
+    'node_modules/jquery/dist/jquery.js',
+    'node_modules/floatthead/dist/jquery.floatThead.js'
+];
+task("scripts:jsLibs", () => {
+    return src(libs)
+        .pipe(sourcemaps.init())
+        .pipe(concat('libs.min.js', { newLine: ";" }))
+        .pipe(babel({
+                presets: ['@babel/env']
+            })
+        )
+        .pipe(uglify())
+        .pipe(sourcemaps.write())
+        .pipe(dest('dist/js'))
+        .pipe(reload({stream: true}))
+});
 
 task('copy:jsComponents', () => {
     return src('src/js/components/*.js')
@@ -159,4 +176,4 @@ watch('./src/js/components/*.js', series("copy:jsComponents"));
 /*watch('./src/images/icons/!*.svg', series("icons"));*/
 
 //task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:fonts', 'copy:images', 'styles', 'icons', 'scripts'), 'server'));
-task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'copy:jsComponents', 'styles', 'scripts', 'scripts:nurse'), 'server'));
+task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'copy:jsComponents', 'styles', 'scripts:jsLibs', 'scripts', 'scripts:nurse'), 'server'));

@@ -12,6 +12,7 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "browser-sync": "^2.26.7",
+    "floatthead": "^2.1.4",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^7.0.1",
     "gulp-babel": "^8.0.0",
@@ -26,6 +27,7 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgo": "^2.2.1",
     "gulp-uglify": "^3.0.2",
+    "jquery": "^3.5.0",
     "node-sass": "^4.13.1"
   },
   "browserslist": [
