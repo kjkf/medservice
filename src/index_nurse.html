@@ -17,9 +17,7 @@
                         <div class="seconds">37</div>
                         <div class="date-md">Февраль 24</div>
                     </div>
-                    <!--<a class="logout">Сменить профиль</a>-->
                 </div>
-
                 <div class="reminder-item-wrap scrolled">
                     <div class="reminder-item">
                         <span class="reminder-item__num">1</span>
@@ -106,9 +104,11 @@
                         </div>
                     </div>
                     <div class="reminder-item layer layer--dis">
-                        <span class="layer__ic"></span>
-                        <div class="layer__name">Добавить напоминание</div>
-                        <button class="layer__btn btn-arrow btn-arrow--down"></button>
+                        <div class="layer__top">
+                            <span class="layer__ic"></span>
+                            <div class="layer__name">Добавить напоминание</div>
+                            <button class="layer__btn btn-arrow btn-arrow--down"></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -231,40 +231,45 @@
             </div>
             <div class="nurse-col nurse-col--right ">
                 <div class="nurse-col__in scrolled">
-                    <div class="layer work-time">
-                        <span class="layer__ic"></span>
-                        <div class="layer__name">График работы</div>
-                        <button class="layer__btn btn-arrow btn-arrow--down"></button>
+                    <div class="layer schedule">
+
+                        <div class="layer__top">
+                            <span class="layer__ic"></span>
+                            <div class="layer__name">График работы</div>
+                            <button class="layer__btn btn-arrow btn-arrow--down"></button>
+                        </div>
+                        <!--<div class="layer__bottom">
+                            <button class="btn schedule__month"></button>
+                            <ul class="schedule-list">
+                                <li class="schedule-list__item">
+                                    <div class="day">
+                                        <span class="day__month">Апр</span>
+                                        <span class="day__num">6</span>
+                                    </div>
+                                    <div class="week-day">
+                                        <span class="week-day__name">Понедельник</span>
+                                        <span class="week-day__time">08:00 - 14:00</span>
+                                    </div>
+                                </li>
+
+                            </ul>
+                        </div>-->
+
                     </div>
                     <div class="layer reminder-add">
-                        <span class="layer__ic"></span>
-                        <div class="layer__name">Добавить напоминие</div>
-                        <button class="layer__btn btn-arrow btn-arrow--down"></button>
+                        <div class="layer__top">
+                            <span class="layer__ic"></span>
+                            <div class="layer__name">Добавить напоминие</div>
+                            <button class="layer__btn btn-arrow btn-arrow--down"></button>
+                        </div>
+                        <div class="layer__bottom"></div>
                     </div>
                     <div class="layer vidjet-add layer--dis">
-                        <span class="layer__ic"></span>
-                        <div class="layer__name">Добавить виджет</div>
-                        <button class="layer__btn btn-arrow btn-arrow--down"></button>
-                    </div>
-                    <div class="layer vidjet-add layer--dis">
-                        <span class="layer__ic"></span>
-                        <div class="layer__name">Добавить виджет</div>
-                        <button class="layer__btn btn-arrow btn-arrow--down"></button>
-                    </div>
-                    <div class="layer vidjet-add layer--dis">
-                        <span class="layer__ic"></span>
-                        <div class="layer__name">Добавить виджет</div>
-                        <button class="layer__btn btn-arrow btn-arrow--down"></button>
-                    </div>
-                    <div class="layer vidjet-add layer--dis">
-                        <span class="layer__ic"></span>
-                        <div class="layer__name">Добавить виджет</div>
-                        <button class="layer__btn btn-arrow btn-arrow--down"></button>
-                    </div>
-                    <div class="layer vidjet-add layer--dis">
-                        <span class="layer__ic"></span>
-                        <div class="layer__name">Добавить виджет</div>
-                        <button class="layer__btn btn-arrow btn-arrow--down"></button>
+                        <div class="layer__top">
+                            <span class="layer__ic"></span>
+                            <div class="layer__name">Добавить виджет</div>
+                            <button class="layer__btn btn-arrow btn-arrow--down"></button>
+                        </div>
                     </div>
                 </div>
             </div>
