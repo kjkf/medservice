@@ -218,7 +218,6 @@
     margin-bottom: 0px
 
 
-
 .layer__name
   font-family: $fontFuturaPTDemi
   font-size: 19px
@@ -244,6 +243,9 @@
 
 .layer__bottom
   background-color: blue
+  display: flex
+  flex-direction: column
+  display: none
 
 .layer__ic
   display: inline-block
@@ -344,3 +346,8 @@
       display: none
     +ipad
       display: block
+
+
+.layer.active
+  .layer__bottom
+    display: flex
