@@ -1,4 +1,7 @@
 .reminder-fields
+  +flexbox
+  +flex-direction(row)
+  +justify-content(center)
   border: 1px solid  #C3D1FF
   +box-shadow(inset 0px 1px 8px rgba(131, 131, 131, 0.25))
   height: 38px
@@ -60,6 +63,14 @@
     font-size: 19px
     font-weight: normal
     padding-top: 7px
+    +laptop
+      padding: 0
+      +placeholder
+        +transform(translateY(4px))
+    +ipad
+      padding: 0
+      +placeholder
+        +transform(translateY(4px))
   &__separator
     width: 5px
     margin: 0px 3px
@@ -101,20 +112,19 @@
     margin: 0
     position: relative
     .textarea-field
+      -webkit-appearance: none
       margin-top: 4px
       margin-bottom: 8px
       margin-left: 0
       margin-right: 0
-      font-weight: normal
-      font-size: 19px
-      color: #686868
-      width: 252px
+      width: 222px
       height: 75px
-      padding: 8px 20px
+      padding: 8px 18px
       color: #686868
       font-family: $fontFuturaPTBook
       font-size: 19px
       font-weight: normal
+      //border-style: none
       +placeholder
         color: #CDCDCD
         position: absolute
@@ -122,7 +132,8 @@
         left: 1px
         text-align: left
         padding: 8px 20px
-        +transform(translateY(20px))
+        font-size: 19px
+        +transform(translateY(18px))
       +laptop
         width: 244px
       +ipad

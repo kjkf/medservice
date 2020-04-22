@@ -4,7 +4,6 @@
   +justify-content(center)
   width: 390px
   height: 280px
-  //margin: auto
   background-color: #ffffff
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
   border-radius: 26px
@@ -43,6 +42,7 @@
   +flexbox
   +flex-direction(row)
   +justify-content(center)
+  -webkit-appearance: none
   width: 389px
   height: 38px
   border: 1px solid  #C3D1FF
@@ -57,28 +57,23 @@
   color: #686868!important
   +placeholder
     color: #CDCDCD
-    font-family: inherit
-    font-size: inherit
+    font-family: $fontFuturaPTBook
+    font-size: 19px
     font-weight: normal
   &:hover
     border: 1px solid #4D83C9
   +ipad
     width: 250px
     font-size: 14px
+    +placeholder
+      color: #CDCDCD
+      font-size: 14px
 
 .auth_btn
   width: 389px
   height: 38px
-  background-color: #FDCA35
-  border-style: none
-  +box-shadow(0px 0px 10px #FDCA35)
-  +border-radius(50px)
-  padding-left: 193px
-  margin-top: 10px
-  color: #284D8A
-  font-family: $fontFuturaPTBook
-  font-weight: normal
-  font-size: 18px
+  padding-top: 5px
+  padding-left: 180px
   text-align: left
   background-image: url('../images/reminder/icon_auth.svg')
   background-repeat: no-repeat
