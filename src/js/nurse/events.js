@@ -11,7 +11,6 @@
     const tableWrapper = document.querySelector('.table_wrapper');
     if (tableWrapper) {
         var instance = OverlayScrollbars(tableWrapper, {
-            resize: 'both',
             scrollbars: {
                 autoHide: 'scroll',
                 autoHideDelay: 800
@@ -28,7 +27,6 @@
 
     layers.forEach(layer => {
         layer.addEventListener('click', e => {
-            console.log(e.target.parentNode);
             const targetParent = e.target.parentNode;
             if (!targetParent.classList.contains('layer__top') && !targetParent.classList.contains('layer') ) return;
             setActive(layer)

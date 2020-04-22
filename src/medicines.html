@@ -9,21 +9,32 @@
 </head>
 <body>
 <div class="container">
-    <div class="research">
+    <div class="dialog-wrapper medicines">
         <div class="table-header">
             <h3 class="patient">Петренко П.П.</h3>
+            <span class="btn--table btn--purple">Медикаменты</span>
 
-            <div class="wrapper">
-                <ul class="indicators">
-                    <li class="indic indic-lightCyan">Не выполнено</li>
-                    <li class="indic indic-lightGreen">Выполнено</li>
-                    <li class="indic indic-purple">Назначено</li>
-                </ul>
-                <span class="btn--table btn--lightGreen">Исследования</span>
-            </div>
         </div>
         <div class="table_wrapper">
-            <table class="table" id>
+            <table class="table" id="medicines_table">
+                <colgroup>
+                    <col width="125px">
+                    <col width="55px">
+                    <col width="65px">
+                    <col width="42px">
+                    <col width="55px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="52px">
+                    <col width="auto">
+                </colgroup>
                 <thead>
                 <tr>
                     <th>Название Препарата</th>
@@ -46,21 +57,267 @@
                 </thead>
                 <tbody>
                 <tr>
-                    <td>Ледокаин</td>
+                    <td><span class="drugs-name" title="Ледокаинdfgsdfbtdthdghdfg">Ледокаинdfgsdfbtdthdghdfg</span></td>
                     <td>3</td>
-                    <td><span class="btn--table btn--lightGreen">14:30</span></td>
+                    <td><span class="drug-dosage drug-dosage--sm">2.0</span></td>
+                    <td>
+                        <div class="drugs drugs--pill">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_pill_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">ЕД</span></td>
                     <td></td>
                     <td></td>
                     <td></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Нимесил</span></td>
+                    <td>5</td>
+                    <td><span class="drug-dosage drug-dosage--sm">200</span></td>
+                    <td>
+                        <div class="drugs drugs--ampoule">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_ampoule_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">ml</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td><span class="btn--table btn--purple">08:20</span></td>
                     <td></td>
                     <td></td>
                 </tr>
-
-
+                <tr>
+                    <td><span class="drugs-name">Спазмалгон</span></td>
+                    <td>7</td>
+                    <td><span class="drug-dosage drug-dosage--sm">500</span></td>
+                    <td>
+                        <div class="drugs drugs--capsule">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_capsule_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">mg</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightCyan">Не вып</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Морфин</span></td>
+                    <td>2</td>
+                    <td><span class="drug-dosage drug-dosage--sm">50</span></td>
+                    <td>
+                        <div class="drugs drugs--system">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_system_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">ml</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Ибупрофен</span></td>
+                    <td>3</td>
+                    <td><span class="drug-dosage drug-dosage--sm">100</span></td>
+                    <td>
+                        <div class="drugs drugs--pill">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_pill_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">mg</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightCyan">Не вып</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Мидазолам</span></td>
+                    <td>5</td>
+                    <td><span class="drug-dosage drug-dosage--sm">3620</span></td>
+                    <td>
+                        <div class="drugs drugs--capsule">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_capsule_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">ЕД</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Диазепам</span></td>
+                    <td>2</td>
+                    <td><span class="drug-dosage drug-dosage--sm">320</span></td>
+                    <td>
+                        <div class="drugs drugs--pill">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_pill_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">ЕД</span></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="btn--table btn--lightCyan">Не вып</span></td>
+                    <td><span class="btn--table btn--lightCyan">Не вып</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Лоперамид</span></td>
+                    <td>4</td>
+                    <td><span class="drug-dosage drug-dosage--sm">100</span></td>
+                    <td>
+                        <div class="drugs drugs--bottle">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_bottle_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">mg</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightCyan">Не вып</span></td>
+                    <td><span class="btn--table btn--lightCyan">Не вып</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Ледокаин</span></td>
+                    <td>3</td>
+                    <td><span class="drug-dosage drug-dosage--sm">2.0</span></td>
+                    <td>
+                        <div class="drugs drugs--pill">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_pill_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">ЕД</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Нимесил</span></td>
+                    <td>5</td>
+                    <td><span class="drug-dosage drug-dosage--sm">200</span></td>
+                    <td>
+                        <div class="drugs drugs--ampoule">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_ampoule_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">ml</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Спазмалгон</span></td>
+                    <td>7</td>
+                    <td><span class="drug-dosage drug-dosage--sm">500</span></td>
+                    <td>
+                        <div class="drugs drugs--capsule">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_capsule_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">mg</span></td>
+                    <td><span class="btn--table btn--lightGreen">Вып</span></td>
+                    <td><span class="btn--table btn--lightCyan">Не вып</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td><span class="drugs-name">Морфин</span></td>
+                    <td>2</td>
+                    <td><span class="drug-dosage drug-dosage--sm">50</span></td>
+                    <td>
+                        <div class="drugs drugs--system">
+                            <svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_system_hover"></use></svg>
+                        </div>
+                    </td>
+                    <td><span class="unit unit--sm">ml</span></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td><span class="btn--table btn--purple">Назн</span></td>
+                    <td></td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -79,10 +336,10 @@
             }
         });
 
-        $('#research_table').floatThead({
+        $('#medicines_table').floatThead({
             position: 'fixed'
         });
-        $('#research_table').floatThead('reflow');
+        $('#medicines_table').floatThead('reflow');
     }
 </script>
 </body>

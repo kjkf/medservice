@@ -9,15 +9,15 @@
 </head>
 <body>
 <div class="container">
-    <div class="research">
+    <div class="dialog-wrapper research">
         <div class="table-header">
             <h3 class="patient">Петренко П.П.</h3>
 
             <div class="wrapper">
                 <ul class="indicators">
-                    <li class="indic indic-lightCyan">Не выполнено</li>
-                    <li class="indic indic-lightGreen">Выполнено</li>
-                    <li class="indic indic-purple">Назначено</li>
+                    <li class="indic indic-lightCyan">- Не выполнено</li>
+                    <li class="indic indic-lightGreen">- Выполнено</li>
+                    <li class="indic indic-purple">- Назначено</li>
                 </ul>
                 <span class="btn--table btn--lightGreen">Исследования</span>
             </div>
@@ -266,7 +266,6 @@
     console.log(tableWrapper);
     if (tableWrapper) {
         var instance1 = OverlayScrollbars(tableWrapper, {
-            resize: 'both',
             scrollbars: {
                 autoHide: 'scroll',
                 autoHideDelay: 800
