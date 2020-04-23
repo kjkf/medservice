@@ -29,6 +29,7 @@
         container.innerHTML = modalTemplate;
         var overlay = container.querySelector('.overlay');
         overlay.classList.add('dialog--flex-display');
+        //if (window.innerWidth <= 768) overlay.classList.add('pl30');
         var popupContainer = container.querySelector('.popup__container');
         popupContainer.innerHTML = dialogTempate;
 

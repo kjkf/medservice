@@ -1,5 +1,17 @@
 .medicines.dialog-wrapper
   padding: 67px 72px 34px 72px
+  +laptop
+    padding: 67px 25px 34px 25px
+  +ipad
+    //width: calc(100% - 100px)
+    width: 700px
+    padding: 32px 15px
+  +phone_1
+    width: calc(100% - 30px)
+  .table-header
+    +ipad
+      flex-direction: row
+      align-items: center
   & .table-header .btn--table
     font-size: 13px
   .table_wrapper
