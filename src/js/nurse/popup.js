@@ -6,14 +6,16 @@
 var POPUP_TEMPLATE = document.querySelector('#popup-template').innerHTML;
 var popupIndex = 1;
 window.addEventListener("DOMContentLoaded", function (e) {
-    if (window.innerWidth > 768) {
+    //if (window.innerWidth > 768) {
         setTimeout(function () {
-            //return findPopup(popupIndex);
+            return findPopup(popupIndex);
         }, 500);
-    }
+    //}
 });
 
 function createModal(elem, parentBlock) {
+    let { y } = {...getPosition(elem)};
+    scrollToElem(elem, y);
     var container = document.createElement('div');
     container.className = 'popup';
     container.innerHTML = POPUP_TEMPLATE;
@@ -37,16 +39,12 @@ function createModal(elem, parentBlock) {
 }
 
 function showModal(elem) {
-    var position = elem.dataset.popupPosition;
-
     //var parentBlock = elem.closest('.popup-wrapper');
     var parentBlock = getClosestParent(elem, 'popup-wrapper');
     var modal = createModal(elem, parentBlock); //document.body.appendChild(modal);
     parentBlock.appendChild(modal);
     var contentBlock = modal.querySelector('.popup__container');
-    var pos = position.split('-');
-    var x = pos[1],
-        y = pos[0];
+    let { x, y } = {...getPosition(elem)};
 
     var coords = elem.getBoundingClientRect();
     var left = x === 'left' ? coords.left : coords.right - contentBlock.offsetWidth - 10;
@@ -68,6 +66,23 @@ function showModal(elem) {
             left = left + 25;
             top = top + 40;
         }
+    }
+
+    left = left < 0 ? 0: left;
+    top = top < 0 ? 0: top;
+    if ((top + contentBlock.offsetHeight) > window.innerHeight ) {
+        top = coords.top - contentBlock.offsetHeight - 50;
+        var anchorElem = modal.querySelector('.dial-window');
+        var anchorClass = elem.dataset.popupPosition;
+        anchorElem.classList.remove(anchorClass);
+        anchorClass = anchorClass.replace('top', 'bottom');
+        anchorElem.classList.add(anchorClass);
+        console.log(anchorClass);
+        console.log(anchorElem.classList.keys());
+        /*let anchorClass = Array.from(anchorElem.classList).filter( cl => {
+            return cl.includes('top')
+        });
+        */
 
     }
 
@@ -81,8 +96,24 @@ function findPopup(index) {
     var elem = document.querySelector(selector);
 
     if (elem) {
-        if (window.innerWidth <= 768 && index === 3) return false;
         showModal(elem);
+    }
+}
+
+function scrollToElem(elem, anchorPosition) {
+    var isTop = anchorPosition === 'top' && popupIndex !== 1;
+    elem.scrollIntoView(isTop);
+    var scrollVall = popupIndex == 1 ? 0 : 30; // магические цифры, 150 - просто мне так захотелось
+    window.scrollBy(0, scrollVall)
+}
+
+function getPosition(elem) {
+    var position = elem.dataset.popupPosition;
+    var pos = position.split('-');
+
+    return {
+        x: pos[1],
+        y: pos[0]
     }
 }
 
