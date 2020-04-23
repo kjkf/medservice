@@ -8,22 +8,6 @@
         }, 1000);
     }
 
-    const tableWrapper = document.querySelector('.table_wrapper');
-    if (tableWrapper) {
-        var oldScrollTop = 0;
-        var oldScrollLeft = 0;
-        var instance = OverlayScrollbars(tableWrapper, {
-            scrollbars: {
-                autoHide: 'never',
-                autoHideDelay: 3000
-            }
-        });
-        var $table = $('#nurse_table');
-
-        $table.floatThead();
-        $($table).floatThead('reflow');
-    }
-
     const layers = document.querySelectorAll('.layer');
 
     layers.forEach(layer => {

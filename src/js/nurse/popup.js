@@ -96,7 +96,7 @@ function findPopup(index) {
     var elem = document.querySelector(selector);
 
     if (elem) {
-        showModal(elem);
+        //showModal(elem);
     }
 }
 
