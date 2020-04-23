@@ -8,6 +8,11 @@
   max-width: 426px
   max-height: 391px
   border: 2px solid #F9E9BA
+  +laptop
+    max-width: 368px
+  +ipad
+    max-width: 280px
+    width: 100%
 
 .table
   width: 100%
@@ -24,10 +29,15 @@
         font-style: normal
         font-size: 13px
         line-height: 13px
+        +laptop
+          padding-left: 0px
+          padding-right: 0px
 
         &:first-child
           padding-left: 28px
           border-radius: 26px 0 0
+          +laptop
+            padding-left: 14px
         &:last-child
           border-radius: 0 26px 0 0
   & tbody
@@ -45,10 +55,21 @@
         line-height: 19px
         color: $table-body-text
 
+        +laptop
+          padding-left: 0px
+          padding-right: 0px
+          font-size: 13px
+        +ipad
+          font-size: 15px
+
         &:first-child
           padding-left: 28px
           font-family: 'FuturaPT-Demi'
           font-weight: 600
+          +laptop
+            padding-left: 13px
+          +ipad
+            padding-left: 28px
 
 .btn--table
   border-radius: 50px
