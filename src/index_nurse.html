@@ -11,7 +11,7 @@
 <body>
 <div class="container nurse-page">
     <div class="nurse">
-        <div class="nurse__in">
+        <div class="nurse__in popup-wrapper">
             <div class="nurse-col nurse-col--left">
                 <div class="datetime datetime1">
                     <div class="time-hm">21:45</div>
@@ -20,7 +20,11 @@
                         <div class="date-md">Февраль 24</div>
                     </div>
                 </div>
-                <div class="reminder-item-wrap scrolled">
+                <div
+                    data-popup-text='Используя данное окно вы можете добавлять новые напоминания'
+                    data-popup-position="top-left"
+                    data-popup-index="7"
+                    class="reminder-item-wrap scrolled">
                     <div class="reminder-item">
                         <span class="reminder-item__num">1</span>
                         <div class="reminder-item__info">
@@ -116,13 +120,21 @@
             </div>
             <div class="nurse-main">
                 <div class="header-block">
-                    <a class="logout">Сменить профиль</a>
+                    <a
+                        data-popup-text='Используя данное окно вы можете переключится между профилями'
+                        data-popup-position="top-right"
+                        data-popup-index="1"
+                        class="logout">Сменить профиль</a>
                     <h2 class="header-title">Шевченко Виктория Викторовна</h2>
                     <h3 class="header-subtitle">Мед-сестра</h3>
                 </div>
                 <div class="content-block">
                     <h3 class="content-title">Листы назначений для пациента</h3>
-                    <div class="table_wrapper">
+                    <div
+                        data-popup-text='Используя данное окно вы можете просмотреть назначения для пациента'
+                        data-popup-position="bottom-right"
+                        data-popup-index="2"
+                        class="table_wrapper">
                         <table class="table" id="nurse_table">
                             <colgroup>
                                 <col width="140px">
@@ -145,7 +157,11 @@
                                 <td>Чернышевский П.П.</td>
                                 <td>№ 27</td>
                                 <td>24.03.2020</td>
-                                <td><span class="btn--table btn--purple">Мед</span></td>
+                                <td
+                                        data-popup-text='Тут вы сможете просмотреть все медикамены, назначеные пациенту'
+                                        data-popup-position="bottom-right"
+                                        data-popup-index="3"
+                                ><span class="btn--table btn--purple">Мед</span></td>
                                 <td><span class="btn--table btn--lightGreen">Иссл</span></td>
                             </tr>
                             <tr>
@@ -160,7 +176,11 @@
                                 <td>№ 27</td>
                                 <td>24.03.2020</td>
                                 <td class="p0"><span class="btn--table btn--purple">Мед</span></td>
-                                <td class="p0"><span class="btn--table btn--lightGreen">Иссл</span></td>
+                                <td
+                                        data-popup-text='Тут вы сможете просмотреть все исследования, назначеные пациенту'
+                                        data-popup-position="bottom-right"
+                                        data-popup-index="4"
+                                        class="p0 research-popup"><span class="btn--table btn--lightGreen">Иссл</span></td>
                             </tr>
                             <tr>
                                 <td>Петренко П.П.</td>
@@ -352,7 +372,11 @@
                         </div>
                     </div>
                     <div class="layer reminder-add">
-                        <div class="layer__top">
+                        <div
+                                data-popup-text='Используя данное окно вы можете добавлять новые напоминания!!!'
+                                data-popup-position="top-right"
+                                data-popup-index="5"
+                                class="layer__top">
                             <span class="layer__ic"></span>
                             <div class="layer__name">Добавить напоминие</div>
                             <button class="layer__btn btn-arrow"></button>
@@ -384,7 +408,11 @@
                     </div>
 
                     <div class="layer vidjet-add layer--dis btn">
-                        <div class="layer__top">
+                        <div
+                                data-popup-text='Используя данное окно вы можете добавлять новые записи'
+                                data-popup-position="top-right"
+                                data-popup-index="6"
+                                class="layer__top">
                             <span class="layer__ic"></span>
                             <div class="layer__name">Добавить виджет</div>
                             <button class="layer__btn btn-arrow"></button>
@@ -400,6 +428,21 @@
     <div class="overlay">
         <div class="popup__container">
 
+        </div>
+    </div>
+</script>
+
+<script type="template" id="popup-template">
+    <div class="overlay">
+        <div class="popup__container">
+            <div class="dial-window dial-window--msg ">
+                <div class="dial-window__in">
+                    <p class="dial-window__text"></p>
+                    <div class="row dial-window__footer">
+                        <button class="btn btn--lightBlue" id="popupClose">Понятно</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </script>
