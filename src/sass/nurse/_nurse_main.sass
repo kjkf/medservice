@@ -1,7 +1,9 @@
 .nurse-main
   padding: 6px 25px
+  +laptop
+    padding: 16px 12px 6px
   +ipad
-    padding: 6px 0
+    padding: 12px 0px 0px
   & .header-block
     display: flex
     flex-direction: column
@@ -9,17 +11,32 @@
     align-items: baseline
     padding-left: 57px
     margin-bottom: 30px
+    +laptop
+      padding-left: 75px
+      margin-bottom: 20px
+    +ipad
+      margin: 0px
+
     & .header-title
       font-size: 24px
       line-height: 22px
       font-weight: 400
       margin: 34px 0 10px
       position: relative
+      +laptop
+        font-size: 20px
+        margin: 10px 0px 0px
+      +ipad
+        font-size: 18px
+        position: absolute
+        top: 93px
+        left: 43px
+        z-index: 1000
       &:before
         content: ''
         display: inline-block
-        width: 38px
-        height: 38px
+        width: calc(38px - 2px)
+        height: calc(38px - 2px)
         border-radius: 50%
         border: 2px solid $blue
         position: absolute
@@ -29,16 +46,28 @@
           image: url("../images/nurse/sprite/icon_nurse.svg")
           repeat: no-repeat
           position: center
+        +ipad
+          display: none
+
     & .header-subtitle
       font-size: 14px
       line-height: 13px
       letter-spacing: .04em
       margin: 0
+      +ipad
+        font-size: 16px
+        position: absolute
+        top: 125px
+        left: 43px
+        z-index: 1000
+
   .content-block
     padding: 34px 9px 33px
     background: #fafcff
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15)
     border-radius: 30px
+    +laptop
+      padding: 34px 9px 30px
     & .content-title
       font-family: 'FuturaPT-Demi'
       font-size: 19px
@@ -48,13 +77,19 @@
       color: $blue-light
       padding-left: 90px
       position: relative
+      +laptop
+        width: 50%
+        margin: 0px 0px 24px 0px
+      +ipad
+        font-size: 16px
+        padding-left: 75px
       &:before
         content: ''
         display: inline-block
-        width: 38px
-        height: 38px
+        width: calc(38px - 2px)
+        height: calc(38px - 2px)
         border-radius: 50%
-        border: 2px solid $blue
+        border: 2px solid $blue-light
         position: absolute
         left: 35px
         top: -2px
@@ -62,6 +97,17 @@
           image: url("../images/nurse/sprite/icon_doc.svg")
           repeat: no-repeat
           position: center
+        +laptop
+          width: 28px
+          height: 28px
+          left: 30px
+          top: 2px
+        +ipad
+          width: 32px
+          height: 32px
+          left: 16px
+          top: 0px
+
     & .btn--table:hover
       cursor: pointer
 
