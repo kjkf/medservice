@@ -10,17 +10,18 @@
 
     const tableWrapper = document.querySelector('.table_wrapper');
     if (tableWrapper) {
+        var oldScrollTop = 0;
+        var oldScrollLeft = 0;
         var instance = OverlayScrollbars(tableWrapper, {
             scrollbars: {
-                autoHide: 'scroll',
-                autoHideDelay: 800
+                autoHide: 'never',
+                autoHideDelay: 3000
             }
         });
+        var $table = $('#nurse_table');
 
-        $('#nurse_table').floatThead({
-            position: 'fixed'
-        });
-        $('#nurse_table').floatThead('reflow');
+        $table.floatThead();
+        $($table).floatThead('reflow');
     }
 
     const layers = document.querySelectorAll('.layer');

@@ -2,7 +2,7 @@
     const modalTemplate = document.getElementById('modal-template').innerHTML;
     const researchTemplate = document.getElementById('researchTable').innerHTML;
     const medicinesTemplate = document.getElementById('medicinesTable').innerHTML;
-
+    let currentTableName = 'nurse_table';
 
     const openDialogButtons = document.querySelectorAll('.nurse-main .btn--table');
     openDialogButtons.forEach(btn => {
@@ -31,11 +31,12 @@
         overlay.classList.add('dialog--flex-display');
         var popupContainer = container.querySelector('.popup__container');
         popupContainer.innerHTML = dialogTempate;
-        var action = {};
 
         overlay.addEventListener('click', function (e) {
             if (e.target === overlay) {
                 document.body.removeChild(container);
+            } else {
+                console.log()
             }
         });
         return {
@@ -50,19 +51,23 @@
     }
 
     function activateTableScroll(tableWrapper, id) {
-        console.log(id);
+
         if (tableWrapper) {
             var instance1 = OverlayScrollbars(tableWrapper, {
                 scrollbars: {
-                    autoHide: 'scroll',
+                    autoHide: 'never',
                     autoHideDelay: 800
                 }
             });
-
+            console.log('---');
             $(id).floatThead({
-                position: 'fixed'
+                scrollContainer: function($table){
+                    console.log($table);
+                    return $table.closest('.table-responsive');
+                }
             });
-            $(id).floatThead('reflow');
+
+            $('table').floatThead('reflow');
         }
     }
 })();
