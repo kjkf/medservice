@@ -1,6 +1,6 @@
 ;(function () {
   const elem = document.getElementById('calendar_input');
-
+  const month_list = ['Января', 'Февраля', 'Марта', 'Апреля', 'Мая', 'Июня', 'Июля', 'Августа', 'Сентября', 'Октября', 'Ноября', 'Декабря'];
   if (!elem) return;
   const picker = datepicker('#calendar_input', {
     onSelect: (instance, date) => {
@@ -9,10 +9,12 @@
     formatter: (input, date, instance) => {
       // меняет формат даты на дд.мм.гггг
       let d = new Date();
-      let dd = date.getDate()<=9 ? '0'+(date.getDate()):(date.getDate());
-      let mm = date.getMonth()<9?'0'+(date.getMonth() + 1):date.getMonth() + 1  ; //Months are zero based
+      let dd = date.getDate();
+      let mm = date.getMonth();//<9?'0'+(date.getMonth() + 1):date.getMonth() + 1  ; //Months are zero based
       let yyyy = date.getFullYear();
-      input.value = dd+'.'+mm+'.'+yyyy
+      console.log("month_list[mm]="+month_list[mm])
+      console.log("mm = "+mm)
+      input.value = dd+' '+month_list[mm]+' '+yyyy
     },
     startDay: 1,
     customDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
