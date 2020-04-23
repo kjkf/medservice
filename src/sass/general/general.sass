@@ -375,7 +375,7 @@ input[type="text"]
   fill: #4D83C9
   background:
     color: transparent
-    image: url("../images/nurse/icon_arrow.svg")
+    image: url("../images/nurse/sprite/icon_arrow.svg")
     size: contain
     repeat: no-repeat
     position: center
@@ -386,7 +386,8 @@ input[type="text"]
   &.right
     transform: rotate(-90deg)
   &--dark
-    fill: #284C8A
+    background-image: url("../images/nurse/sprite/icon_arrow_dark.svg")
+
 
 
 *::-webkit-scrollbar
@@ -411,3 +412,6 @@ input[type="text"]
 .scrolled
   scrollbar-color: #3677D2 #CBD3FF
   scrollbar-width: thin
+
+.red
+  fill: red
