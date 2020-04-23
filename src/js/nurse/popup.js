@@ -6,9 +6,11 @@
 var POPUP_TEMPLATE = document.querySelector('#popup-template').innerHTML;
 var popupIndex = 1;
 window.addEventListener("DOMContentLoaded", function (e) {
-    setTimeout(function () {
-        return findPopup(popupIndex);
-    }, 500);
+    if (window.innerWidth > 768) {
+        setTimeout(function () {
+            return findPopup(popupIndex);
+        }, 500);
+    }
 });
 
 function createModal(elem, parentBlock) {
