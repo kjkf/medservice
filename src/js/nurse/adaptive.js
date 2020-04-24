@@ -1,19 +1,3 @@
-function replaceColgroup(table, cols) {
-    let colgroup = table.querySelectorAll('col');
-    console.log(colgroup);
-    colgroup.forEach((col, i) => {
-        console.log(col);
-        console.log(col.getAttribute('width'));
-        col.style.width = `${cols[i]}px`;
-        col.setAttribute('width', `${cols[i]}px`)
-    });
-}
-
-let tabletCols = [];
-
-let table = document.querySelector('table');
-console.log(table);
-replaceColgroup(table, [100, 30, 50, 30, 30]);
 
 const tableWrapper = document.querySelector('.table_container');
 if (tableWrapper) {
