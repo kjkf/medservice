@@ -90,7 +90,7 @@ if (window.innerWidth >= 1024) {
     }
 }
 
-if (window.innerWidth <= 768) {
+if (window.innerWidth <= 1023) {
     contentEl.style.height = content_h - 56 + "px";
 
     if (!MAIN_PANEL.classList.contains("folded")) {
@@ -106,14 +106,21 @@ if (window.innerWidth <= 768) {
     });
     contentEl.style.left = parseInt(container_pl) + "px";
     contentEl.style.width = winowWidth - parseInt(container_pl) - parseInt(container_pr) + "px";
+
     document.querySelector('.mob-menu').addEventListener('click', function (e) {
         mp_header_h = mp_header.clientHeight;
         mp_footer_h = mp_footer.clientHeight;
+        mp_footer_h = 46;
         mp_pt = 35;
         mp_pb = 33;
         mp_h = winowHeight - parseInt(container_pt) - parseInt(container_pb) - parseInt(mp_pt) - parseInt(mp_pb);
         MAIN_PANEL.style.height = mp_h + "px";
         mp_menu_list.style.height = mp_h - parseInt(mp_header_h) - parseInt(mp_footer_h) - parseInt(menu_list_mb) - parseInt(menu_list_pt) + "px";
+        console.log("mp_h =" + mp_h);
+        console.log("mp_header_h =" + mp_header_h);
+        console.log("mp_footer_h =" + mp_footer_h);
+        console.log("menu_list_mb =" + menu_list_mb);
+        console.log("menu_list_pt =" + menu_list_pt);
     });
 } //console.log(dragName.closest('input-field__wrap'));
 
@@ -133,7 +140,7 @@ if (isSafari) {
     for (var i = 0; i < return_list_item.length; i++) {
         return_list_item[i].style.display = "-webkit-box";
     }
-    if (window.innerWidth >= 768) {
+    if (window.innerWidth >= 1023) {
         for (var _i2 = 0; _i2 < blocks.length; _i2++) {
             blocks[_i2].style.display = "-webkit-inline-flex";
         }
@@ -159,7 +166,7 @@ if (isSafari) {
         contentEl.style.left = parseInt(mp_left) + parseInt(mp_w) - 0 + "px";
     }
 
-    if (window.innerWidth >= 768 && window.innerWidth <= 912) {
+    if (window.innerWidth >= 1023 && window.innerWidth <= 912) {
         block_heads.style.display = "-webkit-inline-flex";
 
         for (var _i7 = 0; _i7 < inside_block.length; _i7++) {
@@ -171,7 +178,7 @@ if (isSafari) {
         }
     }
 
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1023) {
         block_heads.style.display = "-webkit-box";
     }
 
