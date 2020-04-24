@@ -1,5 +1,5 @@
 
-const tableWrapper = document.querySelector('.table_container');
+const tableWrapper = document.querySelector('.table_wrapper');
 if (tableWrapper) {
     var oldScrollTop = 0;
     var oldScrollLeft = 0;
@@ -12,7 +12,7 @@ if (tableWrapper) {
     var $table = $('#nurse_table');
 
     $table.floatThead({
-        zIndex: 100,
+        zIndex: 10,
         scrollContainer: function($table){
             return $table.closest('.table_container');
         }
