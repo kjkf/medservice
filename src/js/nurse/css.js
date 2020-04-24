@@ -6,9 +6,8 @@ var isSafari = (currentUserAgent.indexOf('safari') > -1 && currentUserAgent.inde
 var winowHeight = window.innerHeight;
 var winowWidth = window.innerWidth;
 var container = document.querySelector(".container");
-container.style.height = winowHeight - (parseInt(container_pt) + parseInt(container_pb)) + "px";
+
 if (isSafari) {
     container.style.height = winowHeight;
-    container.style.background = 'green';
 }
 
