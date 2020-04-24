@@ -32,4 +32,23 @@
     const isHidden = picker.calendarContainer.classList.contains('qs-hidden');
     picker[isHidden ? 'show' : 'hide']()
   });
+
+  const btnsArrow = document.querySelectorAll('.schedule__month .btn-arrow--dark');
+  const monthNameSpan = document.querySelector('.schedule__month .btn-lr__name .btn-lr-m');
+  const _month = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'];
+  let monthIndex = new Date().getMonth();
+  monthNameSpan.innerHTML = _month[monthIndex];
+
+  btnsArrow.forEach(btn => {
+    btn.addEventListener('click', e => {
+      let idx = monthIndex;
+      if (btn.classList.contains('left')) {
+        monthIndex = monthIndex === 0 ? 11 : monthIndex - 1;
+      } else {
+        monthIndex = monthIndex === 11 ? 0 : monthIndex + 1;
+      }
+
+      monthNameSpan.innerHTML = _month[monthIndex];
+    });
+  })
 })();
