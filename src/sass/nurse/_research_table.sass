@@ -9,10 +9,12 @@
     padding: 67px 25px 34px 25px
   +ipad
     //width: calc(100% - 100px)
+    max-height: 533px
     width: 700px
     padding: 32px 15px
+    padding: 40px 25px 70px 25px
   +phone_1
-    width: calc(100% - 30px)
+    width: calc(100% - 60px)
   .table-header
     display: flex
     justify-content: space-between
@@ -43,6 +45,7 @@
         margin-right: 19px
         +ipad
           padding-left: 0
+          margin: 10px 0
         & li
           margin-right: 10px
           padding-left: 36px
@@ -66,10 +69,21 @@
             background: $lightGreenBg
           &.indic-purple:before
             background: $purpleBg
+          +phone
+            font-size: 10px
+            &:before
+              width: 15px
+              height: 15px
+              left: 15px
+              top: -1px
 .research
   .table_wrapper
     max-width: 850px
     max-height: 391px
+    //+laptop
+      height: calc(100vh - 400px)
+    +ipad
+      height: calc(100vh - 360px)
     //width: 805px
     & thead
       & th
@@ -103,8 +117,12 @@
   position: relative
   height: 400px
   width: 880px
+  +laptop
+    height: calc(100vh - 470px)
   +ipad
     width: 750px
+    height: 386px
+    height: calc(100vh - 360px)
 
 .research-btn
   +ipad

@@ -15,6 +15,7 @@
                 id = '#medicines_table';
             }
 
+            window.scrollTo(0, 0);
             var dialog = createDialog(template);
             dialog.open();
             const tableWrapper = dialog.container.querySelector('.table_wrapper');
@@ -36,8 +37,6 @@
         overlay.addEventListener('click', function (e) {
             if (e.target === overlay) {
                 document.body.removeChild(container);
-            } else {
-                console.log()
             }
         });
         return {

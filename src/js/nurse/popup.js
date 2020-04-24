@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
 function createModal(elem, parentBlock) {
     let { y } = {...getPosition(elem)};
-    if (window.innerWidth < 1024) scrollToElem(elem, y);
+    scrollToElem(elem, y);
     var container = document.createElement('div');
     container.className = 'popup';
     container.innerHTML = POPUP_TEMPLATE;
@@ -61,9 +61,15 @@ function showModal(elem) {
     }
 
     if (elem.tagName === 'TD') {
-        if (window.innerWidth > 425) {
+        if (window.innerWidth >= 1348) {
             left = left + 20;
             top = top - 25;
+        } else if (window.innerWidth > 1023) {
+            left = elem.classList.contains('research-popup') ? left : left + 20;
+            top = top + 30;
+        } else if (window.innerWidth > 425) {
+            left = left + 20;
+            top = top + 30;
         } else {
             left = left + 90;
             top = top + 25;
