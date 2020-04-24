@@ -12,6 +12,7 @@
   height: 100%
 
 .popup__container
+  z-index: 120 !important
   //position: absolute
   +phone
     +flexbox
@@ -20,7 +21,8 @@
     width: calc(100% - 10px)
 
 .hightlight
-  z-index: 101
+  z-index: 101 !important
+  position: relative
 
 .block-head
   position: relative
@@ -29,4 +31,8 @@
   +flexbox
   +justify-content(center)
   +align-items(center)
+
+
+.hightlight.reminder-item
+  background: rgba(191, 201, 255, 0.5)
 

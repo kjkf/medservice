@@ -103,7 +103,7 @@ function findPopup(index) {
 function scrollToElem(elem, anchorPosition) {
     var isTop = anchorPosition === 'top' && popupIndex !== 1;
     elem.scrollIntoView(isTop);
-    var scrollVall = popupIndex == 1 ? 0 : 30; // магические цифры, 150 - просто мне так захотелось
+    var scrollVall = popupIndex == 1 ? 0 : isTop ? -30 : 30; // магические цифры, - просто мне так захотелось
     window.scrollBy(0, scrollVall)
 }
 
