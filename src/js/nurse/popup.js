@@ -56,7 +56,8 @@ function showModal(elem) {
     }
     if (elem.classList.contains('reminder-item-wrap')) {
         left = left - 20;
-        top = top - 20;
+        top = window.innerHeight < 768 ? top - 200 : top - 150;
+
     }
     if (elem.tagName === 'TD') {
         if (elem.classList.contains('research-popup')) {
@@ -68,8 +69,6 @@ function showModal(elem) {
         }
     }
 
-    left = left < 0 ? 0: left;
-    top = top < 0 ? 0: top;
     if ((top + contentBlock.offsetHeight) > window.innerHeight ) {
         top = coords.top - contentBlock.offsetHeight - 50;
         var anchorElem = modal.querySelector('.dial-window');
@@ -77,16 +76,12 @@ function showModal(elem) {
         anchorElem.classList.remove(anchorClass);
         anchorClass = anchorClass.replace('top', 'bottom');
         anchorElem.classList.add(anchorClass);
-        console.log(anchorClass);
-        console.log(anchorElem.classList.keys());
-        /*let anchorClass = Array.from(anchorElem.classList).filter( cl => {
-            return cl.includes('top')
-        });
-        */
-
     }
 
-    if(elem.tagName !== 'TD') elem.classList.add('hightlight');
+    if(elem.tagName !== 'TD' && !elem.classList.contains('reminder-item-wrap')) elem.classList.add('hightlight');
+
+    left = left < 0 ? 0: left;
+    top = top < 0 ? 0: top;
     contentBlock.style.left = left + "px";
     contentBlock.style.top = top + "px";
 }
