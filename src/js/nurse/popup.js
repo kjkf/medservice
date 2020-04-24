@@ -86,7 +86,7 @@ function showModal(elem) {
 
     }
 
-    elem.classList.add('hightlight');
+    if(elem.tagName !== 'TD') elem.classList.add('hightlight');
     contentBlock.style.left = left + "px";
     contentBlock.style.top = top + "px";
 }
