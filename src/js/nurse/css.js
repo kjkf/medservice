@@ -1,3 +1,4 @@
+/*
 "use strict";
 
 var currentUserAgent = navigator.userAgent.toLowerCase();
@@ -11,3 +12,4 @@ if (isSafari) {
     container.style.height = winowHeight;
 }
 
+*/
