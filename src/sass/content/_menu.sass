@@ -6,7 +6,7 @@
       min-height: 50px
     +laptop
       font-size: 18px
-    +tablet
+    +ipad
       padding-bottom: 10px
       +retina
         min-height: 46px
@@ -15,12 +15,12 @@
       background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 100%)
   .btn-content-wrap
     margin-top: auto
-  +tablet
+  +ipad
     +retina
       max-height: 25px
 
   &.folded
-    +tablet
+    +ipad
       +retina
         max-height: initial
 
@@ -51,7 +51,7 @@
     min-height: 68px
   +laptop
     margin-bottom: 26px
-  +tablet
+  +ipad
     margin-bottom: 0px
     +justify-content(flex-end)
     min-height: auto
@@ -64,7 +64,7 @@
   letter-spacing: -2px
   +laptop
     font-size: 63px
-  +tablet
+  +ipad
     display: none
 
 .date-sd
@@ -72,7 +72,7 @@
   +flex-direction(column)
   +justify-content(space-evenly)
   margin-left: 10px
-  +tablet
+  +ipad
     font-size: 16px
     line-height: 21px
 
@@ -101,7 +101,7 @@
   position: relative
   +retina
     min-height: 45px
-  +tablet
+  +ipad
     margin-bottom: 9px
 
 .search-bar__field
@@ -141,7 +141,7 @@
   margin-bottom: 40px
   height: 560px
   overflow-y: scroll
-  +tablet
+  +ipad
     margin-bottom: 0px
   .menu-list__item
     +flexbox
@@ -151,7 +151,7 @@
     border-top-left-radius: 14px
     +laptop
       padding-left: 48px
-    +tablet
+    +ipad
       +border_radius(12px)
       padding: 11px 16px 11px 50px
     a
@@ -163,7 +163,7 @@
       letter-spacing: 0.3px
       color: $menuFontColor
       position: relative
-      +tablet
+      +ipad
         font-size: 21px
     a::before
       content: ''
@@ -174,7 +174,7 @@
       top: 5px
       +border_radius(50%)
       background-color: #8EADD4
-      +tablet
+      +ipad
         left: -27px
         width: 15px
         height: 15px
@@ -188,7 +188,7 @@
       position: absolute
       width: 20px
       height: 20px
-      +tablet
+      +ipad
         display: none
     &:before
       right: 0
@@ -219,7 +219,7 @@
           height: 24px
           left: -40px
           top: 0px
-        +tablet
+        +ipad
           width: 28px
           height: 28px
           left: -35px
@@ -227,7 +227,7 @@
 
 .menu-list-wrap
   padding-right: 0px
-  +tablet
+  +ipad
     padding-left: 35px
     padding-right: 35px
   .menu-list__item.hide
@@ -245,7 +245,7 @@
     size: 13px 10px
     position: center
     repeat: no-repeat
-  +tablet
+  +ipad
     display: inline-block
 
 .hide
@@ -273,7 +273,7 @@
     padding-top: 35px
     height: 186px
 
-  +tablet
+  +ipad
     width: calc(100% - 20px*2 )
     left: 20px
 
@@ -297,9 +297,10 @@
     +flexbox
     padding: 16px 16px 10px 70px
     margin-bottom: 10px
+    min-height: 25px
     +laptop
       padding: 0px 4px 0px 53px
-    //+tablet
+    //+ipad
       +border_radius(12px)
       padding: 8px 5px 8px 50px
     a
@@ -311,7 +312,7 @@
       font-size: 25px
       color: #8EADD4
       position: relative
-      //+tablet
+      //+ipad
         font-size: 21px
     a::before
       content: ''

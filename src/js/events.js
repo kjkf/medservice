@@ -117,7 +117,7 @@ returnBtn.addEventListener('click', function (e) {
     MAIN_PANEL.classList.remove('return-unfold');
 }); // перенос кнопки Добавить рекомендации
 
-if (window.innerWidth <= 768) {
+if (window.innerWidth <= 1023) {
     var footer = document.querySelector('.block--footer');
     var btnRecomendWrap = document.querySelector('.btn-recomend-wrap');
     var addRecomendsBtn = footer.removeChild(footer.querySelector('.btn-recomend'));

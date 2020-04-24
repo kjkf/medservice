@@ -35,7 +35,7 @@
     margin-bottom: 8px
     padding: 14px 10px
     position: relative
-  +tablet
+  +ipad
     width: calc(100% - (12px * 2))
   +phone_min
     padding: 10px 5px
@@ -47,18 +47,20 @@
       width: calc(100% - (6px * 2) - (10px * 2))
     +laptop
       width: calc(100% - (10px * 2))
-    //+tablet
+    //+ipad
       //width: calc(100% - 15px*2) // 15px is paddings of container
       width: calc(100% - (6px * 2) - (10px * 2))
 
 .block__protocolCaption
+  box-sizing: border-box
   +flexbox
   +flex-direction(row)
   +justify-content(flex-start)
   +align-items(flex-end)
   width: auto
   height: 30px
-  margin-bottom: 10px
+  margin-bottom: 10pxblock__protocolCaption
+
   padding-left: 40px
   width: 100px
   background:
@@ -74,10 +76,15 @@
     margin-bottom: 16px
     +align-items(center)
     background-size: 16px 20px
-    //margin-right: 115px
-    max-width: 200px
-  +phone_1
     max-width: calc(100% - 160px)
+    width: 65%
+  +tablet
+    max-width: 100%
+    width: 85%
+  +phone_1
+    width: 70%
+    max-width: unset
+
   h3
     margin: 0px 5px 3px 0px
     +phone
@@ -91,7 +98,7 @@
 .block.active
   background-color: $blockBgColor_Active
   align-content: center
-  +tablet
+  +ipad
     background-color: #DEE7FF
 
 .block-head
@@ -115,7 +122,7 @@
     +flex-direction(column)
     padding: 19px 17px 22px
     margin-bottom: 22px
-  +tablet
+  +ipad
     //margin-top: calc(41px + 8px)
   +phone_min
     padding: 14px 10px
@@ -283,10 +290,14 @@
       +flex-wrap(nowrap)
       width: auto
       max-width: initial
+    +ipad
+      width: calc(100% - (7px * 2))
     .btn
       margin-right: $block__layer__r_mr
       +medium
         margin-right: 0px
+      +ipad
+        margin-right: $block__layer__r_mr
       &:last-child
         margin-right: 0px
     .med-label
@@ -359,7 +370,7 @@
   border-bottom-right-radius: 52px
   padding: 15px 27px
 
-  +tablet
+  +ipad
     display: block
     width: 100%
     background-color: transparent
@@ -392,7 +403,7 @@
   padding-top: 20px
   background-color: transparent
   box-shadow: none
-  +tablet
+  +ipad
     text-align: center
     bottom: 0px!important
     right: 0px!important
@@ -494,7 +505,7 @@
 
 .block--last
   margin-bottom: 12px
-  +tablet
+  +ipad
     margin-bottom: 6px
 
 .block--footer
@@ -502,7 +513,7 @@
   +box_shadow(none)
   background: transparent
   +justify-content(flex-start)
-  +tablet
+  +ipad
     margin-bottom: calc(91px - 24px)
     width: auto
     +justify-content(flex-start)
@@ -512,7 +523,7 @@
   display: none
   width: 100%
   margin-top: 5px
-  +tablet
+  +ipad
     display: block
   .btn-content
     max-width: none
@@ -570,3 +581,7 @@
         width: 47%
       +ipad
         width: auto
+      +tablet
+        width: 100%
+      +phone_1
+        width: 100%

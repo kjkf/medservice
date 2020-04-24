@@ -180,7 +180,7 @@
   +ipad
     margin-left: auto
     margin-right: calc(110px + 5px)
-  +phone_1
+  +ipad
     display: none
 
   .drug-dosage
@@ -199,13 +199,21 @@
 
 
 .block__header
+  box-sizing: border-box
   +flexbox
   +justify-content(space-between)
   +laptop
     width: 100%
     max-width: 320px
-  +tablet
+  +ipad
     +justify-content(flex-start)
+    max-width: initial
+  +tablet
+    width: 100%
+  +phone_1
+    max-width: 100%
+  +phone_min
+    max-width: 280px
 
 .icon
   width: 100%
