@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", function (e) {
 
 function createModal(elem, parentBlock) {
     let { y } = {...getPosition(elem)};
-    scrollToElem(elem, y);
+    if (window.innerWidth < 1024) scrollToElem(elem, y);
     var container = document.createElement('div');
     container.className = 'popup';
     container.innerHTML = POPUP_TEMPLATE;
