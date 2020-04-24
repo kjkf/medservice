@@ -59,13 +59,14 @@ function showModal(elem) {
         top = window.innerHeight < 768 ? top - 200 : top - 150;
 
     }
+
     if (elem.tagName === 'TD') {
-        if (elem.classList.contains('research-popup')) {
-            left = left + 25;
-            top = top + 30;
+        if (window.innerWidth > 425) {
+            left = left + 20;
+            top = top - 25;
         } else {
-            left = left + 25;
-            top = top + 40;
+            left = left + 90;
+            top = top + 25;
         }
     }
 
@@ -82,6 +83,7 @@ function showModal(elem) {
 
     left = left < 0 ? 0: left;
     top = top < 0 ? 0: top;
+
     contentBlock.style.left = left + "px";
     contentBlock.style.top = top + "px";
 }

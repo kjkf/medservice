@@ -12,8 +12,11 @@
   +laptop
     max-width: 368px
   +ipad
-    max-width: 280px
-    width: 100%
+    max-width: 426px
+  +phone
+    max-width: 380px
+  +phone_2
+    max-width: 300px
 
 .table
   width: 100%
@@ -39,6 +42,13 @@
           border-radius: 26px 0 0
           +laptop
             padding-left: 14px
+          +ipad
+            width: 200px !important
+            padding-left: 28px
+          +phone_2
+            width: 140px !important
+            padding-left: 10px
+
         &:last-child
           border-radius: 0 26px 0 0
   & tbody
@@ -72,6 +82,8 @@
             padding-left: 13px
           +ipad
             padding-left: 28px
+          +phone_2
+            padding-left: 10px
 
 .btn--table
   border-radius: 50px
@@ -109,3 +121,9 @@
   background: #ffffffff
   +laptop
     width: 372px
+  +ipad
+    width: 426px
+  +phone
+    width: 400px
+  +phone_2
+    width: 380px
