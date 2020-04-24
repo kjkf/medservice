@@ -5,8 +5,8 @@ if (tableWrapper) {
     var oldScrollLeft = 0;
     var instance = OverlayScrollbars(tableWrapper, {
         scrollbars: {
-            autoHide: 'never',
-            autoHideDelay: 3000
+            autoHide: 'leave',
+            autoHideDelay: 500
         }
     });
     var $table = $('#nurse_table');

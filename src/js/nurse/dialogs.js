@@ -56,11 +56,10 @@
         if (tableWrapper) {
             var instance1 = OverlayScrollbars(tableWrapper, {
                 scrollbars: {
-                    autoHide: 'never',
-                    autoHideDelay: 800
+                    autoHide: 'leave',
+                    autoHideDelay: 500
                 }
             });
-            console.log('---');
             $(id).floatThead({
                 scrollContainer: function($table){
                     console.log($table);

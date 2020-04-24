@@ -39,4 +39,13 @@
         if (activeItem) activeItem.classList.remove('active');
         item.classList.add('active');
     }
+
+    // подключение скролла
+    //initialize plugin with custom options on all div.scrolled elements and return all instances as array
+    var instances = OverlayScrollbars(document.querySelectorAll('.scrolled'), {
+        scrollbars: {
+            autoHide: 'scroll',
+            autoHideDelay: 1000
+        }
+    });
 })();
