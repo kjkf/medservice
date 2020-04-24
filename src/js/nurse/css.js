@@ -10,3 +10,4 @@ var container = document.querySelector(".container");
 if (isSafari) {
     container.style.height = winowHeight;
 }
+
