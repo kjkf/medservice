@@ -76,7 +76,7 @@ function findPopup(index) {
     var elem = document.querySelector(selector);
 
     if (elem) {
-        if (window.innerWidth <= 768 && index === 3) return false;
+        if (window.innerWidth < 1024 && index === 3) return false;
         showModal(elem);
     }
 }
