@@ -93,7 +93,10 @@ function showModal(elem) {
 
         contentBlock.style.left = left + "px";
         contentBlock.style.top = top + "px";
-        contentBlock.classList.remove('hidden');
+
+        const overlay = modal.querySelector('.overlay');
+        overlay.classList.add('show');
+        //contentBlock.classList.add('show');
     }, 100);
 
 
