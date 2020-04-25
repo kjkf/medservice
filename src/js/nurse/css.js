@@ -8,11 +8,9 @@ var winowHeight = window.innerHeight;
 var winowWidth = window.innerWidth;
 var container = document.querySelector(".container");
 
-/*
 if (isSafari) {
     container.style.height = winowHeight;
 }
-*/
 
 
 function getStyle(elem, propertyName) {
@@ -57,5 +55,6 @@ table_wrapper.style.height =
     parseInt(content_title_mb) -
     parseInt(content_title_h) + "px";
 
-table_container.style.height = table_wrapper.style.height;
-table_wrapper.style.maxHeight = table_wrapper.style.height;
+//table_container.style.height = table_wrapper.style.height;
+table_container.style.height = `${getStyle(table_wrapper, 'height')}px`;
+table_wrapper.style.maxHeight = `${getStyle(table_wrapper, 'height')}px`;
