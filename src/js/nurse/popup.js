@@ -93,6 +93,7 @@ function showModal(elem) {
 
         contentBlock.style.left = left + "px";
         contentBlock.style.top = top + "px";
+        contentBlock.classList.remove('hidden');
     }, 100);
 
 
