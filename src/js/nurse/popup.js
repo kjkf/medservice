@@ -52,7 +52,7 @@
         setTimeout(() => {
             var coords = elem.getBoundingClientRect();
             var left = x === 'left' ? coords.left : coords.right - contentBlock.offsetWidth - 10;
-            var top = y === 'top' ? coords.bottom + 35 : coords.top - contentBlock.offsetHeight - 50;
+            var top = y === 'top' ? coords.bottom + 25 : coords.top - contentBlock.offsetHeight - 50;
 
             if (elem.classList.contains('table_wrapper')) {
                 left = coords.left - contentBlock.offsetWidth / 2;
@@ -66,7 +66,8 @@
             if (elem.tagName === 'TD') {
                 if (window.innerWidth >= 1348) {
                     left = left + 20;
-                    top = elem.classList.contains('research-popup') ? top - 25 : top + 5;
+                    //top = elem.classList.contains('research-popup') ? top : top + 5;
+                    top = top + 25
                 } else if (window.innerWidth > 1023) {
                     left = elem.classList.contains('research-popup') ? left : left + 20;
                     top = top + 30;
