@@ -61,6 +61,7 @@ function showModal(elem) {
             top = window.innerHeight < 768 ? top - 200 : top - 150;
         }
 
+        console.log(window.innerWidth);
         if (elem.tagName === 'TD') {
             if (window.innerWidth >= 1348) {
                 left = left + 20;
@@ -71,9 +72,14 @@ function showModal(elem) {
             } else if (window.innerWidth > 425) {
                 left = left + 20;
                 top = top + 30;
-            } else {
+            } else if (window.innerWidth > 374) {
+                console.log('1!!!');
                 left = left + 90;
-                top = top + 25;
+                top = top + 30;
+            } else {
+                console.log('2@@@');
+                left = 15;
+                top = top + 30;
             }
         }
 
@@ -86,7 +92,9 @@ function showModal(elem) {
             anchorElem.classList.add(anchorClass);
         }
 
-        if (elem.tagName !== 'TD' && !elem.classList.contains('reminder-item-wrap')) elem.classList.add('hightlight');
+        if ((elem.tagName !== 'TD' && !elem.classList.contains('reminder-item-wrap')) && window.innerHeight > 600) {
+            elem.classList.add('hightlight');
+        }
 
         left = left < 0 ? 0 : left;
         top = top < 0 ? 0 : top;
