@@ -16,7 +16,9 @@ if (isSafari) {
         container.style.height = `${winowHeight - parseInt(container_pt) - parseInt(container_pb)}px`;
     }
 }
-
+if (!isSafari) {
+    document.body.style.height = "100vh";
+}
 
 function getStyle(elem, propertyName) {
     return getComputedStyle(elem)[propertyName];
