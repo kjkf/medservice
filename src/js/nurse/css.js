@@ -52,18 +52,17 @@ var tableHeigth =
     parseInt(nurse_page_pb) -
     parseInt(nurse_main_pt) -
     parseInt(nurse_main_pb) -
-    //parseInt(header_block_mb) -
+    parseInt(header_block_mb) -
     parseInt(header_block_h) -
     parseInt(content_block_pb) -
     parseInt(content_block_pt) -
     parseInt(content_title_mb) -
-    parseInt(content_title_h)
-    - parseInt(container_pt)
-    - parseInt(container_pb);
+    parseInt(content_title_h);
 
     if (isSafari) {
-        if(winowWidth > 1023 && winowWidth < 1347) {
-          tableHeigth = tableHeigth + parseInt(container_pt) + parseInt(container_pb);
+        tableHeigth = tableHeigth + parseInt(header_block_mb);
+        if (!(winowWidth > 1023 && winowWidth < 1347)) {
+          tableHeigth = tableHeigth - parseInt(container_pt) - parseInt(container_pb) + parseInt(header_block_mb);
         }
       }
 table_wrapper.style.height = `${tableHeigth}px`;
