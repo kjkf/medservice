@@ -7,14 +7,14 @@ var POPUP_TEMPLATE = document.querySelector('#popup-template').innerHTML;
 var popupIndex = 1;
 window.addEventListener("DOMContentLoaded", function (e) {
     //if (window.innerWidth > 768) {
-        setTimeout(function () {
-            return findPopup(popupIndex);
-        }, 500);
+    setTimeout(function () {
+        return findPopup(popupIndex);
+    }, 500);
     //}
 });
 
 function createModal(elem, parentBlock) {
-    let { y } = {...getPosition(elem)};
+    let {y} = {...getPosition(elem)};
     scrollToElem(elem, y);
     var container = document.createElement('div');
     container.className = 'popup';
@@ -45,60 +45,55 @@ function showModal(elem) {
     parentBlock.appendChild(modal);
     //document.body.appendChild(modal);
     var contentBlock = modal.querySelector('.popup__container');
-    let { x, y } = {...getPosition(elem)};
+    let {x, y} = {...getPosition(elem)};
 
+    setTimeout(() => {
+        var coords = elem.getBoundingClientRect();
+        var left = x === 'left' ? coords.left : coords.right - contentBlock.offsetWidth - 10;
+        var top = y === 'top' ? coords.bottom + 35 : coords.top - contentBlock.offsetHeight - 50;
 
-console.log(elem);
-setTimeout(() => {
-  console.log('======');
-  var coords = elem.getBoundingClientRect();
-  var left = x === 'left' ? coords.left : coords.right - contentBlock.offsetWidth - 10;
-  var top = y === 'top' ? coords.bottom + 35 : coords.top - contentBlock.offsetHeight - 50;
-  console.log(elem.getBoundingClientRect())
-  console.log(coords);
-      if (elem.classList.contains('table_wrapper')) {
-          left = coords.left - contentBlock.offsetWidth / 2;
-          top = top + 20;
-      }
-      if (elem.classList.contains('reminder-item-wrap')) {
-          left = left - 20;
-          top = window.innerHeight < 768 ? top - 200 : top - 150;
+        if (elem.classList.contains('table_wrapper')) {
+            left = coords.left - contentBlock.offsetWidth / 2;
+            top = top + 20;
+        }
+        if (elem.classList.contains('reminder-item-wrap')) {
+            left = left - 20;
+            top = window.innerHeight < 768 ? top - 200 : top - 150;
+        }
 
-      }
+        if (elem.tagName === 'TD') {
+            if (window.innerWidth >= 1348) {
+                left = left + 20;
+                top = elem.classList.contains('research-popup') ? top - 25 : top + 5;
+            } else if (window.innerWidth > 1023) {
+                left = elem.classList.contains('research-popup') ? left : left + 20;
+                top = top + 30;
+            } else if (window.innerWidth > 425) {
+                left = left + 20;
+                top = top + 30;
+            } else {
+                left = left + 90;
+                top = top + 25;
+            }
+        }
 
-      if (elem.tagName === 'TD') {
-          if (window.innerWidth >= 1348) {
-              left = left + 20;
-              top = elem.classList.contains('research-popup') ?top - 25 : top + 5;
-          } else if (window.innerWidth > 1023) {
-              left = elem.classList.contains('research-popup') ? left : left + 20;
-              top = top + 30;
-          } else if (window.innerWidth > 425) {
-              left = left + 20;
-              top = top + 30;
-          } else {
-              left = left + 90;
-              top = top + 25;
-          }
-      }
+        if ((top + contentBlock.offsetHeight) > window.innerHeight) {
+            top = coords.top - contentBlock.offsetHeight - 50;
+            var anchorElem = modal.querySelector('.dial-window');
+            var anchorClass = elem.dataset.popupPosition;
+            anchorElem.classList.remove(anchorClass);
+            anchorClass = anchorClass.replace('top', 'bottom');
+            anchorElem.classList.add(anchorClass);
+        }
 
-      if ((top + contentBlock.offsetHeight) > window.innerHeight ) {
-          top = coords.top - contentBlock.offsetHeight - 50;
-          var anchorElem = modal.querySelector('.dial-window');
-          var anchorClass = elem.dataset.popupPosition;
-          anchorElem.classList.remove(anchorClass);
-          anchorClass = anchorClass.replace('top', 'bottom');
-          anchorElem.classList.add(anchorClass);
-      }
+        if (elem.tagName !== 'TD' && !elem.classList.contains('reminder-item-wrap')) elem.classList.add('hightlight');
 
-      if(elem.tagName !== 'TD' && !elem.classList.contains('reminder-item-wrap')) elem.classList.add('hightlight');
+        left = left < 0 ? 0 : left;
+        top = top < 0 ? 0 : top;
 
-      left = left < 0 ? 0: left;
-      top = top < 0 ? 0: top;
-
-      contentBlock.style.left = left + "px";
-      contentBlock.style.top = top + "px";
-}, 100);
+        contentBlock.style.left = left + "px";
+        contentBlock.style.top = top + "px";
+    }, 100);
 
 
 }
@@ -109,7 +104,7 @@ function findPopup(index) {
 
     if (elem) {
         setTimeout(() => {
-          showModal(elem);
+            showModal(elem);
         }, 0)
     }
 }
