@@ -63,7 +63,7 @@ function showModal(elem) {
     if (elem.tagName === 'TD') {
         if (window.innerWidth >= 1348) {
             left = left + 20;
-            top = top - 25;
+            top = elem.classList.contains('research-popup') ?top - 25 : top + 5;
         } else if (window.innerWidth > 1023) {
             left = elem.classList.contains('research-popup') ? left : left + 20;
             top = top + 30;
