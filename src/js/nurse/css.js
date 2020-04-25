@@ -12,7 +12,7 @@ var container_pt = getStyle(container, 'padding-top');
 var container_pb = getStyle(container, 'padding-bottom');
 
 if (isSafari) {
-    if(winowWidth > 1023) {
+    if(winowWidth > 1023 && winowWidth < 1347) {
         container.style.height = `${winowHeight - parseInt(container_pt) - parseInt(container_pb)}px`;
     }
 }
@@ -46,7 +46,7 @@ var nurse_main_pb = getStyle(nurse_main, 'padding-bottom');
 var nurse_page_pt = getStyle(nurse_page, 'padding-top');
 var nurse_page_pb = getStyle(nurse_page, 'padding-bottom');
 
-table_wrapper.style.height =
+var tableHeigth =
     parseInt(winowHeight) -
     parseInt(nurse_page_pt) -
     parseInt(nurse_page_pb) -
@@ -57,9 +57,9 @@ table_wrapper.style.height =
     parseInt(content_block_pb) -
     parseInt(content_block_pt) -
     parseInt(content_title_mb) -
-    parseInt(content_title_h - parseInt(container_pt) - parseInt(container_pb)) + "px";
+    parseInt(content_title_h) - parseInt(container_pt) - parseInt(container_pb);
 
-
+table_wrapper.style.height = `${tableHeigth}px`;
 //table_container.style.height = table_wrapper.style.height;
-table_container.style.height = `${getStyle(table_wrapper, 'height')}px`;
-table_wrapper.style.maxHeight = `${getStyle(table_wrapper, 'height')}px`;
+table_container.style.height = `${tableHeigth}px`;
+table_wrapper.style.maxHeight = `${tableHeigth}px`;

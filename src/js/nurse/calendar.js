@@ -5,12 +5,12 @@
     const picker = datepicker('#calendar_input', {
         onSelect: (instance, date) => {
 
-        },
+        },/*
         onShow: instance => {
             setTimeout(() => {
                 elem.scrollIntoView(true);
             }, 0)
-        },
+        },*/
         formatter: (input, date, instance) => {
             // меняет формат даты на дд.мм.гггг
             let d = new Date();
