@@ -42,6 +42,7 @@
 
     // подключение скролла
     //initialize plugin with custom options on all div.scrolled elements and return all instances as array
+    if (document.querySelectorAll('.scrolled').length === 0) return;
     var instances = OverlayScrollbars(document.querySelectorAll('.scrolled'), {
         scrollbars: {
             autoHide: 'scroll',

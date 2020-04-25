@@ -1,5 +1,7 @@
 ;(function () {
-    const modalTemplate = document.getElementById('modal-template').innerHTML;
+    const dialogTemplElem = document.getElementById('modal-template');
+    if (!dialogTemplElem) return;
+    const modalTemplate = dialogTemplElem.innerHTML;
     const researchTemplate = document.getElementById('researchTable').innerHTML;
     const medicinesTemplate = document.getElementById('medicinesTable').innerHTML;
     let currentTableName = 'nurse_table';
