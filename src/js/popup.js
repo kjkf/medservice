@@ -7,7 +7,7 @@ var POPUP_TEMPLATE = document.querySelector('#modal-template').innerHTML;
 var popupIndex = 1;
 window.addEventListener("DOMContentLoaded", function (e) {
     setTimeout(function () {
-        return findPopup(popupIndex);
+        //return findPopup(popupIndex);
     }, 500);
 });
 

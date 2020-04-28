@@ -628,9 +628,9 @@
 					 data-popup-position="bottom-right"
 					 data-popup-index="1">
 
-					<button class="btn btn-content btn--blue" id="addNewDrug">Новый препарат</button>
+					<button class="btn btn-content btn--blue" id="addNewDrug" type="button">Новый препарат</button>
 					<button class="btn btn-content btn--blue" id="saveProtocolBtn" type="button" name="button">Сохранить протокол</button>
-					<button class="btn btn-content btn--blue">Создать протокол</button>
+					<button class="btn btn-content btn--blue" id="createProtocolBtn" type="button">Создать протокол</button>
 
 
 				</div>
@@ -749,6 +749,18 @@
 			<div class="row dial-window__footer">
 				<button class="btn btn-content btn--blue" id="cancel">Отмена</button>
 				<button class="btn btn-content btn--blue" id="create">Создать</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="template" id="dialogSimpleTemplate">
+	<div class="dial-window dial-window--msg dial-window--simple">
+		<button class="btn btn--small" id="cancel"></button>
+		<div class="dial-window__in">
+			<p class="dial-window__text">!!!!</p>
+			<div class="row dial-window__footer">
+				<button class="btn btn--blue" id="create">Готово</button>
 			</div>
 		</div>
 	</div>

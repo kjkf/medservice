@@ -1,14 +1,26 @@
 "use strict";
 
 // ============ Вывести диалоговое окно о создании протокола
+var createProtocolBtn = document.querySelector('#createProtocolBtn');
+
 var saveProtocolBtn = document.querySelector('#saveProtocolBtn');
 var createProtocolTempate = document.querySelector('#createProtocolDialog').innerHTML;
+
 var addRecomendBtn = document.querySelector('#addRecomend');
 var addRecomendTempate = document.querySelector('#addRecomendDialog').innerHTML;
 var template = document.querySelector('#modal-template').innerHTML;
+
+var dialogSimpleTemplate = document.querySelector('#dialogSimpleTemplate').innerHTML;
+
 saveProtocolBtn.addEventListener('click', function (e) {
-    return showCreateDialog(createProtocolTempate, addNewProtocol);
+    return showCreateDialog(createProtocolTempate, saveProtocolDialogShow);
 });
+
+createProtocolBtn.addEventListener('click', function (e) {
+    //deliverySuccessDialogShow();
+    createProtocolDialogShow();
+});
+
 addRecomendBtn.addEventListener('click', function (e) {
     //return showCreateDialog(addRecomendTempate, addNewRecomend);
     var dialog = showCreateDialog(addRecomendTempate, addNewRecomend);
@@ -22,12 +34,22 @@ addRecomendBtn.addEventListener('click', function (e) {
             overlay.style.paddingTop = paddingTop;
             overlay.style.alignItems = 'flex-start';
         }
-
     })
 });
 
-function addNewProtocol() {
-    console.log('Add New Protocol!!!');
+function saveProtocolDialogShow() {
+    const template = prepareTemplate(dialogSimpleTemplate, 'Протокол № 1234 успешно сохранен', 'large');
+    showCreateDialog(template);
+}
+
+function deliverySuccessDialogShow() {
+    const template = prepareTemplate(dialogSimpleTemplate, 'Доставка оформлена', '');
+    showCreateDialog(template);
+}
+
+function createProtocolDialogShow() {
+    const template = prepareTemplate(dialogSimpleTemplate, 'Протокол успешно синхронизирован со страницей пациента', 'synch');
+    showCreateDialog(template);
 }
 
 function addNewRecomend() {
@@ -63,23 +85,39 @@ function createDialog(dialogTempate) {
         },
         setAction: function setAction(action) {
             createButton.addEventListener('click', function (e) {
-                action();
                 document.body.removeChild(container);
+                if (action) action();
             });
         }
     };
 }
 
-var measureUnits;
-var drugsReleaseForms;
+/*
+* Функция, подготавливает шаблон для вывода одинаковых диалоговых окон
+* */
+function prepareTemplate(template, text, className) {
+    let div = document.createElement('div');
+    div.innerHTML = template;
+    const textDiv = div.querySelector('.dial-window__text');
+    textDiv.textContent = text;
+    if (className) {
+        const wrapper = div.querySelector('.dial-window--simple');
+        wrapper.classList.add(className);
+    }
+
+    return div.innerHTML;
+}
 
 function showCreateDialog(dialogTempate, addAction) {
     var dialog = createDialog(dialogTempate, addAction);
     dialog.open();
     dialog.setAction(addAction);
     return dialog;
-} // ============ Вывести диалоговое окно о добавлении нового препарата
+}
 
+// ============ Вывести диалоговое окно о добавлении нового препарата
+var measureUnits;
+var drugsReleaseForms;
 
 var addNewDrugBtn = document.querySelector('#addNewDrug');
 var addNewDrugTemplate = document.querySelector('#addNewDrugTemplate').innerHTML;
