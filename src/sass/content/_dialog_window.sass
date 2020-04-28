@@ -137,6 +137,7 @@
     width: 0px
     border: 20px solid transparent
 
+
 .dial-window--drug
   //min-height: 310px
   //1+phone_1
@@ -323,33 +324,7 @@
     +tablet
       padding: 55px 41px 28px
 
-    & .dial-window__text
-      font-size: 24px
-      line-height: 24px
-      padding-left: 60px
-      +tablet
-        font-size: 20px
-        line-height: 22px
-        //padding-left: 60px
-      color: $fontColorMain
-      -ms-text-align-last: right
-      text-align: left
-      position: relative
-      &:before
-        position: absolute
-        display: inline-block
-        content: ''
-        width: 47px
-        height: 36px
-        background:
-          image: url("../images/icon_check.svg")
-          repeat: no-repeat
-          position: center
-        left: -2px
-        top: 9px
-        +tablet
-          left: 0
-          top: 7px
+
 
   & .dial-window__footer .btn
     border-radius: 22px
@@ -406,7 +381,39 @@
         width: 82%
 
 
+.dial-window--success
+  & .dial-window__text
+    font-size: 20px
+    line-height: 24px
+    padding-left: 60px
+    +tablet
+      font-size: 20px
+      line-height: 22px
+    //padding-left: 60px
+    color: $fontColorMain
+    -ms-text-align-last: right
+    text-align: left
+    position: relative
+    &:before
+      position: absolute
+      display: inline-block
+      content: ''
+      width: 47px
+      height: 36px
+      background:
+        image: url("../images/icon_check.svg")
+        repeat: no-repeat
+        position: center
+      left: -2px
+      top: 9px
+      +tablet
+        left: 0
+        top: 7px
 
+.dial-window--create
+  width: 300px
+  .dial-window__in
+    padding: 70px 17px 24px
 
 
 .dial-layer

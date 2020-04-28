@@ -656,9 +656,13 @@
 </script>
 
 <script type="template" id="createProtocolDialog">
-	<div class="dial-window">
+	<div class="dial-window dial-window--msg dial-window--success dial-window--create">
+		<button class="btn btn--small" id="cancel"></button>
 		<div class="dial-window__in">
-			<button type="button" class="btn btn-print"><span class="btn-print__text">Печать</span></button>
+			<div class="row">
+				<p class="dial-window__text">Протокол создан успешно</p>
+				<button type="button" class="btn btn-print"><span class="btn-print__text">Печать</span></button>
+			</div>
 			<div class="dial-layer active">
 				<div class="dial-layer__top">
 					<label class="radio">
@@ -829,7 +833,7 @@
 </script>
 
 <script type="template" id="dialogSimpleTemplate">
-	<div class="dial-window dial-window--msg dial-window--simple">
+	<div class="dial-window dial-window--msg dial-window--success dial-window--simple">
 		<button class="btn btn--small" id="cancel"></button>
 		<div class="dial-window__in">
 			<p class="dial-window__text">!!!!</p>
