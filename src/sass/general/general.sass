@@ -122,6 +122,31 @@ h4
   padding-left: 10px
   padding-right: 10px
 
+.btn-print
+  background: #E2E7FF
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+  border-radius: 8px
+  width: 69px
+  height: 52px
+  padding: 3px 0px 3px!important
+  &__text
+    display: inline-block
+    position: relative
+    padding-top: 24px
+    &:before
+      content: ""
+      position: absolute
+      display: inline-block
+      top: 0px
+      left: calc(24px / 2)
+      width: 24px
+      height: 24px
+      background:
+        color: transparent
+        image: url("../images/icon_print.svg")
+        repeat: no-repeat
+        size: contain
+
 .btn-delete
   padding: 0px 18px 0 38px
   color: #FFFFFF
@@ -519,3 +544,4 @@ input[type="text"]
 .drop-list.active
   .drop-list__res
     display: flex
+
