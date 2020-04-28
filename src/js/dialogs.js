@@ -205,6 +205,8 @@ addNewDrugBtn.addEventListener('click', function (e) {
 
 function addNewDrug() {
     console.log('Add New Drug!!!');
+        const template = prepareTemplate(dialogSimpleTemplate, 'Препарат успешно добавлен', '');
+        showCreateDialog(template);
 }
 
 function togleActiveClass(elem) {
