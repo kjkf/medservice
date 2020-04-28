@@ -10,7 +10,7 @@
     window.addEventListener("DOMContentLoaded", function (e) {
         //if (window.innerWidth > 768) {
         setTimeout(function () {
-            return findPopup(popupIndex);
+            //return findPopup(popupIndex);
         }, 500);
         //}
     });

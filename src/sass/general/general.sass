@@ -324,6 +324,10 @@ input[type="text"]
 .flex
   +flexbox
 
+.flexDirCol
+  flex-direction: column !important
+
+
 .flex-col
   +flex-direction(column)
   //+align-self(flex-start)
@@ -415,3 +419,103 @@ input[type="text"]
 .scrolled
   scrollbar-color: #3677D2 #CBD3FF
   scrollbar-width: thin
+
+.radio input
+  position: absolute
+  z-index: -1
+  opacity: 0
+  margin: 10px 0 0 7px
+
+.radio__text
+  position: relative
+  padding: 0 0 0 30px
+  cursor: pointer
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0px
+    left: 0px
+    width: calc(#{$radio_w} - #{$radio_br}*2)
+    height: calc(#{$radio_w} - #{$radio_br}*2)
+    border: $radio_br solid #C3D1FF
+    border-radius: 50%
+    background: transparent
+
+  &:after
+    content: ''
+    position: absolute
+    top: calc((#{$radio_w} - #{$radio_in_w}) / 2)
+    left: calc((#{$radio_w} - #{$radio_in_w}) / 2)
+    width: $radio_in_w
+    height: $radio_in_h
+    border-radius: 50%
+    background: #C3D1FF
+    opacity: 0
+    transition: .2s
+
+.radio input
+  &:checked + .radio__text:after
+    opacity: 1
+
+  &:focus + .radio__text:before
+    //box-shadow: 0 0 0 3px rgba(255, 255, 0, 0.7)
+
+//drop-list
+.drop-list-wrap
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+
+  
+.drop-list-label
+  font-size: 16px
+  line-height: 21px
+  color: #4D83C9
+
+.drop-list
+  display: flex
+  flex-direction: column
+  position: relative
+
+  font-size: 19px
+  line-height: 24px
+  
+
+.drop-list__input
+  font-size: 19px
+  line-height: 24px
+  color: #CDCDCD
+  width: 100%
+  min-height: 38px
+  padding: 7px 21px
+  background: #FFFFFF
+  border: 1px solid #C4D1FF
+  box-sizing: border-box
+  box-shadow: inset 0px 1px 8px rgba(131, 131, 131, 0.25)
+  border-radius: 8px
+
+.drop-list__res
+  margin: 0px
+  padding: 0px 21px
+  background: #FFFFFF
+  border: 1px solid #C4D1FF
+  box-sizing: border-box
+  box-shadow: inset 0px 1px 8px rgba(131, 131, 131, 0.25)
+  border-radius: 0 0 8px 8px
+  list-style: none
+  display: flex
+  flex-direction: column
+
+  position: absolute
+  top: 38px
+  left: 0px
+  width: 100%
+  display: none
+
+  &__item
+    display: inline-flex
+
+.drop-list.active
+  .drop-list__res
+    display: flex

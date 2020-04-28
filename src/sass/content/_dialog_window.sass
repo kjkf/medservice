@@ -408,3 +408,47 @@
 
 
 
+
+.dial-layer
+  background-color: #F5F5F5
+  border: 1px solid transparent
+  box-sizing: border-box
+
+  border-radius: 8px
+  font-size: 20px
+  display: flex
+  flex-direction: column
+  padding: 25px 20px 15px
+  margin-bottom: 10px
+  &:last-child
+    margin-bottom: 0px
+  &.active
+    border-color: #284C8A
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25)
+    .radio__text
+      &:before
+        border-color: #284D8A
+      &:after
+        background: #284D8A
+    .btn-arrow.layer__btn
+      transform: rotate(180deg)
+    .dial-layer__bottom
+      display: flex
+
+.dial-layer__top
+  display: flex
+  flex-direction: row
+  justify-content: flex-start
+  align-items: center
+
+.dial-layer__bottom
+  display: flex
+  flex-direction: column
+  margin-top: 25px
+  display: none
+
+  .drop-list-wrap
+    margin-bottom: 5px
+  .btn-content
+    margin-top: 15px
+
