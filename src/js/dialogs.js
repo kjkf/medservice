@@ -39,7 +39,7 @@ createProtocolBtn.addEventListener('click', function (e) {
 
         input.addEventListener('blur', e => {
             const timer = setTimeout(() => {
-                dropList.classList.remove('active');
+                //dropList.classList.remove('active');
             }, 200);
 
         });
@@ -48,7 +48,7 @@ createProtocolBtn.addEventListener('click', function (e) {
         results.addEventListener('click', event =>{
             if (event.target.tagName === 'UL') return;
             const span = event.target.tagName === 'SPAN' ? event.target : event.target.querySelector('span');
-            input.value = span.innerHTML;
+            input.value = span.innerHTML;//.slice(1);
             dropList.classList.remove('active');
         });
     });
@@ -112,15 +112,18 @@ function createDialog(dialogTempate) {
     popupContainer.innerHTML = dialogTempate;
     var action = {};
     var closeButton = container.querySelector('#cancel');
-    closeButton.addEventListener('click', function (e) {
-        document.body.removeChild(container);
-    });
+    if (closeButton) {
+        closeButton.addEventListener('click', function (e) {
+            document.body.removeChild(container);
+        });
+    }
     var createButton = container.querySelector('#create');
     overlay.addEventListener('click', function (e) {
         if (e.target === overlay) {
-            closeButton.click();
+            document.body.removeChild(container);
         }
     });
+
     return {
         container: container,
         open: function open() {
@@ -130,6 +133,7 @@ function createDialog(dialogTempate) {
             document.body.removeChild(container);
         },
         setAction: function setAction(action) {
+            if (!createButton) return;
             createButton.addEventListener('click', function (e) {
                 document.body.removeChild(container);
                 if (action) action();

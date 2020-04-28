@@ -507,7 +507,6 @@ input[type="text"]
 
   font-size: 19px
   line-height: 24px
-  
 
 .drop-list__input
   font-size: 19px
@@ -516,15 +515,25 @@ input[type="text"]
   width: 100%
   min-height: 38px
   padding: 7px 21px
-  background: #FFFFFF
+  background: #ffffff
   border: 1px solid #C4D1FF
   box-sizing: border-box
   box-shadow: inset 0px 1px 8px rgba(131, 131, 131, 0.25)
   border-radius: 8px
+  position: relative
+  &:before
+    content: ''
+    position: absolute
+    display: inline-block
+    width: 14px
+    height: 19px
+    left: 0
+    top: 0
+    background-color: #00ff00
 
 .drop-list__res
   margin: 0px
-  padding: 0px 21px
+  padding: 0px 15px
   background: #FFFFFF
   border: 1px solid #C4D1FF
   box-sizing: border-box
@@ -546,10 +555,22 @@ input[type="text"]
 .drop-list.active
   .drop-list__res
     display: flex
+    z-index: 110
+    height: 235px
+    overflow-y: scroll
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+    border-radius: 12px
 
 .drop-list__item
+  padding: 10px 5px 12px 10px
+  font-size: 18px
+  line-height: 23px
+  +tablet
+    font-size: 14px
   &:hover
-    background: #C9E3FF
+    background: $menuBgColor
+    border-radius: 12px
+    color: #ffffff
     cursor: pointer
 
 

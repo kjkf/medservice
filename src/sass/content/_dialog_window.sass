@@ -315,7 +315,7 @@
   +phone_1
     width: 100%
 
-.dial-window--simple
+.dial-window--simple.dial-window--success
   width: 404px
   +tablet
     width: 300px
@@ -323,8 +323,6 @@
     padding: 36px 95px 28px
     +tablet
       padding: 55px 41px 28px
-
-
 
   & .dial-window__footer .btn
     border-radius: 22px
@@ -363,7 +361,7 @@
     & .dial-window__in
       padding: 36px 46px 28px 95px
       +tablet
-        padding: 55px 41px 28px
+        padding: 55px 33px 28px
     & .dial-window__text
       padding-left: 50px
       +tablet
@@ -376,12 +374,13 @@
           top: 7px
 
     & .dial-window__footer
-      justify-content: flex-start
+      justify-content: center
       .btn
-        width: 82%
+        //width: 82%
 
 
 .dial-window--success
+  width: 460px
   & .dial-window__text
     font-size: 20px
     line-height: 24px
@@ -411,9 +410,21 @@
         top: 7px
 
 .dial-window--create
-  width: 300px
+  width: 460px
   .dial-window__in
-    padding: 70px 17px 24px
+    padding: 33px 34px 24px 38px
+    +tablet
+      padding: 73px 17px 28px
+    .row
+      justify-content: space-between
+      //margin-bottom: 21px
+      .dial-window__text
+        width: 35%
+        +tablet
+          width: 48%
+          +tablet
+            font-size: 19px
+
 
 
 .dial-layer
@@ -425,7 +436,10 @@
   font-size: 20px
   display: flex
   flex-direction: column
-  padding: 25px 20px 15px
+  //padding: 25px 20px 15px
+  padding: 25px 48px 15px 53px
+  +tablet
+    padding: 22px 15px 15px 15px
   margin-bottom: 10px
   &:last-child
     margin-bottom: 0px
@@ -459,5 +473,10 @@
   .drop-list-wrap
     margin-bottom: 5px
   .btn-content
+    +tablet
+      width: 85%
+      align-self: center
+      font-size: 18px
+      padding: 6px 20px 7px
     margin-top: 15px
 

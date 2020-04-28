@@ -657,7 +657,6 @@
 
 <script type="template" id="createProtocolDialog">
 	<div class="dial-window dial-window--msg dial-window--success dial-window--create">
-		<button class="btn btn--small" id="cancel"></button>
 		<div class="dial-window__in">
 			<div class="row">
 				<p class="dial-window__text">Протокол создан успешно</p>
@@ -676,12 +675,19 @@
 						<label class="drop-list-label">Назначить пациенту №</label>
 						<div class="drop-list">
 							<input type="text" class="drop-list__input" placeholder="ХХХХХ">
-							<ul class="drop-list__res">
-								<li class="drop-list__item"><span>Иванов</span></li>
-								<li class="drop-list__item"><span>Петров</span></li>
-								<li class="drop-list__item"><span>Сидоров</span></li>
-								<li class="drop-list__item"><span>Чернов</span></li>
-								<li class="drop-list__item"><span>Орлов</span></li>
+							<ul class="drop-list__res scrolled">
+								<li class="drop-list__item"><span>№ 2344</span></li>
+								<li class="drop-list__item"><span>№ 2345</span></li>
+								<li class="drop-list__item"><span>№ 2346</span></li>
+								<li class="drop-list__item"><span>№ 2347</span></li>
+								<li class="drop-list__item"><span>№ 2348</span></li>
+								<li class="drop-list__item"><span>№ 2349</span></li>
+								<li class="drop-list__item"><span>№ 2350</span></li>
+								<li class="drop-list__item"><span>№ 2351</span></li>
+								<li class="drop-list__item"><span>№ 2352</span></li>
+								<li class="drop-list__item"><span>№ 2353</span></li>
+								<li class="drop-list__item"><span>№ 2354</span></li>
+								<li class="drop-list__item"><span>№ 2355</span></li>
 							</ul>
 						</div>
 					</div>
@@ -702,10 +708,19 @@
 						<label class="drop-list-label">Больница</label>
 						<div class="drop-list ">
 							<input type="text" class="drop-list__input" placeholder="Выберите больницу">
-							<ul class="drop-list__res">
-								<li class="drop-list__item"><span>Первая городская больница</span></li>
-								<li class="drop-list__item"><span>Областная</span></li>
-								<li class="drop-list__item"><span>Республиканская</span></li>
+							<ul class="drop-list__res scrolled">
+								<li class="drop-list__item"><span>Больница №8, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №9, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №10, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №11, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №8, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №9, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №10, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №11, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №8, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №9, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №10, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №11, ул. Название</span></li>
 							</ul>
 						</div>
 					</div>
@@ -713,21 +728,22 @@
 						<label class="drop-list-label">Доктор</label>
 						<div class="drop-list ">
 							<input type="text" class="drop-list__input" placeholder="Выберите доктора">
-							<ul class="drop-list__res">
-								<li class="drop-list__item"><span>Иванов</span></li>
-								<li class="drop-list__item"><span>Петров</span></li>
-								<li class="drop-list__item"><span>Сидоров</span></li>
-								<li class="drop-list__item"><span>Чернов</span></li>
-								<li class="drop-list__item"><span>Орлов</span></li>
+							<ul class="drop-list__res scrolled">
+								<li class="drop-list__item"><span>Иванов Иван Иванович</span></li>
+								<li class="drop-list__item"><span>Петров Петр Петрович</span></li>
+								<li class="drop-list__item"><span>Сидоров Иван Семенович</span></li>
+								<li class="drop-list__item"><span>Чернов Семен Петрович</span></li>
+								<li class="drop-list__item"><span>Орлов Петр Иванович</span></li>
+								<li class="drop-list__item"><span>Иванов Иван Иванович</span></li>
+								<li class="drop-list__item"><span>Петров Петр Петрович</span></li>
+								<li class="drop-list__item"><span>Сидоров Иван Семенович</span></li>
+								<li class="drop-list__item"><span>Чернов Семен Петрович</span></li>
+								<li class="drop-list__item"><span>Орлов Петр Иванович</span></li>
 							</ul>
 						</div>
 					</div>
 					<button class="btn btn-content btn--blue" id="btn-sync">Оформить доставку</button>
 				</div>
-			</div>
-			<div class="row dial-window__footer">
-				<button class="btn btn-content btn--blue" id="cancel">Отмена</button>
-				<button class="btn btn-content btn--blue" id="create">Создать</button>
 			</div>
 		</div>
 	</div>
