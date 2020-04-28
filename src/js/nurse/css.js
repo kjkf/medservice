@@ -74,18 +74,5 @@
     table_container.style.height = `${tableHeigth}px`;
     table_wrapper.style.maxHeight = `${tableHeigth}px`;
 
-    console.log("winowHeight " + winowHeight);
-    console.log("nurse_page_pt " + nurse_page_pt);
-    console.log("nurse_page_pb " + nurse_page_pb) ;
-    console.log("nurse_main_pt " + nurse_main_pt) ;
-    console.log("nurse_main_pb " + nurse_main_pb) ;
-    console.log("header_block_mb " + header_block_mb) ;
-    console.log("header_block_h " + header_block_h) ;
-    console.log("content_block_pb " + content_block_pb) ;
-    console.log("content_block_pt " + content_block_pt) ;
-    console.log("content_title_mb " + content_title_mb) ;
-    console.log("content_title_h " + content_title_h);
-    console.log("container_pt " + container_pt);
-    console.log("container_pt " + container_pb);
 
 })();
