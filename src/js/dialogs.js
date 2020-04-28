@@ -2,9 +2,10 @@
 
 // ============ Вывести диалоговое окно о создании протокола
 var createProtocolBtn = document.querySelector('#createProtocolBtn');
+var createProtocolTempate = document.querySelector('#createProtocolDialog').innerHTML;
 
 var saveProtocolBtn = document.querySelector('#saveProtocolBtn');
-var createProtocolTempate = document.querySelector('#createProtocolDialog').innerHTML;
+var saveProtocolDialog = document.querySelector('#saveProtocolDialog').innerHTML;
 
 var addRecomendBtn = document.querySelector('#addRecomend');
 var addRecomendTempate = document.querySelector('#addRecomendDialog').innerHTML;
@@ -13,12 +14,57 @@ var template = document.querySelector('#modal-template').innerHTML;
 var dialogSimpleTemplate = document.querySelector('#dialogSimpleTemplate').innerHTML;
 
 saveProtocolBtn.addEventListener('click', function (e) {
-    return showCreateDialog(createProtocolTempate, saveProtocolDialogShow);
+    return showCreateDialog(saveProtocolDialog, saveProtocolDialogShow);
 });
 
 createProtocolBtn.addEventListener('click', function (e) {
-    //deliverySuccessDialogShow();
-    createProtocolDialogShow();
+    const dialog = showCreateDialog(createProtocolTempate, saveProtocolDialogShow);
+
+    const radio = dialog.container.querySelectorAll('input[name=radio]');
+    radio.forEach(r => {
+        r.addEventListener('change', e => {
+            const layer = r.closest('.dial-layer');
+            const active = dialog.container.querySelector('.dial-layer.active');
+            active.classList.remove('active');
+            layer.classList.add('active');
+        })
+    });
+
+    const dropListInputs = document.querySelectorAll('.drop-list__input');
+    dropListInputs.forEach(input => {
+        const dropList = input.closest('.drop-list');
+        input.addEventListener('focus', e => {
+            dropList.classList.add('active');
+        });
+
+        input.addEventListener('blur', e => {
+            const timer = setTimeout(() => {
+                dropList.classList.remove('active');
+            }, 200);
+
+        });
+
+        const results = dropList.querySelector('.drop-list__res');
+        results.addEventListener('click', event =>{
+            if (event.target.tagName === 'UL') return;
+            const span = event.target.tagName === 'SPAN' ? event.target : event.target.querySelector('span');
+            input.value = span.innerHTML;
+            dropList.classList.remove('active');
+        });
+    });
+
+    const syncBtn = dialog.container.querySelector('#btn-sync');
+    const assignBtn = dialog.container.querySelector('#btn-assign');
+
+    assignBtn.addEventListener('click', e => {
+        dialog.close();
+        createProtocolDialogShow();
+    });
+
+    syncBtn.addEventListener('click', e => {
+        dialog.close();
+        deliverySuccessDialogShow();
+    });
 });
 
 addRecomendBtn.addEventListener('click', function (e) {

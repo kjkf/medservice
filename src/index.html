@@ -661,7 +661,7 @@
 			<div class="dial-layer active">
 				<div class="dial-layer__top">
 					<label class="radio">
-						<input type="radio" name="radio" />
+						<input type="radio" name="radio" value="patient" checked/>
 						<div class="radio__text">Назначить пациенту</div>
 					</label>
 					<button class="layer__btn btn-arrow"></button>
@@ -669,23 +669,25 @@
 				<div class="dial-layer__bottom">
 					<div class="drop-list-wrap">
 						<label class="drop-list-label">Назначить пациенту №</label>
-						<div class="drop-list active">
+						<div class="drop-list">
 							<input type="text" class="drop-list__input" placeholder="ХХХХХ">
 							<ul class="drop-list__res">
-								<li class="drop-list__item"><span>1 text</span></li>
-								<li class="drop-list__item"><span>1 text</span></li>
-								<li class="drop-list__item"><span>1 text</span></li>
+								<li class="drop-list__item"><span>Иванов</span></li>
+								<li class="drop-list__item"><span>Петров</span></li>
+								<li class="drop-list__item"><span>Сидоров</span></li>
+								<li class="drop-list__item"><span>Чернов</span></li>
+								<li class="drop-list__item"><span>Орлов</span></li>
 							</ul>
 						</div>
 					</div>
-					<button class="btn btn-content btn&#45;&#45;blue">Назначить пациенту</button>
+					<button class="btn btn-content btn--blue" id="btn-assign">Назначить пациенту</button>
 				</div>
 			</div>
 
-			<div class="dial-layer active deliver">
+			<div class="dial-layer deliver">
 				<div class="dial-layer__top">
 					<label class="radio">
-						<input type="radio" name="radio"/>
+						<input type="radio" name="radio"  value="deliver"  />
 						<div class="radio__text">Заказать доставку</div>
 					</label>
 					<button class="layer__btn btn-arrow"></button>
@@ -696,9 +698,9 @@
 						<div class="drop-list ">
 							<input type="text" class="drop-list__input" placeholder="Выберите больницу">
 							<ul class="drop-list__res">
-								<li class="drop-list__item"><span>1 text</span></li>
-								<li class="drop-list__item"><span>1 text</span></li>
-								<li class="drop-list__item"><span>1 text</span></li>
+								<li class="drop-list__item"><span>Первая городская больница</span></li>
+								<li class="drop-list__item"><span>Областная</span></li>
+								<li class="drop-list__item"><span>Республиканская</span></li>
 							</ul>
 						</div>
 					</div>
@@ -707,26 +709,28 @@
 						<div class="drop-list ">
 							<input type="text" class="drop-list__input" placeholder="Выберите доктора">
 							<ul class="drop-list__res">
-								<li class="drop-list__item"><span>1 text</span></li>
-								<li class="drop-list__item"><span>1 text</span></li>
-								<li class="drop-list__item"><span>1 text</span></li>
+								<li class="drop-list__item"><span>Иванов</span></li>
+								<li class="drop-list__item"><span>Петров</span></li>
+								<li class="drop-list__item"><span>Сидоров</span></li>
+								<li class="drop-list__item"><span>Чернов</span></li>
+								<li class="drop-list__item"><span>Орлов</span></li>
 							</ul>
 						</div>
 					</div>
-					<button class="btn btn-content btn&#45;&#45;blue">Оформить доставку</button>
+					<button class="btn btn-content btn--blue" id="btn-sync">Оформить доставку</button>
 				</div>
 			</div>
 
 
 			<div class="row dial-window__footer">
-				<button class="btn btn-content btn&#45;&#45;blue" id="cancel">Отмена</button>
-				<button class="btn btn-content btn&#45;&#45;blue" id="create">Создать</button>
+				<button class="btn btn-content btn--blue" id="cancel">Отмена</button>
+				<button class="btn btn-content btn--blue" id="create">Создать</button>
 			</div>
 		</div>
 	</div>
 </script>
 
-<!--<script type="template" id="createProtocolDialog">
+<script type="template" id="saveProtocolDialog">
 	<div class="dial-window">
 		<div class="dial-window__in">
 			<h5 class="dial-window__title">Сохранить новый протокол?</h5>
@@ -734,12 +738,12 @@
 				<input type="text" class="input-field" placeholder="Введите название протокола" />
 			</div>
 			<div class="row dial-window__footer">
-				<button class="btn btn-content btn&#45;&#45;blue" id="cancel">Отмена</button>
-				<button class="btn btn-content btn&#45;&#45;blue" id="create">Создать</button>
+				<button class="btn btn-content btn--blue" id="cancel">Отмена</button>
+				<button class="btn btn-content btn--blue" id="create">Создать</button>
 			</div>
 		</div>
 	</div>
-</script>-->
+</script>
 
 <script type="template" id="addNewDrugTemplate">
 	<div class="dial-window dial-window--wide dial-window--drug">
