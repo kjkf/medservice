@@ -13,13 +13,16 @@ var template = document.querySelector('#modal-template').innerHTML;
 
 var dialogSimpleTemplate = document.querySelector('#dialogSimpleTemplate').innerHTML;
 
+// диалоговое окно на кнопку Сохранить протокол
 saveProtocolBtn.addEventListener('click', function (e) {
     return showCreateDialog(saveProtocolDialog, saveProtocolDialogShow);
 });
 
+// диалоговое окно на кнопку Создать протокол
 createProtocolBtn.addEventListener('click', function (e) {
     const dialog = showCreateDialog(createProtocolTempate, saveProtocolDialogShow);
 
+    // инициализация событий переключателя
     const radio = dialog.container.querySelectorAll('input[name=radio]');
     radio.forEach(r => {
         r.addEventListener('change', e => {
@@ -30,6 +33,7 @@ createProtocolBtn.addEventListener('click', function (e) {
         })
     });
 
+    // выпадающий список
     const dropListInputs = document.querySelectorAll('.drop-list__input');
     dropListInputs.forEach(input => {
         const dropList = input.closest('.drop-list');
@@ -56,17 +60,19 @@ createProtocolBtn.addEventListener('click', function (e) {
     const syncBtn = dialog.container.querySelector('#btn-sync');
     const assignBtn = dialog.container.querySelector('#btn-assign');
 
+    // обрабатывает клик на кнопку  Назначить пациенту
     assignBtn.addEventListener('click', e => {
         dialog.close();
         createProtocolDialogShow();
     });
-
+// обрабатывает клик на кнопку  Оформить доставку
     syncBtn.addEventListener('click', e => {
         dialog.close();
         deliverySuccessDialogShow();
     });
 });
 
+//обрабатывает клик на кнопку Добавить рекомендации
 addRecomendBtn.addEventListener('click', function (e) {
     //return showCreateDialog(addRecomendTempate, addNewRecomend);
     var dialog = showCreateDialog(addRecomendTempate, addNewRecomend);

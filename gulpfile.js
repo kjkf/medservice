@@ -13,6 +13,9 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const svgo = require('gulp-svgo');
 const svgSprite=require('gulp-svg-sprite');
+const gulpif = require('gulp-if');
+
+const env = process.env.NODE_ENV;
 
 const reload = browserSync.reload;
 sass.compiler = require('node-sass');
@@ -64,7 +67,7 @@ const styles = [
 
 task('styles', () => {
     return src(styles)
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(env === 'dev', sourcemaps.init()))
         .pipe(concat('styles.min.sass'))
         .pipe(sassGlob())
         .pipe(sass().on('error', sass.logError))
@@ -72,9 +75,9 @@ task('styles', () => {
         .pipe(autoprefixer({
             cascade: false
         }))
-        //.pipe(gcmq())
-        //.pipe(cleanCSS())
-        .pipe(sourcemaps.write())
+        .pipe(gulpif(env === 'prod', gcmq()))
+        .pipe(gulpif(env === 'prod', cleanCSS()))
+        .pipe(gulpif(env === 'dev', sourcemaps.write()))
         .pipe(dest('dist/css'))
         .pipe(reload({stream: true}));
 });
@@ -104,14 +107,14 @@ task('icons', () => {
 
 task("scripts", () => {
     return src('src/js/*.js')
-        .pipe(sourcemaps.init())
+        .pipe(gulpif(env === 'dev', sourcemaps.init()))
         .pipe(concat('main.min.js', { newLine: ";" }))
         .pipe(babel({
                 presets: ['@babel/env']
             })
         )
         .pipe(uglify())
-        .pipe(sourcemaps.write())
+        .pipe(gulpif(env === 'dev', sourcemaps.write()))
         .pipe(dest('dist/js'))
         .pipe(reload({stream: true}))
 });
@@ -163,17 +166,32 @@ task('server', () => {
     });
 });
 
-watch('./src/sass/**/*.sass', series("styles"));
-watch('./src/js/*.js', series("scripts"));
-watch('./src/js/nurse/*.js', series("scripts:nurse"));
-watch('./src/*.html', series("copy:html"));
-watch('./src/*.css', series("copy:css"));
-watch('./src/*.ico', series("copy:favicon"));
-watch('./src/fonts/**/*.*', series("copy:fonts"));
-watch('./src/images/**/*.*', series("copy:images"));
-watch('./src/upload/**/*.*', series("copy:upload"));
-watch('./src/js/components/*.js', series("copy:jsComponents"));
-watch('./src/images/nurse/sprite/*.svg', series("icons"));
+task('watch', () => {
+    watch('./src/sass/**/*.sass', series("styles"));
+    watch('./src/js/*.js', series("scripts"));
+    watch('./src/js/nurse/*.js', series("scripts:nurse"));
+    watch('./src/*.html', series("copy:html"));
+    watch('./src/*.css', series("copy:css"));
+    watch('./src/*.ico', series("copy:favicon"));
+    watch('./src/fonts/**/*.*', series("copy:fonts"));
+    watch('./src/images/**/*.*', series("copy:images"));
+    watch('./src/upload/**/*.*', series("copy:upload"));
+    watch('./src/js/components/*.js', series("copy:jsComponents"));
+    watch('./src/images/nurse/sprite/*.svg', series("icons"));
+});
 
 //task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:fonts', 'copy:images', 'styles', 'icons', 'scripts'), 'server'));
-task("default", series('clean', parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'icons', 'copy:jsComponents', 'styles', 'scripts:jsLibs', 'scripts', 'scripts:nurse'), 'server'));
+task(
+    "default",
+    series('clean',
+        parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'icons', 'copy:jsComponents', 'styles', 'scripts:jsLibs', 'scripts', 'scripts:nurse'),
+        parallel('watch', 'server')
+    )
+);
+
+task(
+    "build",
+    series('clean',
+        parallel('copy:html', 'copy:favicon', 'copy:css', 'copy:fonts', 'copy:images', 'copy:upload', 'icons', 'copy:jsComponents', 'styles', 'scripts:jsLibs', 'scripts', 'scripts:nurse')
+    )
+);
