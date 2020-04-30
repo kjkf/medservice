@@ -5,7 +5,7 @@ var isIphone = currentUserAgent.indexOf('iphone') > -1 || currentUserAgent.index
 var isSafari = (currentUserAgent.indexOf('safari') > -1 && currentUserAgent.indexOf('win') === -1) && (currentUserAgent.indexOf('mobile') === -1 || isIphone);
 console.log(currentUserAgent, 'isSafari', isSafari);
 var blocks = document.getElementsByClassName("block");
-var drugs = document.getElementsByClassName("drugs");//for back-end
+var blocks_wrapper = document.getElementsByClassName("block-wrapper");//for back-end
 var filter = document.getElementsByClassName("filter");
 var inside_block = document.getElementsByClassName("inside-block");
 var menu_list = document.getElementsByClassName("menu-list");
@@ -146,8 +146,8 @@ if (isSafari) {
             blocks[_i2].style.display = "-webkit-inline-flex";
         }
         //for back-end
-        for (var _i2 = 0; _i2 < drugs.length; _i2++) {
-            drugs[_i2].style.display = "-webkit-inline-flex";
+        for (var _i2 = 0; _i2 < blocks_wrapper.length; _i2++) {
+            blocks_wrapper[_i2].style.display = "-webkit-inline-flex";
         }
         //----
 
@@ -167,8 +167,8 @@ if (isSafari) {
             blocks[_i5].style.display = "-webkit-inline-flex";
         }
         //for back-end
-        for (var _i5 = 0; _i5 < drugs.length; _i5++) {
-            drugs[_i5].style.display = "-webkit-inline-flex";
+        for (var _i5 = 0; _i5 < blocks_wrapper.length; _i5++) {
+            blocks_wrapper[_i5].style.display = "-webkit-inline-flex";
         }
         //----
 
