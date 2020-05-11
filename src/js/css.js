@@ -65,12 +65,15 @@ if (parseInt(content_w) > 860) {
 }
 
 mp_left = winowWidth / 2 - (parseInt(mp_w) + parseInt(content_w)) / 2;
+
 MAIN_PANEL.style.left = mp_left + 'px';
 mp_header_h = mp_header.clientHeight;
 mp_footer_h = mp_footer.clientHeight;
 mp_menu_list.style.height = parseInt(mp_h) - parseInt(mp_header_h) - parseInt(mp_footer_h) - parseInt(menu_list_mb) - parseInt(menu_list_pt) + "px";
 contentEl.style.height = content_h + "px";
-contentEl.style.width = content_w + "px";
+//contentEl.style.width = content_w + "px";
+content_w = content_w === 0 ? mp_w : content_w; //в мобильной и планшетной версии ширина content_w и mp_w совпадают, поэтому в вычислениях выше content_w === 0
+contentEl.style.width = `${content_w}px`;
 contentEl.style.top = "" + container_pt;
 contentEl.style.left = mp_left + mp_w + "px";
 block_head_h = block_heads.clientHeight;
@@ -79,7 +82,7 @@ mainContent_footer.style.right = parseInt(container_pr) + "px";
 mainContent_footer.style.bottom = parseInt(container_pb) + "px";
 
 mainContent_footer.style.width = content_w + "px";
-console.log(content_w);
+console.log('content_w = ' + content_w);
 
 if (window.innerWidth >= 1024) {
     var containerBox = container.getBoundingClientRect();
@@ -117,11 +120,11 @@ if (window.innerWidth <= 1023) {
         mp_h = winowHeight - parseInt(container_pt) - parseInt(container_pb) - parseInt(mp_pt) - parseInt(mp_pb);
         MAIN_PANEL.style.height = mp_h + "px";
         mp_menu_list.style.height = mp_h - parseInt(mp_header_h) - parseInt(mp_footer_h) - parseInt(menu_list_mb) - parseInt(menu_list_pt) + "px";
-        console.log("mp_h =" + mp_h);
+       /* console.log("mp_h =" + mp_h);
         console.log("mp_header_h =" + mp_header_h);
         console.log("mp_footer_h =" + mp_footer_h);
         console.log("menu_list_mb =" + menu_list_mb);
-        console.log("menu_list_pt =" + menu_list_pt);
+        console.log("menu_list_pt =" + menu_list_pt);*/
     });
 } //console.log(dragName.closest('input-field__wrap'));
 
