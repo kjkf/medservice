@@ -177,7 +177,7 @@ if (isSafari) {
 
         MAIN_PANEL.style.width = parseInt(mp_w) - 0 + "px";
         contentEl.style.width = content_w + 0 + "px";
-        contentEl.style.left = parseInt(mp_left) + parseInt(mp_w) - 0 + "px";
+        //contentEl.style.left = parseInt(mp_left) + parseInt(mp_w) - 0 + "px";
     }
 
     if (window.innerWidth >= 1023 && window.innerWidth <= 912) {
