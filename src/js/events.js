@@ -77,9 +77,9 @@ searchProtocolsFld.addEventListener('input', function (e) {
         }
 
         if (count === 0) {
-            emptyResultsDiv.classList.remove('hide');
+            emptyResultsDiv.classList.remove('hidden');
         } else {
-            emptyResultsDiv.classList.add('hide');
+            emptyResultsDiv.classList.add('hidden');
         }
     }, 3000)();
 }); //Обработка клика по кнопки сохраненные протокола
