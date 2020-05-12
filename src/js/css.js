@@ -174,8 +174,8 @@ if (isSafari) {
             blocks_wrapper[_i5].style.display = "-webkit-inline-flex";
         }
         //----
-
-        MAIN_PANEL.style.width = parseInt(mp_w) - 0 + "px";
+//console.log('mp_w = ', mp_w);
+        //MAIN_PANEL.style.width = parseInt(mp_w) - 0 + "px";
         contentEl.style.width = content_w + 0 + "px";
         //contentEl.style.left = parseInt(mp_left) + parseInt(mp_w) - 0 + "px";
     }
