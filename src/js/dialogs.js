@@ -25,11 +25,17 @@ createProtocolBtn.addEventListener('click', function (e) {
     // инициализация событий переключателя
     const radio = dialog.container.querySelectorAll('input[name=radio]');
     radio.forEach(r => {
-        r.addEventListener('change', e => {
+        r.addEventListener('click', e => {
             const layer = r.closest('.dial-layer');
             const active = dialog.container.querySelector('.dial-layer.active');
             active.classList.remove('active');
             layer.classList.add('active');
+        });
+        const btn = r.closest('label').nextElementSibling;
+        btn.addEventListener('click', () => {
+            console.log(r.checked);
+            r.checked = !r.checked;
+            r.click();
         })
     });
 
