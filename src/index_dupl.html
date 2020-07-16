@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/styles.min.css">
+	<title>Medical Service</title>
+</head>
+<body>
+<div class="container">
+	<div class="main-panel popup-wrapper"><!--return-unfold-->
+		<div class="main-panel__in main-panel__header">
+			<div class="mob-menu"></div>
+			<div class="datetime">
+				<div class="time-hm">21:45</div>
+				<div class="date-sd">
+					<div class="seconds">37</div>
+					<div class="date-md">Февраль 24</div>
+				</div>
+			</div>
+			<div class="search-bar">
+				<span class="search-bar__icon"></span>
+				<input id="searchProtocols" class="search-bar__field" type="text" placeholder="Поиск" />
+			</div>
+		</div>
+		<div class="main-panel__in main-panel__menu menu-list-wrap">
+			<span class="hidden isEmptyResults">По вашему запросу протоколов не найдено!</span>
+			<ul class="menu-list">
+				<li class="menu-list__item active"><a href="">Протокол №1</a></li>
+				<li class="menu-list__item"><a href="/">Протокол №2</a></li>
+				<li class="menu-list__item"><a href="/">Иванов</a></li>
+				<li class="menu-list__item"><a href="/">Иващенко</a></li>
+				<li class="menu-list__item"><a href="/">Сидоров А</a></li>
+				<li class="menu-list__item"><a href="/">Синюк</a></li>
+				<li class="menu-list__item"><a href="/">Андреев</a></li>
+				<li class="menu-list__item"><a href="/">Петров</a></li>
+				<li class="menu-list__item"><a href="/">Сидоров К</a></li>
+				<li class="menu-list__item"><a href="/">Николаев</a></li>
+				<li class="menu-list__item"><a href="/">Осипов</a></li>
+				<li class="menu-list__item"><a href="/">Бездомный</a></li>
+				<li class="menu-list__item"><a href="/">Никоноров</a></li>
+				<li class="menu-list__item"><a href="/">Коровьев</a></li>
+				<li class="menu-list__item"><a href="/">Лиходеев </a></li>
+			</ul>
+			<div class="return-list-wrap">
+				<ul class="return-list">
+					<li class="return-list__item"><a href="#">Игнат 1</a></li>
+					<li class="return-list__item"><a href="#">Игнат 1</a></li>
+					<li class="return-list__item"><a href="#">Игнат 1</a></li>
+					<li class="return-list__item"><a href="#">Игнат 1</a></li>
+					<li class="return-list__item"><a href="#">Игнат 1</a></li>
+					<li class="return-list__item"><a href="#">Игнат 1</a></li>
+					<li class="return-list__item"><a href="#">Игнат 1</a></li>
+					<li class="return-list__item"><a href="#">Игнат 242356</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="main-panel__in main-panel__footer btn-content-wrap">
+			<button class="btn btn-content btn-protocol" type="button" name="button" id="testModal"
+					data-popup-text='"Сохраненные протоколы" позволяют вам получить доступ к вашим ранним заметкам'
+					data-popup-position="bottom-left"
+					data-popup-index="3">Сохраненные протоколы</button>
+			<button class="btn btn-content btn-return" type="button" name="button">Вернуться назад</button>
+		</div>
+	</div>
+	<div class="content popup-wrapper">
+		<div class="content__in">
+			<div class="block block-head active flex-column"
+				 data-popup-text='Используя данное окно вы можете добавлять новые препараты в протокол'
+				 data-popup-position="top-right"
+				 data-popup-index="2">
+
+				<div class="field-box">
+					<div class="filter filtered-input">
+						<input class='filterInput' type="text" placeholder='Название препарата' />
+						<ul class="filterResults"></ul>
+					</div>
+					<button class="btn btn-add" type="button" name="button">Добавить</button>
+				</div>
+				<div class="inside-block block-head-l">
+					<h4 class="med-label">Скорость введения:</h4>
+					<div class="row">
+						<button class="btn--setActive btn btn-drop active" type="button" name="button"></button>
+						<button class="btn--setActive btn btn-drop btn-drop--2" type="button" name="button"></button>
+						<button class="btn--setActive btn btn-drop btn-drop--3" type="button" name="button"></button>
+					</div>
+				</div>
+				<div class="row block-head-f">
+					<div class="inside-block ">
+						<h4 class="med-label">Дозировка</h4>
+						<div class="btn button-reg increment-input">
+							<button class="button-reg__minus" type="button" name="button"></button>
+							<input class="button-reg__field" increment="5" value="3" type="text" />
+							<button class="button-reg__plus" type="button" name="button"></button>
+						</div>
+					</div>
+					<div class="inside-block">
+						<h4 class="med-label">Кратность</h4>
+						<div class="btn button-reg increment-input">
+							<button class="button-reg__minus" type="button" name="button"></button>
+							<input class="button-reg__field" increment="5" value="3" type="text" />
+							<button class="button-reg__plus" type="button" name="button"></button>
+						</div>
+					</div>
+					<div class="inside-block">
+						<h4 class="med-label">Кол. дней</h4>
+						<div class="btn button-reg increment-input">
+							<button class="button-reg__minus" type="button" name="button"></button>
+							<input class="button-reg__field" increment="5" value="3" type="text" />
+							<button class="button-reg__plus" type="button" name="button"></button>
+						</div>
+					</div>
+				</div>
+				<div class="inside-block inside-block--center block-head-s">
+					<h4 class="med-label">Время приёма</h4>
+					<div class="row">
+						<button class="btn--setActive btn btn--wide" type="button" name="button">До</button>
+						<button class="btn--setActive btn active" type="button" name="button">После</button>
+						<button class="btn--setActive btn btn-p10" type="button" name="button">Во время</button>
+					</div>
+				</div>
+				<div class="inside-block inside-block--right">
+					<h4 class="med-label">Время приёма</h4>
+					<div class="row">
+						<button class="btn--setActive btn btn--sh" type="button" name="button">В.в</button>
+						<button class="btn--setActive btn btn--sh" type="button" name="button">В.м</button>
+						<button class="btn--setActive btn btn--sh active" type="button" name="button">Ос</button>
+					</div>
+				</div>
+			</div>
+			<div class="drugs-block">
+				<!-- Ледокаин -->
+				<div class="block-wrapper">
+					<div class="block ">
+						<div class="col">
+							<div class="block__header">
+								<div class="block__protocolCaption">
+									<h2>Ледокаин Ледокаин Ледокаин Ледокаин Ледокаин Ледокаин</h2>
+								</div>
+								<div class="block__items">
+									<span class="drug-dosage drug-dosage--sm">320</span>
+									<span class="unit unit--sm">ml</span>
+									<div class="drugs drugs--system">
+										<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_system_hover"></use></svg>
+									</div>
+								</div>
+							</div>
+							<div class="block__layer block__layer--left layer-left">
+								<div class="inside-block">
+									<h4 class="med-label">Дозировка</h4>
+									<div class="btn button-reg increment-input">
+										<button class="button-reg__minus" type="button" name="button"></button>
+										<input class="button-reg__field" increment="5" value="1200" type="text" />
+										<button class="button-reg__plus" type="button" name="button"></button>
+									</div>
+								</div>
+								<div class="inside-block">
+									<h4 class="med-label">Кратность</h4>
+									<div class="btn button-reg increment-input">
+										<button class="button-reg__minus" type="button" name="button"></button>
+										<input class="button-reg__field" increment="5" value="1200" type="text" />
+										<button class="button-reg__plus" type="button" name="button"></button>
+									</div>
+								</div>
+								<div class="inside-block">
+									<h4 class="med-label">Количество дней</h4>
+									<div class="btn button-reg increment-input">
+										<button class="button-reg__minus" type="button" name="button"></button>
+										<input class="button-reg__field" increment="5" value="1200" type="text" />
+										<button class="button-reg__plus" type="button" name="button"></button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="block__layer block__layer--center">
+								<div class="inside-block mb-6px-desct displaced-left">
+									<h4 class="med-label">Скорость введения:</h4>
+									<div class="row">
+										<button class="btn--setActive btn btn-drop active" type="button" name="button"></button>
+										<button class="btn--setActive btn btn-drop btn-drop--2" type="button" name="button"></button>
+										<button class="btn--setActive btn btn-drop btn-drop--3" type="button" name="button"></button>
+									</div>
+								</div>
+								<div class="inside-block mb-8px-mob displaced-right">
+									<h4 class="med-label">Время приёма</h4>
+									<div class="row">
+										<button class="btn--setActive btn btn--wide" type="button" name="button">До</button>
+										<button class="btn--setActive btn active" type="button" name="button">После</button>
+										<button class="btn--setActive btn btn-p10" type="button" name="button">Во время</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="btn-delete-wrap">
+								<button class="btn btn-delete">Удалить</button>
+							</div>
+							<div class="block__layer block__layer--right">
+								<div class="inside-block">
+									<h4 class="med-label">Время приёма</h4>
+									<div class="row row--sh">
+										<button class="btn--setActive btn btn--sh" type="button" name="button">В.в</button>
+										<button class="btn--setActive btn btn--sh" type="button" name="button">В.м</button>
+										<button class="btn--setActive btn btn--sh active" type="button" name="button">Ос</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Спазмалгон -->
+				<div class="block-wrapper">
+					<div class="block">
+					<div class="col">
+						<div class="block__header">
+							<div class="block__protocolCaption">
+								<h2>Спазмалгон</h2>
+							</div>
+							<div class="block__items">
+								<span class="drug-dosage drug-dosage--sm">1320</span>
+								<span class="unit unit--sm">mg</span>
+								<div class="drugs drugs--capsule">
+									<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_capsule_hover"></use></svg>
+								</div>
+							</div>
+						</div>
+						<div class="block__layer block__layer--left layer-left">
+							<div class="inside-block">
+								<h4 class="med-label">Дозировка</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="320" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Кратность</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="2" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Количество дней</h4>
+								<div class="row">
+									<div class="btn button-reg increment-input">
+										<button class="button-reg__minus" type="button" name="button"></button>
+										<input class="button-reg__field" increment="5" value="28" type="text" />
+										<button class="button-reg__plus" type="button" name="button"></button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="block__layer block__layer--center">
+							<div class="inside-block mb-6px-desct displaced-left">
+								<h4 class="med-label">Скорость введения:</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn-drop active" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--2" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--3" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block displaced-right">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn--wide" type="button" name="button">До</button>
+									<button class="btn--setActive btn active" type="button" name="button">После</button>
+									<button class="btn--setActive btn btn-p10" type="button" name="button">Во время</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="btn-delete-wrap">
+							<button class="btn btn-delete">Удалить</button>
+						</div>
+						<div class="block__layer block__layer--right">
+							<div class="inside-block">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row row--sh">
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.в</button>
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.м</button>
+									<button class="btn--setActive btn btn--sh active" type="button" name="button">Ос</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<!-- Нимесил -->
+				<div class="block-wrapper">
+					<div class="block">
+					<div class="col">
+						<div class="block__header">
+							<div class="block__protocolCaption">
+								<h2>Нимесил</h2>
+							</div>
+							<div class="block__items">
+								<span class="drug-dosage drug-dosage--sm">3420</span>
+								<span class="unit unit--sm">ЕД</span>
+								<div class="drugs drugs--ampoule">
+									<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_ampoule_hover"></use></svg>
+								</div>
+							</div>
+						</div>
+						<div class="block__layer block__layer--left layer-left">
+							<div class="inside-block">
+								<h4 class="med-label">Дозировка</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="240" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Кратность</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="4" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Количество дней</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="7" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="block__layer block__layer--center">
+							<div class="inside-block mb-6px-desct displaced-left">
+								<h4 class="med-label">Скорость введения:</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn-drop active" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--2" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--3" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block displaced-right">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn--wide" type="button" name="button">До</button>
+									<button class="btn--setActive btn active" type="button" name="button">После</button>
+									<button class="btn--setActive btn btn-p10" type="button" name="button">Во время</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="btn-delete-wrap">
+							<button class="btn btn-delete">Удалить</button>
+						</div>
+						<div class="block__layer block__layer--right">
+							<div class="inside-block">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row row--sh">
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.в</button>
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.м</button>
+									<button class="btn--setActive btn btn--sh active" type="button" name="button">Ос</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<!-- Нимесил -->
+				<div class="block-wrapper">
+					<div class="block">
+					<div class="col">
+						<div class="block__header">
+							<div class="block__protocolCaption">
+								<h2>Нимесил</h2>
+							</div>
+							<div class="block__items">
+								<span class="drug-dosage drug-dosage--sm">320</span>
+								<span class="unit unit--sm">ml</span>
+								<div class="drugs drugs--pill">
+									<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_pill_hover"></use></svg>
+								</div>
+							</div>
+						</div>
+						<div class="block__layer block__layer--left layer-left">
+							<div class="inside-block">
+								<h4 class="med-label">Дозировка</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="240" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Кратность</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="4" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Количество дней</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="7" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="block__layer block__layer--center">
+							<div class="inside-block mb-6px-desct displaced-left">
+								<h4 class="med-label">Скорость введения:</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn-drop active" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--2" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--3" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block displaced-right">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn--wide" type="button" name="button">До</button>
+									<button class="btn--setActive btn active" type="button" name="button">После</button>
+									<button class="btn--setActive btn btn-p10" type="button" name="button">Во время</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="btn-delete-wrap">
+							<button class="btn btn-delete">Удалить</button>
+						</div>
+						<div class="block__layer block__layer--right">
+							<div class="inside-block">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row row--sh">
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.в</button>
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.м</button>
+									<button class="btn--setActive btn btn--sh active" type="button" name="button">Ос</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<!-- Нимесил -->
+				<div class="block-wrapper">
+					<div class="block">
+					<div class="col">
+						<div class="block__header">
+							<div class="block__protocolCaption">
+								<h2>Нимесил</h2>
+							</div>
+							<div class="block__items">
+								<span class="drug-dosage drug-dosage--sm">320</span>
+								<span class="unit unit--sm">ml</span>
+								<div class="drugs drugs--pot">
+									<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_bottle_hover"></use></svg>
+								</div>
+							</div>
+						</div>
+						<div class="block__layer block__layer--left layer-left">
+							<div class="inside-block">
+								<h4 class="med-label">Дозировка</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="240" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Кратность</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="4" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Количество дней</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="7" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="block__layer block__layer--center">
+							<div class="inside-block mb-6px-desct displaced-left">
+								<h4 class="med-label">Скорость введения:</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn-drop active" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--2" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--3" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block displaced-right">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn--wide" type="button" name="button">До</button>
+									<button class="btn--setActive btn active" type="button" name="button">После</button>
+									<button class="btn--setActive btn btn-p10" type="button" name="button">Во время</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="btn-delete-wrap">
+							<button class="btn btn-delete">Удалить</button>
+						</div>
+						<div class="block__layer block__layer--right">
+							<div class="inside-block">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row row--sh">
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.в</button>
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.м</button>
+									<button class="btn--setActive btn btn--sh active" type="button" name="button">Ос</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				<!-- Нимесил -->
+				<div class="block-wrapper">
+					<div class="block block--last">
+					<div class="col">
+						<div class="block__header">
+							<div class="block__protocolCaption">
+								<h2>Нимесил</h2>
+							</div>
+							<div class="block__items">
+								<span class="drug-dosage drug-dosage--sm">320</span>
+								<span class="unit unit--sm">ml</span>
+								<div class="drugs drugs--candles">
+									<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_suppositories_hover"></use></svg>
+								</div>
+							</div>
+						</div>
+						<div class="block__layer block__layer--left layer-left">
+							<div class="inside-block">
+								<h4 class="med-label">Дозировка</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="240" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Кратность</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="4" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block">
+								<h4 class="med-label">Количество дней</h4>
+								<div class="btn button-reg increment-input">
+									<button class="button-reg__minus" type="button" name="button"></button>
+									<input class="button-reg__field" increment="5" value="7" type="text" />
+									<button class="button-reg__plus" type="button" name="button"></button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="block__layer block__layer--center">
+							<div class="inside-block mb-6px-desct displaced-left">
+								<h4 class="med-label">Скорость введения:</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn-drop active" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--2" type="button" name="button"></button>
+									<button class="btn--setActive btn btn-drop btn-drop--3" type="button" name="button"></button>
+								</div>
+							</div>
+							<div class="inside-block displaced-right">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row">
+									<button class="btn--setActive btn btn--wide" type="button" name="button">До</button>
+									<button class="btn--setActive btn active" type="button" name="button">После</button>
+									<button class="btn--setActive btn btn-p10" type="button" name="button">Во время</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col">
+						<div class="btn-delete-wrap">
+							<button class="btn btn-delete">Удалить</button>
+						</div>
+						<div class="block__layer block__layer--right">
+							<div class="inside-block">
+								<h4 class="med-label">Время приёма</h4>
+								<div class="row row--sh">
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.в</button>
+									<button class="btn--setActive btn btn--sh" type="button" name="button">В.м</button>
+									<button class="btn--setActive btn btn--sh active" type="button" name="button">Ос</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+			<div class="block block--footer"><button class="btn btn-content btn--blue btn-recomend" id="addRecomend">Добавить рекомендации</button></div>
+
+			<div class="mainContent_footer">
+				<div class="mainContent_footer-btn"
+					 data-popup-text='С помощью данных кнопок вы сможете создавать и наполнять новые протокола'
+					 data-popup-position="bottom-right"
+					 data-popup-index="1">
+					<button class="btn btn-content btn--blue" id="addNewDrug" type="button">Новый препарат</button>
+					<button class="btn btn-content btn--blue" id="saveProtocolBtn" type="button" name="button">Сохранить протокол</button>
+					<button class="btn btn-content btn--blue" id="createProtocolBtn" type="button">Создать протокол</button>
+				</div>
+				<div class="btn-recomend-wrap"><!--<button class="btn btn-content btn&#45;&#45;blue btn-recomend">Добавить рекомендации</button>--></div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="template" id="modal-template">
+	<div class="overlay">
+		<div class="popup__container">
+			<div class="dial-window dial-window--msg ">
+				<div class="dial-window__in">
+					<p class="dial-window__text"></p>
+					<div class="row dial-window__footer">
+						<button class="btn btn--lightBlue" id="popupClose">Понятно</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="template" id="createProtocolDialog">
+	<div class="dial-window dial-window--msg dial-window--success dial-window--create">
+		<div class="dial-window__in">
+			<div class="row">
+				<p class="dial-window__text">Протокол создан успешно</p>
+				<button type="button" class="btn btn-print"><span class="btn-print__text">Печать</span></button>
+			</div>
+			<div class="dial-layer active">
+				<div class="dial-layer__top">
+					<label class="radio">
+						<input type="radio" name="radio" value="patient" checked/>
+						<div class="radio__text">Назначить пациенту</div>
+					</label>
+					<button class="layer__btn btn-arrow"></button>
+				</div>
+				<div class="dial-layer__bottom">
+					<div class="drop-list-wrap">
+						<label class="drop-list-label">Назначить пациенту №</label>
+						<div class="drop-list">
+							<input type="text" class="drop-list__input" placeholder="ХХХХХ">
+							<ul class="drop-list__res scrolled">
+								<li class="drop-list__item"><span>№ 2344</span></li>
+								<li class="drop-list__item"><span>№ 2345</span></li>
+								<li class="drop-list__item"><span>№ 2346</span></li>
+								<li class="drop-list__item"><span>№ 2347</span></li>
+								<li class="drop-list__item"><span>№ 2348</span></li>
+								<li class="drop-list__item"><span>№ 2349</span></li>
+								<li class="drop-list__item"><span>№ 2350</span></li>
+								<li class="drop-list__item"><span>№ 2351</span></li>
+								<li class="drop-list__item"><span>№ 2352</span></li>
+								<li class="drop-list__item"><span>№ 2353</span></li>
+								<li class="drop-list__item"><span>№ 2354</span></li>
+								<li class="drop-list__item"><span>№ 2355</span></li>
+							</ul>
+						</div>
+					</div>
+					<button class="btn btn-content btn--blue" id="btn-assign">Назначить пациенту</button>
+				</div>
+			</div>
+
+			<div class="dial-layer deliver">
+				<div class="dial-layer__top">
+					<label class="radio">
+						<input type="radio" name="radio"  value="deliver"  />
+						<div class="radio__text">Заказать доставку</div>
+					</label>
+					<button class="layer__btn btn-arrow"></button>
+				</div>
+				<div class="dial-layer__bottom">
+					<div class="drop-list-wrap flexDirCol">
+						<label class="drop-list-label">Больница</label>
+						<div class="drop-list ">
+							<input type="text" class="drop-list__input" placeholder="Выберите больницу">
+							<ul class="drop-list__res scrolled">
+								<li class="drop-list__item"><span>Больница №8, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №9, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №10, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №11, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №8, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №9, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №10, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №11, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №8, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №9, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №10, ул. Название</span></li>
+								<li class="drop-list__item"><span>Больница №11, ул. Название</span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="drop-list-wrap flexDirCol">
+						<label class="drop-list-label">Доктор</label>
+						<div class="drop-list ">
+							<input type="text" class="drop-list__input" placeholder="Выберите доктора">
+							<ul class="drop-list__res scrolled">
+								<li class="drop-list__item"><span>Иванов Иван Иванович</span></li>
+								<li class="drop-list__item"><span>Петров Петр Петрович</span></li>
+								<li class="drop-list__item"><span>Сидоров Иван Семенович</span></li>
+								<li class="drop-list__item"><span>Чернов Семен Петрович</span></li>
+								<li class="drop-list__item"><span>Орлов Петр Иванович</span></li>
+								<li class="drop-list__item"><span>Иванов Иван Иванович</span></li>
+								<li class="drop-list__item"><span>Петров Петр Петрович</span></li>
+								<li class="drop-list__item"><span>Сидоров Иван Семенович</span></li>
+								<li class="drop-list__item"><span>Чернов Семен Петрович</span></li>
+								<li class="drop-list__item"><span>Орлов Петр Иванович</span></li>
+							</ul>
+						</div>
+					</div>
+					<button class="btn btn-content btn--blue" id="btn-sync">Оформить доставку</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="template" id="saveProtocolDialog">
+	<div class="dial-window">
+		<div class="dial-window__in">
+			<h5 class="dial-window__title">Сохранить новый протокол?</h5>
+			<div class="input-field__wrap">
+				<input type="text" class="input-field" placeholder="Введите название протокола" />
+			</div>
+			<div class="row dial-window__footer">
+				<button class="btn btn-content btn--blue" id="cancel">Отмена</button>
+				<button class="btn btn-content btn--blue" id="create">Создать</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="template" id="addNewDrugTemplate">
+	<div class="dial-window dial-window--wide dial-window--drug">
+		<div class="dial-window__in">
+			<div class="dial-window__title-wrapper">
+				<h5 class="dial-window__title dial-window__title--center">Добавить новый препарат?</h5>
+				<div class="input-field__wrap">
+					<input type="text" class="input-field input-field--yellow drag-name" placeholder="Название препарата" />
+				</div>
+			</div>
+
+			<div class="flex drug-info">
+				<div class="flex flex-col drug-info-col">
+					<div class="item-label">Единица измерения</div>
+					<div class="unit-wrap">
+						<span class="unit">ЕД</span>
+						<span class="unit">ml</span>
+						<span class="unit">mg</span>
+					</div>
+				</div>
+				<div class="flex flex-col drug-info-col">
+					<div class="item-label">Дозировка:</div>
+					<div class="measure-wrap">
+						<!--<increment-input class="btn button-reg button-reg&#45;&#45;yellow" increment="5" value="320" />-->
+						<div class="btn button-reg button-reg--yellow increment-input--dialog">
+							<button class="button-reg__minus" type="button" name="button"></button>
+							<input class="button-reg__field" increment="5" value="320" type="text" />
+							<button class="button-reg__plus" type="button" name="button"></button>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col drug-info-col">
+					<div class="item-label mb-0">Форма выпуска:</div>
+					<div class="drugs-wrap">
+						<div class="drugs drugs--system">
+							<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_system_hover"></use></svg>
+							<!--<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_system"></use></svg>-->
+						</div>
+						<div class="drugs drugs--ampoule">
+							<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_ampoule_hover"></use></svg>
+							<!--<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_ampoule"></use></svg>-->
+						</div>
+						<div class="drugs drugs--pill">
+							<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_pill_hover"></use></svg>
+							<!--<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_pill"></use></svg>-->
+						</div>
+						<div class="drugs drugs--capsule">
+							<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_capsule_hover"></use></svg>
+							<!--<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_capsule"></use></svg>-->
+						</div>
+						<div class="drugs drugs--pot">
+							<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_bottle_hover"></use></svg>
+							<!--<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_bottle"></use></svg>-->
+						</div>
+						<div class="drugs drugs--candles">
+							<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_suppositories_hover"></use></svg>
+							<!--<svg class="icon"><use xlink:href="images/drug_sprite.svg#icon_drugs_suppositories"></use></svg>-->
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row dial-window__footer">
+				<button class="btn btn-content btn--blue" id="cancel">Отмена</button>
+				<button class="btn btn-content btn--blue" id="create">Добавить</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="template" id="addRecomendDialog">
+	<div class="dial-window dial-window--recomend">
+		<div class="dial-window__in">
+			<div class="recomend-text-wrap">
+				<textarea class="textarea-field" name="recomend-text" class="" id="" cols="30" rows="10" placeholder="&#10;Напишите в этой области рекомендации по применению лекарственных препаратов"></textarea>
+			</div>
+
+			<div class="row dial-window__footer">
+				<button class="btn btn-content btn--blue" id="cancel">Отмена</button>
+				<button class="btn btn-content btn--blue" id="create">Создать</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script type="template" id="dialogSimpleTemplate">
+	<div class="dial-window dial-window--msg dial-window--success dial-window--simple">
+		<button class="btn btn--small" id="cancel"></button>
+		<div class="dial-window__in">
+			<p class="dial-window__text">!!!!</p>
+			<div class="row dial-window__footer">
+				<button class="btn btn--blue" id="create">Готово</button>
+			</div>
+		</div>
+	</div>
+</script>
+
+<script src="js/components/FilteredInput.js"></script>
+<script src="js/components/CalendarClock.js"></script>
+<script src="js/components/IncrementInput.js"></script>
+<script src="js/main.min.js"></script>
+</body>
+</html>
