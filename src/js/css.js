@@ -4,6 +4,7 @@ var currentUserAgent = navigator.userAgent.toLowerCase();
 var isIphone = currentUserAgent.indexOf('iphone') > -1 || currentUserAgent.indexOf('ipad') > -1;
 var isSafari = (currentUserAgent.indexOf('safari') > -1 && currentUserAgent.indexOf('win') === -1) && (currentUserAgent.indexOf('mobile') === -1 || isIphone);
 console.log(currentUserAgent, 'isSafari', isSafari);
+var drugs_block = document.getElementsByClassName("drugs-block");
 var blocks = document.getElementsByClassName("block");
 var blocks_wrapper = document.getElementsByClassName("block-wrapper");//for back-end
 var filter = document.getElementsByClassName("filter");
